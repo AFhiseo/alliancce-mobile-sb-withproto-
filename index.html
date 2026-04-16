@@ -37,32 +37,23 @@ html,body{height:100vh;overflow:hidden;background:#0d0d0d;
 .proto-frame iframe{width:100%;height:100%;border:none;display:block;}
 
 /* ── 워크스루 오버레이 ── */
-.walk-overlay{position:absolute;inset:0;z-index:200;pointer-events:none;display:none;}
-.walk-overlay.active{display:flex;flex-direction:column;}
+
+
 .walk-dim{position:absolute;inset:0;background:rgba(0,0,0,.5);}
-.walk-step-card{position:absolute;bottom:0;left:0;right:0;background:#fff;
-  border-radius:12px 12px 0 0;padding:16px 20px;z-index:10;}
-.walk-step-num{font-size:10px;font-weight:800;color:var(--blue);margin-bottom:4px;letter-spacing:.5px;}
-.walk-step-label{font-size:14px;font-weight:800;color:var(--blk);margin-bottom:4px;}
-.walk-step-desc{font-size:12px;color:var(--desc);}
-.walk-dots{display:flex;gap:5px;margin-top:10px;}
+
+
+
+
+
 .walk-dot{width:6px;height:6px;border-radius:50%;background:#e0e0e0;}
 .walk-dot.on{background:var(--blue);width:16px;border-radius:3px;}
-.walk-touch{position:absolute;border-radius:8px;
-  border:2.5px solid #4D8AFF;background:rgba(0,65,255,.10);
-  pointer-events:none;
-  animation:areaGlow 1.2s ease-in-out infinite;
-  box-sizing:border-box;}
+
 @keyframes areaGlow{
   0%,100%{box-shadow:0 0 0 0 rgba(0,65,255,.35),inset 0 0 8px rgba(0,65,255,.08);}
   50%{box-shadow:0 0 0 6px rgba(0,65,255,0),inset 0 0 16px rgba(0,65,255,.15);}
 }
-.walk-touch::before{content:'';position:absolute;inset:-6px;border-radius:12px;
-  border:1.5px dashed rgba(0,65,255,.30);pointer-events:none;}
-.walk-touch-label{position:absolute;top:-22px;left:50%;transform:translateX(-50%);
-  background:#0041FF;color:#fff;font-size:9px;font-weight:800;
-  padding:2px 8px;border-radius:4px;white-space:nowrap;letter-spacing:-.2px;
-  pointer-events:none;}
+
+
 .walk-close-btn{position:absolute;top:12px;right:12px;width:28px;height:28px;
   border-radius:50%;background:#eee;border:none;cursor:pointer;
   display:flex;align-items:center;justify-content:center;
@@ -1596,19 +1587,7 @@ body.edit-mode .add-row-btn{display:block;}
     </div>
 
     <!-- 워크스루 오버레이 -->
-    <div class="walk-overlay" id="walk-overlay" style="display: none;">
-      <div class="walk-dim" onclick="closeWalkthrough()"></div>
-      <div class="walk-step-card">
-        <button class="walk-close-btn" onclick="closeWalkthrough()">✕</button>
-        <div class="walk-step-num" id="walk-num">STEP 2 / 2</div>
-        <div class="walk-step-label" id="walk-label">출조종류 관리 탭 클릭</div>
-        <div class="walk-step-desc" id="walk-desc">상단 탭바 우측 [출조종류 관리] 탭을 선택합니다</div>
-        <div class="walk-dots" id="walk-dots"><div class="walk-dot"></div><div class="walk-dot on"></div></div>
-        <div style="margin-top:8px;">
-          <button onclick="endWalkthrough()" style="font-size:11px;font-weight:700;color:var(--blue);background:none;border:none;cursor:pointer;padding:4px 0;">바로 이동 →</button>
-        </div>
-      </div>
-    </div>
+    
 
     <div class="proto-frame">
       <iframe id="proto-iframe" srcdoc="&lt;!DOCTYPE html&gt;
@@ -4194,7 +4173,7 @@ document.addEventListener('click', function(e) {
 
     <!-- ① 전체 화면 목록 -->
     <div class="sdiv"><div class="sdiv-t" data-eid="eid-23" data-editable="1" data-orig="① 전체 화면 종류 — 상품관리 탭 내 모든 화면" data-dashlane-rid="9147ad9e5f9948b7" data-dashlane-classification="other">① 전체 화면 종류 — 상품관리 탭 내 모든 화면</div><div class="sdiv-s" data-eid="eid-29" data-editable="1" data-orig="총 11개 화면 · 클릭 시 프로토타입에서 해당 화면으로 이동" data-dashlane-rid="d3bbb731f9b92ac3" data-dashlane-classification="other">총 11개 화면 · 클릭 시 프로토타입에서 해당 화면으로 이동</div></div>
-    <div class="screen-grid"><div class="screen-card" onclick="startWalkthrough('s1')">
+    <div class="screen-grid"><div class="screen-card" onclick="navigateProto('s1')">
   <span class="sc-badge" style="background:var(--blk);">S1</span>
   <div class="ph-frame ph-sm">
   <div class="ph-island"></div>
@@ -4222,18 +4201,39 @@ document.addEventListener('click', function(e) {
     <div><div style="font-size:5px;color:#aaa;">잔여</div><b style="font-size:8px;color:var(--green);">42/68</b></div>
   </div>
 </div>
-  <div style="background:var(--bg);flex:1;display:flex;align-items:center;justify-content:center;flex-direction:column;gap:3px;">
-    <svg width="18" height="18" fill="none" stroke="#ccc" stroke-width="1.5" viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="18" rx="2"></rect><line x1="3" y1="9" x2="21" y2="9"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="16" y1="2" x2="16" y2="6"></line></svg>
-    <span style="font-size:6px;color:#ccc;">날짜 선택 시 카드 표시</span>
+  <div style="flex:1;background:var(--bg);padding:2px 4px;">
+<div style="background:var(--blk);color:#fff;padding:3px 5px;border-radius:3px 3px 0 0;font-size:5px;font-weight:700;display:flex;justify-content:space-between;align-items:center;">
+  <span>02.27(금) · 3개</span><span style="opacity:.6;font-size:4px;">노출 3 · 7/10명 ▲</span>
+</div>
+<div style="background:#fff;border-radius:0 0 3px 3px;border:1px solid #eee;border-top:none;padding:3px;margin-bottom:2px;">
+  <div style="display:flex;align-items:center;gap:2px;margin-bottom:1px;">
+    <div style="width:16px;height:8px;border-radius:4px;background:#e0e7ff;"></div>
+    <span style="font-size:5px;color:var(--blue);font-weight:700;">노출중</span>
+  </div>
+  <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:1px;">
+    <span style="font-size:6px;font-weight:700;">갑오징어/주꾸미</span>
+    <span style="font-size:6px;font-weight:800;color:var(--blue);">94,000원</span>
+  </div>
+  <div style="font-size:4px;color:#aaa;margin-bottom:2px;">갑오징어 · 주꾸미 · 05:00~15:30 · 당일</div>
+  <div style="height:2px;border-radius:1px;background:#eee;"><div style="height:100%;width:45%;background:var(--blue);border-radius:1px;"></div></div>
+  <div style="display:grid;grid-template-columns:1fr 1fr 1fr;border-top:1px solid #eee;margin-top:2px;">
+    <div style="font-size:4px;text-align:center;padding:2px 0;font-weight:600;">인원조정</div>
+    <div style="font-size:4px;text-align:center;padding:2px 0;color:var(--blue);font-weight:600;border-left:1px solid #eee;border-right:1px solid #eee;">예약추가</div>
+    <div style="font-size:4px;text-align:center;padding:2px 0;font-weight:600;">예약명단</div>
+  </div>
+</div>
+<div style="background:var(--blk);color:#fff;padding:3px 5px;border-radius:3px;font-size:5px;font-weight:700;display:flex;justify-content:space-between;align-items:center;">
+  <span>02.28(토) · 2개</span><span style="opacity:.6;font-size:4px;">노출 2 · 5/12명 ▲</span>
+</div>
   </div>
 </div>
 </div>
-    <div class="ph-nav"><div class="ph-ni "><span>홈</span></div><div class="ph-ni "><span>예약</span></div><div class="ph-ni on"><span>상품관리</span></div><div class="ph-ni "><span>조황</span></div><div class="ph-ni "><span>공지</span></div></div>
+    <div class="ph-nav"><div class="ph-ni "><span>홈</span></div><div class="ph-ni "><span>정산</span></div><div class="ph-ni on"><span>상품관리</span></div><div class="ph-ni "><span>조황</span></div><div class="ph-ni "><span>공지</span></div></div>
   </div>
 </div>
   <div class="sc-name">상품관리 메인</div>
   <div class="sc-desc">진입 화면</div>
-</div><div class="screen-card" onclick="startWalkthrough('s2_filter')">
+</div><div class="screen-card" onclick="navigateProto('s2_filter')">
   <span class="sc-badge" style="background:var(--blue);">S2-A</span>
   <div class="ph-frame ph-sm">
   <div class="ph-island"></div>
@@ -4260,17 +4260,31 @@ document.addEventListener('click', function(e) {
     <div><div style="font-size:5px;color:#aaa;">잔여</div><b style="font-size:8px;color:var(--green);">19/37</b></div>
   </div>
 </div>
-  <div style="background:var(--bg);flex:1;display:flex;align-items:center;justify-content:center;">
-    <span style="font-size:6px;color:#ccc;">↓ 아래 날짜별 카드</span>
+  <div style="flex:1;background:var(--bg);padding:2px 4px;">
+<div style="background:var(--blk);color:#fff;padding:3px 5px;border-radius:3px 3px 0 0;font-size:5px;font-weight:700;display:flex;justify-content:space-between;align-items:center;">
+  <span>02.28(토) · 3개</span><span style="opacity:.6;font-size:4px;">노출 3 · 14/37명 ▲</span>
+</div>
+<div style="background:#fff;border-radius:0 0 3px 3px;border:1px solid #eee;border-top:none;padding:3px;">
+  <div style="display:flex;align-items:center;gap:2px;margin-bottom:1px;">
+    <div style="width:16px;height:8px;border-radius:4px;background:#e0e7ff;"></div>
+    <span style="font-size:5px;color:var(--blue);font-weight:700;">노출중</span>
+  </div>
+  <div style="display:flex;justify-content:space-between;margin-bottom:1px;">
+    <span style="font-size:6px;font-weight:700;">갑오징어/주꾸미</span>
+    <span style="font-size:6px;font-weight:800;color:var(--blue);">94,000원</span>
+  </div>
+  <div style="font-size:4px;color:#aaa;">갑오징어 · 주꾸미 · 05:00~15:30</div>
+  <div style="height:2px;border-radius:1px;background:#eee;margin-top:2px;"><div style="height:100%;width:38%;background:var(--blue);border-radius:1px;"></div></div>
+</div>
   </div>
 </div>
 </div>
-    <div class="ph-nav"><div class="ph-ni "><span>홈</span></div><div class="ph-ni "><span>예약</span></div><div class="ph-ni on"><span>상품관리</span></div><div class="ph-ni "><span>조황</span></div><div class="ph-ni "><span>공지</span></div></div>
+    <div class="ph-nav"><div class="ph-ni "><span>홈</span></div><div class="ph-ni "><span>정산</span></div><div class="ph-ni on"><span>상품관리</span></div><div class="ph-ni "><span>조황</span></div><div class="ph-ni "><span>공지</span></div></div>
   </div>
 </div>
   <div class="sc-name">날짜 필터</div>
   <div class="sc-desc">현황 요약</div>
-</div><div class="screen-card" onclick="startWalkthrough('s2_card')">
+</div><div class="screen-card" onclick="navigateProto('s2_card')">
   <span class="sc-badge" style="background:var(--blue);">S2-B</span>
   <div class="ph-frame ph-sm">
   <div class="ph-island"></div>
@@ -4325,12 +4339,12 @@ document.addEventListener('click', function(e) {
 </div>
 </div>
 </div>
-    <div class="ph-nav"><div class="ph-ni "><span>홈</span></div><div class="ph-ni "><span>예약</span></div><div class="ph-ni on"><span>상품관리</span></div><div class="ph-ni "><span>조황</span></div><div class="ph-ni "><span>공지</span></div></div>
+    <div class="ph-nav"><div class="ph-ni "><span>홈</span></div><div class="ph-ni "><span>정산</span></div><div class="ph-ni on"><span>상품관리</span></div><div class="ph-ni "><span>조황</span></div><div class="ph-ni "><span>공지</span></div></div>
   </div>
 </div>
   <div class="sc-name">상품 카드뷰</div>
   <div class="sc-desc">6가지 액션</div>
-</div><div class="screen-card" onclick="startWalkthrough('m1')">
+</div><div class="screen-card" onclick="navigateProto('m1')">
   <span class="sc-badge" style="background:#7C3AED;">M1</span>
   <div class="ph-frame ph-sm">
   <div class="ph-island"></div>
@@ -4372,7 +4386,7 @@ document.addEventListener('click', function(e) {
           <div style="text-align:center;font-size:5px;color:#aaa;">총정원<b style="font-size:8px;font-weight:900;display:block;color:var(--blk);">11명</b></div>
           <div style="text-align:center;font-size:5px;color:#aaa;">예약<b style="font-size:8px;font-weight:900;display:block;color:var(--blue);">5명</b></div>
           <div style="text-align:center;font-size:5px;color:#aaa;">잔여<b style="font-size:8px;font-weight:900;display:block;color:var(--green);">6석</b></div>
-          <div style="text-align:center;font-size:5px;color:#aaa;">점유<b style="font-size:8px;font-weight:900;display:block;">45%</b></div>
+          <div style="text-align:center;font-size:5px;color:#aaa;">점유율<b style="font-size:8px;font-weight:900;display:block;">45%</b></div>
         </div>
       </div>
       <div style="display:grid;grid-template-columns:1fr 1fr;gap:3px;padding:5px 8px 7px;border-top:1px solid #eee;"><div style="padding:6px;border-radius:4px;border:1px solid #eee;text-align:center;font-size:8px;font-weight:700;color:#767676;">취소</div><div style="padding:6px;border-radius:4px;background:var(--blue);text-align:center;font-size:8px;font-weight:700;color:#fff;">저장</div></div>
@@ -4380,12 +4394,12 @@ document.addEventListener('click', function(e) {
   </div>
 </div>
 </div>
-    <div class="ph-nav"><div class="ph-ni "><span>홈</span></div><div class="ph-ni "><span>예약</span></div><div class="ph-ni on"><span>상품관리</span></div><div class="ph-ni "><span>조황</span></div><div class="ph-ni "><span>공지</span></div></div>
+    <div class="ph-nav"><div class="ph-ni "><span>홈</span></div><div class="ph-ni "><span>정산</span></div><div class="ph-ni on"><span>상품관리</span></div><div class="ph-ni "><span>조황</span></div><div class="ph-ni "><span>공지</span></div></div>
   </div>
 </div>
   <div class="sc-name">인원조정</div>
   <div class="sc-desc">CapacityModal</div>
-</div><div class="screen-card" onclick="startWalkthrough('m2')">
+</div><div class="screen-card" onclick="navigateProto('m2')">
   <span class="sc-badge" style="background:var(--green);">M2</span>
   <div class="ph-frame ph-sm">
   <div class="ph-island"></div>
@@ -4408,12 +4422,15 @@ document.addEventListener('click', function(e) {
 </div>
   <div style="background:rgba(0,0,0,.40);flex:1;min-height:0;display:flex;flex-direction:column;justify-content:flex-end;">
     <div style="background:#fff;border-radius:6px 6px 0 0;">
-      <div style="display:flex;align-items:center;justify-content:space-between;padding:6px 8px;border-bottom:1px solid #eee;"><div><div style="font-size:9px;font-weight:800;color:var(--blk);">예약 직접 추가</div><div style="font-size:5px;color:#aaa;margin-top:1px;">전화·현장·타플랫폼</div></div><span style="font-size:10px;color:#aaa;cursor:pointer;">✕</span></div>
+      <div style="display:flex;align-items:center;justify-content:space-between;padding:6px 8px;border-bottom:1px solid #eee;"><div><div style="font-size:9px;font-weight:800;color:var(--blk);">예약 직접 추가</div><div style="font-size:5px;color:#aaa;margin-top:1px;">전화·네이버·카카오·갈치365·직접방문·기타</div></div><span style="font-size:10px;color:#aaa;cursor:pointer;">✕</span></div>
       <div style="padding:5px 8px;">
         <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:2px;margin-bottom:4px;">
-          <div style="padding:3px;text-align:center;background:var(--blk);color:#fff;border-radius:3px;font-size:6px;font-weight:700;">전화</div>
-          <div style="padding:3px;text-align:center;border:1px solid #eee;border-radius:3px;font-size:6px;font-weight:700;color:#767676;">카카오</div>
-          <div style="padding:3px;text-align:center;border:1px solid #eee;border-radius:3px;font-size:6px;font-weight:700;color:#767676;">현장</div>
+          <div style="padding:3px;text-align:center;background:#2D7D46;color:#fff;border-radius:3px;font-size:5px;font-weight:700;">전화</div>
+          <div style="padding:3px;text-align:center;background:#03C75A;color:#fff;border-radius:3px;font-size:5px;font-weight:700;">네이버</div>
+          <div style="padding:3px;text-align:center;background:#9B6800;color:#fff;border-radius:3px;font-size:5px;font-weight:700;">카카오</div>
+          <div style="padding:3px;text-align:center;border:1px solid #eee;border-radius:3px;font-size:5px;font-weight:700;color:#0055CC;">갈치365</div>
+          <div style="padding:3px;text-align:center;border:1px solid #eee;border-radius:3px;font-size:5px;font-weight:700;color:#767676;">직접방문</div>
+          <div style="padding:3px;text-align:center;border:1px solid #eee;border-radius:3px;font-size:5px;font-weight:700;color:#767676;">기타</div>
         </div>
         <div style="margin-bottom:4px;"><div style="font-size:5px;font-weight:700;color:#767676;margin-bottom:2px;">이름 *</div><div style="border:1px solid #eee;border-radius:3px;padding:3px 5px;font-size:6px;color:var(--blk);">홍길동</div></div><div style="margin-bottom:4px;"><div style="font-size:5px;font-weight:700;color:#767676;margin-bottom:2px;">연락처 *</div><div style="border:1px solid #eee;border-radius:3px;padding:3px 5px;font-size:6px;color:var(--blk);">010-1234-5678</div></div>
         <div style="margin-bottom:4px;"><div style="font-size:5px;font-weight:700;color:#767676;margin-bottom:2px;">상품 (자동선택됨)</div><div style="border:1px solid #eee;border-radius:3px;padding:3px 5px;font-size:5px;font-weight:700;color:var(--blue);">갑오징어/주꾸미 94,000원</div></div>
@@ -4427,12 +4444,12 @@ document.addEventListener('click', function(e) {
   </div>
 </div>
 </div>
-    <div class="ph-nav"><div class="ph-ni "><span>홈</span></div><div class="ph-ni "><span>예약</span></div><div class="ph-ni on"><span>상품관리</span></div><div class="ph-ni "><span>조황</span></div><div class="ph-ni "><span>공지</span></div></div>
+    <div class="ph-nav"><div class="ph-ni "><span>홈</span></div><div class="ph-ni "><span>정산</span></div><div class="ph-ni on"><span>상품관리</span></div><div class="ph-ni "><span>조황</span></div><div class="ph-ni "><span>공지</span></div></div>
   </div>
 </div>
   <div class="sc-name">예약추가</div>
   <div class="sc-desc">DirectReservationModal</div>
-</div><div class="screen-card" onclick="startWalkthrough('m3')">
+</div><div class="screen-card" onclick="navigateProto('m3')">
   <span class="sc-badge" style="background:#555;">M3</span>
   <div class="ph-frame ph-sm">
   <div class="ph-island"></div>
@@ -4491,12 +4508,12 @@ document.addEventListener('click', function(e) {
   </div>
 </div>
 </div>
-    <div class="ph-nav"><div class="ph-ni "><span>홈</span></div><div class="ph-ni "><span>예약</span></div><div class="ph-ni on"><span>상품관리</span></div><div class="ph-ni "><span>조황</span></div><div class="ph-ni "><span>공지</span></div></div>
+    <div class="ph-nav"><div class="ph-ni "><span>홈</span></div><div class="ph-ni "><span>정산</span></div><div class="ph-ni on"><span>상품관리</span></div><div class="ph-ni "><span>조황</span></div><div class="ph-ni "><span>공지</span></div></div>
   </div>
 </div>
   <div class="sc-name">예약명단</div>
   <div class="sc-desc">ReservationListModal</div>
-</div><div class="screen-card" onclick="startWalkthrough('m4')">
+</div><div class="screen-card" onclick="navigateProto('m4')">
   <span class="sc-badge" style="background:#7C3AED;">M4</span>
   <div class="ph-frame ph-sm">
   <div class="ph-island"></div>
@@ -4539,12 +4556,12 @@ document.addEventListener('click', function(e) {
   </div>
 </div>
 </div>
-    <div class="ph-nav"><div class="ph-ni "><span>홈</span></div><div class="ph-ni "><span>예약</span></div><div class="ph-ni on"><span>상품관리</span></div><div class="ph-ni "><span>조황</span></div><div class="ph-ni "><span>공지</span></div></div>
+    <div class="ph-nav"><div class="ph-ni "><span>홈</span></div><div class="ph-ni "><span>정산</span></div><div class="ph-ni on"><span>상품관리</span></div><div class="ph-ni "><span>조황</span></div><div class="ph-ni "><span>공지</span></div></div>
   </div>
 </div>
   <div class="sc-name">개별수정</div>
   <div class="sc-desc">DailyProductEditModal</div>
-</div><div class="screen-card" onclick="startWalkthrough('s4')">
+</div><div class="screen-card" onclick="navigateProto('s4')">
   <span class="sc-badge" style="background:var(--blk);">S4</span>
   <div class="ph-frame ph-sm">
   <div class="ph-island"></div>
@@ -4627,12 +4644,12 @@ document.addEventListener('click', function(e) {
   </div>
 </div>
 </div>
-    <div class="ph-nav"><div class="ph-ni "><span>홈</span></div><div class="ph-ni "><span>예약</span></div><div class="ph-ni on"><span>상품관리</span></div><div class="ph-ni "><span>조황</span></div><div class="ph-ni "><span>공지</span></div></div>
+    <div class="ph-nav"><div class="ph-ni "><span>홈</span></div><div class="ph-ni "><span>정산</span></div><div class="ph-ni on"><span>상품관리</span></div><div class="ph-ni "><span>조황</span></div><div class="ph-ni "><span>공지</span></div></div>
   </div>
 </div>
   <div class="sc-name">출조종류 목록</div>
   <div class="sc-desc">마스터상품</div>
-</div><div class="screen-card" onclick="startWalkthrough('m5')">
+</div><div class="screen-card" onclick="navigateProto('m5')">
   <span class="sc-badge" style="background:var(--blue);">M5</span>
   <div class="ph-frame ph-sm">
   <div class="ph-island"></div>
@@ -4664,12 +4681,12 @@ document.addEventListener('click', function(e) {
   </div>
 </div>
 </div>
-    <div class="ph-nav"><div class="ph-ni "><span>홈</span></div><div class="ph-ni "><span>예약</span></div><div class="ph-ni on"><span>상품관리</span></div><div class="ph-ni "><span>조황</span></div><div class="ph-ni "><span>공지</span></div></div>
+    <div class="ph-nav"><div class="ph-ni "><span>홈</span></div><div class="ph-ni "><span>정산</span></div><div class="ph-ni on"><span>상품관리</span></div><div class="ph-ni "><span>조황</span></div><div class="ph-ni "><span>공지</span></div></div>
   </div>
 </div>
   <div class="sc-name">출조종류 등록</div>
   <div class="sc-desc">MasterProductModal</div>
-</div><div class="screen-card" onclick="startWalkthrough('m6')">
+</div><div class="screen-card" onclick="navigateProto('m6')">
   <span class="sc-badge" style="background:var(--orange);">M6</span>
   <div class="ph-frame ph-sm">
   <div class="ph-island"></div>
@@ -4701,12 +4718,12 @@ document.addEventListener('click', function(e) {
   </div>
 </div>
 </div>
-    <div class="ph-nav"><div class="ph-ni "><span>홈</span></div><div class="ph-ni "><span>예약</span></div><div class="ph-ni on"><span>상품관리</span></div><div class="ph-ni "><span>조황</span></div><div class="ph-ni "><span>공지</span></div></div>
+    <div class="ph-nav"><div class="ph-ni "><span>홈</span></div><div class="ph-ni "><span>정산</span></div><div class="ph-ni on"><span>상품관리</span></div><div class="ph-ni "><span>조황</span></div><div class="ph-ni "><span>공지</span></div></div>
   </div>
 </div>
   <div class="sc-name">출조종류 수정</div>
   <div class="sc-desc">MasterProductModal</div>
-</div><div class="screen-card" onclick="startWalkthrough('c15')">
+</div><div class="screen-card" onclick="navigateProto('c15')">
   <span class="sc-badge" style="background:var(--red);">M7</span>
   <div class="ph-frame ph-sm">
   <div class="ph-island"></div>
@@ -4733,7 +4750,7 @@ document.addEventListener('click', function(e) {
   </div>
 </div>
 </div>
-    <div class="ph-nav"><div class="ph-ni "><span>홈</span></div><div class="ph-ni "><span>예약</span></div><div class="ph-ni on"><span>상품관리</span></div><div class="ph-ni "><span>조황</span></div><div class="ph-ni "><span>공지</span></div></div>
+    <div class="ph-nav"><div class="ph-ni "><span>홈</span></div><div class="ph-ni "><span>정산</span></div><div class="ph-ni on"><span>상품관리</span></div><div class="ph-ni "><span>조황</span></div><div class="ph-ni "><span>공지</span></div></div>
   </div>
 </div>
   <div class="sc-name">삭제 Confirm</div>
@@ -4770,13 +4787,34 @@ document.addEventListener('click', function(e) {
     <div><div style="font-size:5px;color:#aaa;">잔여</div><b style="font-size:8px;color:var(--green);">42/68</b></div>
   </div>
 </div>
-  <div style="background:var(--bg);flex:1;display:flex;align-items:center;justify-content:center;flex-direction:column;gap:3px;">
-    <svg width="18" height="18" fill="none" stroke="#ccc" stroke-width="1.5" viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="18" rx="2"></rect><line x1="3" y1="9" x2="21" y2="9"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="16" y1="2" x2="16" y2="6"></line></svg>
-    <span style="font-size:6px;color:#ccc;">날짜 선택 시 카드 표시</span>
+  <div style="flex:1;background:var(--bg);padding:2px 4px;">
+<div style="background:var(--blk);color:#fff;padding:3px 5px;border-radius:3px 3px 0 0;font-size:5px;font-weight:700;display:flex;justify-content:space-between;align-items:center;">
+  <span>02.27(금) · 3개</span><span style="opacity:.6;font-size:4px;">노출 3 · 7/10명 ▲</span>
+</div>
+<div style="background:#fff;border-radius:0 0 3px 3px;border:1px solid #eee;border-top:none;padding:3px;margin-bottom:2px;">
+  <div style="display:flex;align-items:center;gap:2px;margin-bottom:1px;">
+    <div style="width:16px;height:8px;border-radius:4px;background:#e0e7ff;"></div>
+    <span style="font-size:5px;color:var(--blue);font-weight:700;">노출중</span>
+  </div>
+  <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:1px;">
+    <span style="font-size:6px;font-weight:700;">갑오징어/주꾸미</span>
+    <span style="font-size:6px;font-weight:800;color:var(--blue);">94,000원</span>
+  </div>
+  <div style="font-size:4px;color:#aaa;margin-bottom:2px;">갑오징어 · 주꾸미 · 05:00~15:30 · 당일</div>
+  <div style="height:2px;border-radius:1px;background:#eee;"><div style="height:100%;width:45%;background:var(--blue);border-radius:1px;"></div></div>
+  <div style="display:grid;grid-template-columns:1fr 1fr 1fr;border-top:1px solid #eee;margin-top:2px;">
+    <div style="font-size:4px;text-align:center;padding:2px 0;font-weight:600;">인원조정</div>
+    <div style="font-size:4px;text-align:center;padding:2px 0;color:var(--blue);font-weight:600;border-left:1px solid #eee;border-right:1px solid #eee;">예약추가</div>
+    <div style="font-size:4px;text-align:center;padding:2px 0;font-weight:600;">예약명단</div>
+  </div>
+</div>
+<div style="background:var(--blk);color:#fff;padding:3px 5px;border-radius:3px;font-size:5px;font-weight:700;display:flex;justify-content:space-between;align-items:center;">
+  <span>02.28(토) · 2개</span><span style="opacity:.6;font-size:4px;">노출 2 · 5/12명 ▲</span>
+</div>
   </div>
 </div>
 </div>
-    <div class="ph-nav"><div class="ph-ni "><span>홈</span></div><div class="ph-ni "><span>예약</span></div><div class="ph-ni on"><span>상품관리</span></div><div class="ph-ni "><span>조황</span></div><div class="ph-ni "><span>공지</span></div></div>
+    <div class="ph-nav"><div class="ph-ni "><span>홈</span></div><div class="ph-ni "><span>정산</span></div><div class="ph-ni on"><span>상품관리</span></div><div class="ph-ni "><span>조황</span></div><div class="ph-ni "><span>공지</span></div></div>
   </div>
 </div>
   <div class="flow-lbl">상품관리 메인</div>
@@ -4808,12 +4846,26 @@ document.addEventListener('click', function(e) {
     <div><div style="font-size:5px;color:#aaa;">잔여</div><b style="font-size:8px;color:var(--green);">19/37</b></div>
   </div>
 </div>
-  <div style="background:var(--bg);flex:1;display:flex;align-items:center;justify-content:center;">
-    <span style="font-size:6px;color:#ccc;">↓ 아래 날짜별 카드</span>
+  <div style="flex:1;background:var(--bg);padding:2px 4px;">
+<div style="background:var(--blk);color:#fff;padding:3px 5px;border-radius:3px 3px 0 0;font-size:5px;font-weight:700;display:flex;justify-content:space-between;align-items:center;">
+  <span>02.28(토) · 3개</span><span style="opacity:.6;font-size:4px;">노출 3 · 14/37명 ▲</span>
+</div>
+<div style="background:#fff;border-radius:0 0 3px 3px;border:1px solid #eee;border-top:none;padding:3px;">
+  <div style="display:flex;align-items:center;gap:2px;margin-bottom:1px;">
+    <div style="width:16px;height:8px;border-radius:4px;background:#e0e7ff;"></div>
+    <span style="font-size:5px;color:var(--blue);font-weight:700;">노출중</span>
+  </div>
+  <div style="display:flex;justify-content:space-between;margin-bottom:1px;">
+    <span style="font-size:6px;font-weight:700;">갑오징어/주꾸미</span>
+    <span style="font-size:6px;font-weight:800;color:var(--blue);">94,000원</span>
+  </div>
+  <div style="font-size:4px;color:#aaa;">갑오징어 · 주꾸미 · 05:00~15:30</div>
+  <div style="height:2px;border-radius:1px;background:#eee;margin-top:2px;"><div style="height:100%;width:38%;background:var(--blue);border-radius:1px;"></div></div>
+</div>
   </div>
 </div>
 </div>
-    <div class="ph-nav"><div class="ph-ni "><span>홈</span></div><div class="ph-ni "><span>예약</span></div><div class="ph-ni on"><span>상품관리</span></div><div class="ph-ni "><span>조황</span></div><div class="ph-ni "><span>공지</span></div></div>
+    <div class="ph-nav"><div class="ph-ni "><span>홈</span></div><div class="ph-ni "><span>정산</span></div><div class="ph-ni on"><span>상품관리</span></div><div class="ph-ni "><span>조황</span></div><div class="ph-ni "><span>공지</span></div></div>
   </div>
 </div>
   <div class="flow-lbl">날짜 필터</div>
@@ -4862,7 +4914,7 @@ document.addEventListener('click', function(e) {
   </div>
 </div>
 </div>
-    <div class="ph-nav"><div class="ph-ni "><span>홈</span></div><div class="ph-ni "><span>예약</span></div><div class="ph-ni on"><span>상품관리</span></div><div class="ph-ni "><span>조황</span></div><div class="ph-ni "><span>공지</span></div></div>
+    <div class="ph-nav"><div class="ph-ni "><span>홈</span></div><div class="ph-ni "><span>정산</span></div><div class="ph-ni on"><span>상품관리</span></div><div class="ph-ni "><span>조황</span></div><div class="ph-ni "><span>공지</span></div></div>
   </div>
 </div>
   <div class="flow-lbl">출조종류 관리</div>
@@ -4903,7 +4955,7 @@ document.addEventListener('click', function(e) {
     </div>
   </div>
   <div style="font-size:9px;font-weight:800;margin-bottom:1px;display:flex;justify-content:space-between;align-items:baseline;">
-    <span>갑오징어/주꾸미</span><span style="color:var(--blue);font-size:9px;font-weight:900;">94000</span>
+    <span>갑오징어/주꾸미</span><span style="color:var(--blue);font-size:9px;font-weight:900;">94,000원</span>
   </div>
   <div style="font-size:5px;color:#aaa;margin-bottom:2px;">05:00~15:30 · 당일 · 잔여 6석/11석</div>
   <div class="ph-prog" style="margin-bottom:3px;"><div style="height:100%;width:45%;background:var(--blue);border-radius:1px;"></div></div>
@@ -4919,7 +4971,7 @@ document.addEventListener('click', function(e) {
 </div>
 </div>
 </div>
-    <div class="ph-nav"><div class="ph-ni "><span>홈</span></div><div class="ph-ni "><span>예약</span></div><div class="ph-ni on"><span>상품관리</span></div><div class="ph-ni "><span>조황</span></div><div class="ph-ni "><span>공지</span></div></div>
+    <div class="ph-nav"><div class="ph-ni "><span>홈</span></div><div class="ph-ni "><span>정산</span></div><div class="ph-ni on"><span>상품관리</span></div><div class="ph-ni "><span>조황</span></div><div class="ph-ni "><span>공지</span></div></div>
   </div>
 </div>
   <div class="flow-lbl">카드뷰</div>
@@ -4966,7 +5018,7 @@ document.addEventListener('click', function(e) {
           <div style="text-align:center;font-size:5px;color:#aaa;">총정원<b style="font-size:8px;font-weight:900;display:block;color:var(--blk);">11명</b></div>
           <div style="text-align:center;font-size:5px;color:#aaa;">예약<b style="font-size:8px;font-weight:900;display:block;color:var(--blue);">5명</b></div>
           <div style="text-align:center;font-size:5px;color:#aaa;">잔여<b style="font-size:8px;font-weight:900;display:block;color:var(--green);">6석</b></div>
-          <div style="text-align:center;font-size:5px;color:#aaa;">점유<b style="font-size:8px;font-weight:900;display:block;">45%</b></div>
+          <div style="text-align:center;font-size:5px;color:#aaa;">점유율<b style="font-size:8px;font-weight:900;display:block;">45%</b></div>
         </div>
       </div>
       <div style="display:grid;grid-template-columns:1fr 1fr;gap:3px;padding:5px 8px 7px;border-top:1px solid #eee;"><div style="padding:6px;border-radius:4px;border:1px solid #eee;text-align:center;font-size:8px;font-weight:700;color:#767676;">취소</div><div style="padding:6px;border-radius:4px;background:var(--blue);text-align:center;font-size:8px;font-weight:700;color:#fff;">저장</div></div>
@@ -4974,7 +5026,7 @@ document.addEventListener('click', function(e) {
   </div>
 </div>
 </div>
-    <div class="ph-nav"><div class="ph-ni "><span>홈</span></div><div class="ph-ni "><span>예약</span></div><div class="ph-ni on"><span>상품관리</span></div><div class="ph-ni "><span>조황</span></div><div class="ph-ni "><span>공지</span></div></div>
+    <div class="ph-nav"><div class="ph-ni "><span>홈</span></div><div class="ph-ni "><span>정산</span></div><div class="ph-ni on"><span>상품관리</span></div><div class="ph-ni "><span>조황</span></div><div class="ph-ni "><span>공지</span></div></div>
   </div>
 </div>
   <div class="flow-lbl">인원조정</div>
@@ -5002,12 +5054,15 @@ document.addEventListener('click', function(e) {
 </div>
   <div style="background:rgba(0,0,0,.40);flex:1;min-height:0;display:flex;flex-direction:column;justify-content:flex-end;">
     <div style="background:#fff;border-radius:6px 6px 0 0;">
-      <div style="display:flex;align-items:center;justify-content:space-between;padding:6px 8px;border-bottom:1px solid #eee;"><div><div style="font-size:9px;font-weight:800;color:var(--blk);">예약 직접 추가</div><div style="font-size:5px;color:#aaa;margin-top:1px;">전화·현장·타플랫폼</div></div><span style="font-size:10px;color:#aaa;cursor:pointer;">✕</span></div>
+      <div style="display:flex;align-items:center;justify-content:space-between;padding:6px 8px;border-bottom:1px solid #eee;"><div><div style="font-size:9px;font-weight:800;color:var(--blk);">예약 직접 추가</div><div style="font-size:5px;color:#aaa;margin-top:1px;">전화·네이버·카카오·갈치365·직접방문·기타</div></div><span style="font-size:10px;color:#aaa;cursor:pointer;">✕</span></div>
       <div style="padding:5px 8px;">
         <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:2px;margin-bottom:4px;">
-          <div style="padding:3px;text-align:center;background:var(--blk);color:#fff;border-radius:3px;font-size:6px;font-weight:700;">전화</div>
-          <div style="padding:3px;text-align:center;border:1px solid #eee;border-radius:3px;font-size:6px;font-weight:700;color:#767676;">카카오</div>
-          <div style="padding:3px;text-align:center;border:1px solid #eee;border-radius:3px;font-size:6px;font-weight:700;color:#767676;">현장</div>
+          <div style="padding:3px;text-align:center;background:#2D7D46;color:#fff;border-radius:3px;font-size:5px;font-weight:700;">전화</div>
+          <div style="padding:3px;text-align:center;background:#03C75A;color:#fff;border-radius:3px;font-size:5px;font-weight:700;">네이버</div>
+          <div style="padding:3px;text-align:center;background:#9B6800;color:#fff;border-radius:3px;font-size:5px;font-weight:700;">카카오</div>
+          <div style="padding:3px;text-align:center;border:1px solid #eee;border-radius:3px;font-size:5px;font-weight:700;color:#0055CC;">갈치365</div>
+          <div style="padding:3px;text-align:center;border:1px solid #eee;border-radius:3px;font-size:5px;font-weight:700;color:#767676;">직접방문</div>
+          <div style="padding:3px;text-align:center;border:1px solid #eee;border-radius:3px;font-size:5px;font-weight:700;color:#767676;">기타</div>
         </div>
         <div style="margin-bottom:4px;"><div style="font-size:5px;font-weight:700;color:#767676;margin-bottom:2px;">이름 *</div><div style="border:1px solid #eee;border-radius:3px;padding:3px 5px;font-size:6px;color:var(--blk);">홍길동</div></div><div style="margin-bottom:4px;"><div style="font-size:5px;font-weight:700;color:#767676;margin-bottom:2px;">연락처 *</div><div style="border:1px solid #eee;border-radius:3px;padding:3px 5px;font-size:6px;color:var(--blk);">010-1234-5678</div></div>
         <div style="margin-bottom:4px;"><div style="font-size:5px;font-weight:700;color:#767676;margin-bottom:2px;">상품 (자동선택됨)</div><div style="border:1px solid #eee;border-radius:3px;padding:3px 5px;font-size:5px;font-weight:700;color:var(--blue);">갑오징어/주꾸미 94,000원</div></div>
@@ -5021,7 +5076,7 @@ document.addEventListener('click', function(e) {
   </div>
 </div>
 </div>
-    <div class="ph-nav"><div class="ph-ni "><span>홈</span></div><div class="ph-ni "><span>예약</span></div><div class="ph-ni on"><span>상품관리</span></div><div class="ph-ni "><span>조황</span></div><div class="ph-ni "><span>공지</span></div></div>
+    <div class="ph-nav"><div class="ph-ni "><span>홈</span></div><div class="ph-ni "><span>정산</span></div><div class="ph-ni on"><span>상품관리</span></div><div class="ph-ni "><span>조황</span></div><div class="ph-ni "><span>공지</span></div></div>
   </div>
 </div>
   <div class="flow-lbl">예약추가</div>
@@ -5085,7 +5140,7 @@ document.addEventListener('click', function(e) {
   </div>
 </div>
 </div>
-    <div class="ph-nav"><div class="ph-ni "><span>홈</span></div><div class="ph-ni "><span>예약</span></div><div class="ph-ni on"><span>상품관리</span></div><div class="ph-ni "><span>조황</span></div><div class="ph-ni "><span>공지</span></div></div>
+    <div class="ph-nav"><div class="ph-ni "><span>홈</span></div><div class="ph-ni "><span>정산</span></div><div class="ph-ni on"><span>상품관리</span></div><div class="ph-ni "><span>조황</span></div><div class="ph-ni "><span>공지</span></div></div>
   </div>
 </div>
   <div class="flow-lbl">예약명단</div>
@@ -5128,7 +5183,7 @@ document.addEventListener('click', function(e) {
   </div>
 </div>
 </div>
-    <div class="ph-nav"><div class="ph-ni "><span>홈</span></div><div class="ph-ni "><span>예약</span></div><div class="ph-ni on"><span>상품관리</span></div><div class="ph-ni "><span>조황</span></div><div class="ph-ni "><span>공지</span></div></div>
+    <div class="ph-nav"><div class="ph-ni "><span>홈</span></div><div class="ph-ni "><span>정산</span></div><div class="ph-ni on"><span>상품관리</span></div><div class="ph-ni "><span>조황</span></div><div class="ph-ni "><span>공지</span></div></div>
   </div>
 </div>
   <div class="flow-lbl">개별수정</div>
@@ -5177,7 +5232,7 @@ document.addEventListener('click', function(e) {
   </div>
 </div>
 </div>
-    <div class="ph-nav"><div class="ph-ni "><span>홈</span></div><div class="ph-ni "><span>예약</span></div><div class="ph-ni on"><span>상품관리</span></div><div class="ph-ni "><span>조황</span></div><div class="ph-ni "><span>공지</span></div></div>
+    <div class="ph-nav"><div class="ph-ni "><span>홈</span></div><div class="ph-ni "><span>정산</span></div><div class="ph-ni on"><span>상품관리</span></div><div class="ph-ni "><span>조황</span></div><div class="ph-ni "><span>공지</span></div></div>
   </div>
 </div>
   <div class="flow-lbl">출조종류 목록</div>
@@ -5210,7 +5265,7 @@ document.addEventListener('click', function(e) {
   </div>
 </div>
 </div>
-    <div class="ph-nav"><div class="ph-ni "><span>홈</span></div><div class="ph-ni "><span>예약</span></div><div class="ph-ni on"><span>상품관리</span></div><div class="ph-ni "><span>조황</span></div><div class="ph-ni "><span>공지</span></div></div>
+    <div class="ph-nav"><div class="ph-ni "><span>홈</span></div><div class="ph-ni "><span>정산</span></div><div class="ph-ni on"><span>상품관리</span></div><div class="ph-ni "><span>조황</span></div><div class="ph-ni "><span>공지</span></div></div>
   </div>
 </div>
   <div class="flow-lbl">출조종류 등록</div>
@@ -5242,7 +5297,7 @@ document.addEventListener('click', function(e) {
   </div>
 </div>
 </div>
-    <div class="ph-nav"><div class="ph-ni "><span>홈</span></div><div class="ph-ni "><span>예약</span></div><div class="ph-ni on"><span>상품관리</span></div><div class="ph-ni "><span>조황</span></div><div class="ph-ni "><span>공지</span></div></div>
+    <div class="ph-nav"><div class="ph-ni "><span>홈</span></div><div class="ph-ni "><span>정산</span></div><div class="ph-ni on"><span>상품관리</span></div><div class="ph-ni "><span>조황</span></div><div class="ph-ni "><span>공지</span></div></div>
   </div>
 </div>
   <div class="flow-lbl">출조종류 수정</div>
@@ -5274,7 +5329,7 @@ document.addEventListener('click', function(e) {
   </div>
 </div>
 </div>
-    <div class="ph-nav"><div class="ph-ni "><span>홈</span></div><div class="ph-ni "><span>예약</span></div><div class="ph-ni on"><span>상품관리</span></div><div class="ph-ni "><span>조황</span></div><div class="ph-ni "><span>공지</span></div></div>
+    <div class="ph-nav"><div class="ph-ni "><span>홈</span></div><div class="ph-ni "><span>정산</span></div><div class="ph-ni on"><span>상품관리</span></div><div class="ph-ni "><span>조황</span></div><div class="ph-ni "><span>공지</span></div></div>
   </div>
 </div>
   <div class="flow-lbl">삭제 Confirm</div>
@@ -5296,10 +5351,10 @@ document.addEventListener('click', function(e) {
       <div style="display:flex;flex-direction:column;align-items:center;gap:1px;"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#ccc" stroke-width="1.8"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path></svg><span style="font-size:4px;color:#ccc;">홈</span></div>
       <div style="display:flex;flex-direction:column;align-items:center;gap:1px;"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="var(--bl)" stroke-width="2.2"><rect x="3" y="3" width="8" height="8" rx="1"></rect><rect x="13" y="3" width="8" height="8" rx="1"></rect><rect x="3" y="13" width="8" height="8" rx="1"></rect><rect x="13" y="13" width="8" height="8" rx="1"></rect></svg><span style="font-size:4px;color:var(--bl);font-weight:800;">상품관리</span></div>
     </div>
-    <div style="font-size:6px;color:var(--desc);text-align:center;">BottomNav<br>상품관리 탭</div>
+    <div style="font-size:6px;color:var(--desc);text-align:center;">BottomNav<br>상품관리</div>
   </div>
 </div>
-<div class="mnav"><div class="mni"><span>홈</span></div><div class="mni"><span>정산</span></div><div class="mni on"><span>상품관리</span></div><div class="mni"><span>조황</span></div></div></div>
+<div class="mnav"><div class="mni"><span>홈</span></div><div class="mni"><span>정산</span></div><div class="mni on"><span>상품관리</span></div><div class="mni"><span>조황</span></div><div class="mni"><span>공지</span></div></div></div>
 </div>
 <div class="sc-lbl">BottomNav</div>
 </div><div style="display:flex;flex-direction:column;align-items:center;justify-content:center;flex-shrink:0;">
@@ -5314,9 +5369,18 @@ document.addEventListener('click', function(e) {
 <div class="msb">9:41 <span>🔋</span></div>
 <div class="mhd"><div class="mht">상품관리.</div><div style="width:12px;height:12px;border-radius:50%;background:var(--bl);display:flex;align-items:center;justify-content:center;font-size:5px;color:#fff;font-weight:700;">사</div></div>
 <div class="mbt">왕감자호 <span style="font-size:4px;color:#aaa;">20인승 ▼</span></div>
-<div class="mtabs"><div class="mtab on">일자별상품</div><div class="mtab">출조종류</div></div>
-<div style="height:44px;background:var(--bg);"></div>
-<div class="mnav"><div class="mni"><span>홈</span></div><div class="mni on"><span>상품관리</span></div><div class="mni"><span>조황</span></div></div></div>
+<div class="mtabs"><div class="mtab on">일자별상품</div><div class="mtab">출조종류 관리</div></div>
+<div style="background:var(--bg);padding:2px;">
+  <div style="display:flex;justify-content:space-between;align-items:center;padding:1px 3px;background:#fff;border-bottom:1px solid #eee;font-size:4px;font-weight:800;">
+    <span style="color:#ccc;">‹</span><span>2026년 2월</span><span style="color:#ccc;">›</span>
+  </div>
+  <div style="background:var(--blk);color:#fff;padding:2px 3px;border-radius:2px;font-size:3px;font-weight:700;margin-top:2px;">02.27(금) · 3개</div>
+  <div style="background:#fff;border:1px solid #eee;border-radius:2px;padding:2px;margin-top:1px;">
+    <div style="font-size:3px;font-weight:700;">갑오징어/주꾸미</div>
+    <div style="font-size:2px;color:#aaa;">05:00~15:30</div>
+  </div>
+</div>
+<div class="mnav"><div class="mni"><span>홈</span></div><div class="mni"><span>정산</span></div><div class="mni on"><span>상품관리</span></div><div class="mni"><span>조황</span></div><div class="mni"><span>공지</span></div></div></div>
 </div>
 <div class="sc-lbl">상품관리 메인</div>
 </div><div style="display:flex;flex-direction:column;align-items:center;justify-content:center;flex-shrink:0;">
@@ -5369,7 +5433,7 @@ document.addEventListener('click', function(e) {
       <div class="spec-hd-title" data-eid="eid-1" data-editable="1" data-orig="상품관리 메인 화면 — 진입 &amp;amp; 선박 선택" data-dashlane-rid="258c766c6fdd6068" data-dashlane-classification="other">상품관리 메인 화면 — 진입 &amp; 선박 선택</div>
       <div class="spec-hd-sub" data-eid="eid-12" data-editable="1" data-orig="하단 탭바 3번째 탭 · 기본 탭: 일자별상품 · 선박 드롭다운으로 데이터 필터링" data-dashlane-rid="fcd4bf4001c7ddba" data-dashlane-classification="other">하단 탭바 3번째 탭 · 기본 탭: 일자별상품 · 선박 드롭다운으로 데이터 필터링</div>
     </div>
-    <button class="nav-to-btn" onclick="startWalkthrough('s2')" data-dashlane-label="true" data-dashlane-rid="ffa1a2ee67a4a437" data-dashlane-classification="other">
+    <button class="nav-to-btn" onclick="navigateProto('s2')" data-dashlane-label="true" data-dashlane-rid="ffa1a2ee67a4a437" data-dashlane-classification="other">
       <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polygon points="5 3 19 12 5 21 5 3"></polygon></svg>
       프로토타입에서 보기
     </button>
@@ -5404,13 +5468,34 @@ document.addEventListener('click', function(e) {
     <div><div style="font-size:5px;color:#aaa;">잔여</div><b style="font-size:8px;color:var(--green);">42/68</b></div>
   </div>
 </div>
-  <div style="background:var(--bg);flex:1;display:flex;align-items:center;justify-content:center;flex-direction:column;gap:3px;">
-    <svg width="18" height="18" fill="none" stroke="#ccc" stroke-width="1.5" viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="18" rx="2"></rect><line x1="3" y1="9" x2="21" y2="9"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="16" y1="2" x2="16" y2="6"></line></svg>
-    <span style="font-size:6px;color:#ccc;">날짜 선택 시 카드 표시</span>
+  <div style="flex:1;background:var(--bg);padding:2px 4px;">
+<div style="background:var(--blk);color:#fff;padding:3px 5px;border-radius:3px 3px 0 0;font-size:5px;font-weight:700;display:flex;justify-content:space-between;align-items:center;">
+  <span>02.27(금) · 3개</span><span style="opacity:.6;font-size:4px;">노출 3 · 7/10명 ▲</span>
+</div>
+<div style="background:#fff;border-radius:0 0 3px 3px;border:1px solid #eee;border-top:none;padding:3px;margin-bottom:2px;">
+  <div style="display:flex;align-items:center;gap:2px;margin-bottom:1px;">
+    <div style="width:16px;height:8px;border-radius:4px;background:#e0e7ff;"></div>
+    <span style="font-size:5px;color:var(--blue);font-weight:700;">노출중</span>
+  </div>
+  <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:1px;">
+    <span style="font-size:6px;font-weight:700;">갑오징어/주꾸미</span>
+    <span style="font-size:6px;font-weight:800;color:var(--blue);">94,000원</span>
+  </div>
+  <div style="font-size:4px;color:#aaa;margin-bottom:2px;">갑오징어 · 주꾸미 · 05:00~15:30 · 당일</div>
+  <div style="height:2px;border-radius:1px;background:#eee;"><div style="height:100%;width:45%;background:var(--blue);border-radius:1px;"></div></div>
+  <div style="display:grid;grid-template-columns:1fr 1fr 1fr;border-top:1px solid #eee;margin-top:2px;">
+    <div style="font-size:4px;text-align:center;padding:2px 0;font-weight:600;">인원조정</div>
+    <div style="font-size:4px;text-align:center;padding:2px 0;color:var(--blue);font-weight:600;border-left:1px solid #eee;border-right:1px solid #eee;">예약추가</div>
+    <div style="font-size:4px;text-align:center;padding:2px 0;font-weight:600;">예약명단</div>
+  </div>
+</div>
+<div style="background:var(--blk);color:#fff;padding:3px 5px;border-radius:3px;font-size:5px;font-weight:700;display:flex;justify-content:space-between;align-items:center;">
+  <span>02.28(토) · 2개</span><span style="opacity:.6;font-size:4px;">노출 2 · 5/12명 ▲</span>
+</div>
   </div>
 </div>
 </div>
-    <div class="ph-nav"><div class="ph-ni "><span>홈</span></div><div class="ph-ni "><span>예약</span></div><div class="ph-ni on"><span>상품관리</span></div><div class="ph-ni "><span>조황</span></div><div class="ph-ni "><span>공지</span></div></div>
+    <div class="ph-nav"><div class="ph-ni "><span>홈</span></div><div class="ph-ni "><span>정산</span></div><div class="ph-ni on"><span>상품관리</span></div><div class="ph-ni "><span>조황</span></div><div class="ph-ni "><span>공지</span></div></div>
   </div>
 </div>
       <div class="spec-mock-label">탭 &amp; 드롭다운 영역</div>
@@ -5500,7 +5585,7 @@ document.addEventListener('click', function(e) {
       <div class="spec-hd-title" data-eid="eid-2" data-editable="1" data-orig="날짜 필터 &amp;amp; 현황 요약 패널">날짜 필터 &amp; 현황 요약 패널</div>
       <div class="spec-hd-sub" data-eid="eid-13" data-editable="1" data-orig="월 네비게이션 · 날짜 칩 선택 시 카드와 현황이 실시간 연동">월 네비게이션 · 날짜 칩 선택 시 카드와 현황이 실시간 연동</div>
     </div>
-    <button class="nav-to-btn" onclick="startWalkthrough('s2_filter')">
+    <button class="nav-to-btn" onclick="navigateProto('s2_filter')">
       <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polygon points="5 3 19 12 5 21 5 3"></polygon></svg>
       프로토타입에서 보기
     </button>
@@ -5534,12 +5619,26 @@ document.addEventListener('click', function(e) {
     <div><div style="font-size:5px;color:#aaa;">잔여</div><b style="font-size:8px;color:var(--green);">19/37</b></div>
   </div>
 </div>
-  <div style="background:var(--bg);flex:1;display:flex;align-items:center;justify-content:center;">
-    <span style="font-size:6px;color:#ccc;">↓ 아래 날짜별 카드</span>
+  <div style="flex:1;background:var(--bg);padding:2px 4px;">
+<div style="background:var(--blk);color:#fff;padding:3px 5px;border-radius:3px 3px 0 0;font-size:5px;font-weight:700;display:flex;justify-content:space-between;align-items:center;">
+  <span>02.28(토) · 3개</span><span style="opacity:.6;font-size:4px;">노출 3 · 14/37명 ▲</span>
+</div>
+<div style="background:#fff;border-radius:0 0 3px 3px;border:1px solid #eee;border-top:none;padding:3px;">
+  <div style="display:flex;align-items:center;gap:2px;margin-bottom:1px;">
+    <div style="width:16px;height:8px;border-radius:4px;background:#e0e7ff;"></div>
+    <span style="font-size:5px;color:var(--blue);font-weight:700;">노출중</span>
+  </div>
+  <div style="display:flex;justify-content:space-between;margin-bottom:1px;">
+    <span style="font-size:6px;font-weight:700;">갑오징어/주꾸미</span>
+    <span style="font-size:6px;font-weight:800;color:var(--blue);">94,000원</span>
+  </div>
+  <div style="font-size:4px;color:#aaa;">갑오징어 · 주꾸미 · 05:00~15:30</div>
+  <div style="height:2px;border-radius:1px;background:#eee;margin-top:2px;"><div style="height:100%;width:38%;background:var(--blue);border-radius:1px;"></div></div>
+</div>
   </div>
 </div>
 </div>
-    <div class="ph-nav"><div class="ph-ni "><span>홈</span></div><div class="ph-ni "><span>예약</span></div><div class="ph-ni on"><span>상품관리</span></div><div class="ph-ni "><span>조황</span></div><div class="ph-ni "><span>공지</span></div></div>
+    <div class="ph-nav"><div class="ph-ni "><span>홈</span></div><div class="ph-ni "><span>정산</span></div><div class="ph-ni on"><span>상품관리</span></div><div class="ph-ni "><span>조황</span></div><div class="ph-ni "><span>공지</span></div></div>
   </div>
 </div>
       <div class="spec-mock-label">날짜 칩 &amp; 현황 요약</div>
@@ -5634,7 +5733,7 @@ document.addEventListener('click', function(e) {
       <div class="spec-hd-title" data-eid="eid-3" data-editable="1" data-orig="날짜 그룹 &amp;amp; 상품 카드">날짜 그룹 &amp; 상품 카드</div>
       <div class="spec-hd-sub" data-eid="eid-14" data-editable="1" data-orig="날짜별 그룹화 · 카드당 6가지 액션 · 날짜 그룹 헤더 접기/펼치기">날짜별 그룹화 · 카드당 6가지 액션 · 날짜 그룹 헤더 접기/펼치기</div>
     </div>
-    <button class="nav-to-btn" onclick="startWalkthrough('s2_card')">
+    <button class="nav-to-btn" onclick="navigateProto('s2_card')">
       <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polygon points="5 3 19 12 5 21 5 3"></polygon></svg>
       프로토타입에서 보기
     </button>
@@ -5677,7 +5776,7 @@ document.addEventListener('click', function(e) {
     </div>
   </div>
   <div style="font-size:9px;font-weight:800;margin-bottom:1px;display:flex;justify-content:space-between;align-items:baseline;">
-    <span>갑오징어/주꾸미</span><span style="color:var(--blue);font-size:9px;font-weight:900;">94000</span>
+    <span>갑오징어/주꾸미</span><span style="color:var(--blue);font-size:9px;font-weight:900;">94,000원</span>
   </div>
   <div style="font-size:5px;color:#aaa;margin-bottom:2px;">05:00~15:30 · 당일 · 잔여 6석/11석</div>
   <div class="ph-prog" style="margin-bottom:3px;"><div style="height:100%;width:45%;background:var(--blue);border-radius:1px;"></div></div>
@@ -5693,7 +5792,7 @@ document.addEventListener('click', function(e) {
 </div>
 </div>
 </div>
-    <div class="ph-nav"><div class="ph-ni "><span>홈</span></div><div class="ph-ni "><span>예약</span></div><div class="ph-ni on"><span>상품관리</span></div><div class="ph-ni "><span>조황</span></div><div class="ph-ni "><span>공지</span></div></div>
+    <div class="ph-nav"><div class="ph-ni "><span>홈</span></div><div class="ph-ni "><span>정산</span></div><div class="ph-ni on"><span>상품관리</span></div><div class="ph-ni "><span>조황</span></div><div class="ph-ni "><span>공지</span></div></div>
   </div>
 </div>
       <div class="spec-mock-label">카드 액션 버튼 (인원조정·예약추가·예약명단)</div>
@@ -5808,7 +5907,7 @@ document.addEventListener('click', function(e) {
       <div class="spec-hd-title" data-eid="eid-4" data-editable="1" data-orig="인원조정 모달 (CapacityModal)">인원조정 모달 (CapacityModal)</div>
       <div class="spec-hd-sub" data-eid="eid-15" data-editable="1" data-orig="결제 완료 예약 인원 수 미만으로 줄일 수 없음 · 실시간 통계 패널">결제 완료 예약 인원 수 미만으로 줄일 수 없음 · 실시간 통계 패널</div>
     </div>
-    <button class="nav-to-btn" onclick="startWalkthrough('m1')">
+    <button class="nav-to-btn" onclick="navigateProto('m1')">
       <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polygon points="5 3 19 12 5 21 5 3"></polygon></svg>
       프로토타입에서 보기
     </button>
@@ -5857,7 +5956,7 @@ document.addEventListener('click', function(e) {
           <div style="text-align:center;font-size:5px;color:#aaa;">총정원<b style="font-size:8px;font-weight:900;display:block;color:var(--blk);">11명</b></div>
           <div style="text-align:center;font-size:5px;color:#aaa;">예약<b style="font-size:8px;font-weight:900;display:block;color:var(--blue);">5명</b></div>
           <div style="text-align:center;font-size:5px;color:#aaa;">잔여<b style="font-size:8px;font-weight:900;display:block;color:var(--green);">6석</b></div>
-          <div style="text-align:center;font-size:5px;color:#aaa;">점유<b style="font-size:8px;font-weight:900;display:block;">45%</b></div>
+          <div style="text-align:center;font-size:5px;color:#aaa;">점유율<b style="font-size:8px;font-weight:900;display:block;">45%</b></div>
         </div>
       </div>
       <div style="display:grid;grid-template-columns:1fr 1fr;gap:3px;padding:5px 8px 7px;border-top:1px solid #eee;"><div style="padding:6px;border-radius:4px;border:1px solid #eee;text-align:center;font-size:8px;font-weight:700;color:#767676;">취소</div><div style="padding:6px;border-radius:4px;background:var(--blue);text-align:center;font-size:8px;font-weight:700;color:#fff;">저장</div></div>
@@ -5865,7 +5964,7 @@ document.addEventListener('click', function(e) {
   </div>
 </div>
 </div>
-    <div class="ph-nav"><div class="ph-ni "><span>홈</span></div><div class="ph-ni "><span>예약</span></div><div class="ph-ni on"><span>상품관리</span></div><div class="ph-ni "><span>조황</span></div><div class="ph-ni "><span>공지</span></div></div>
+    <div class="ph-nav"><div class="ph-ni "><span>홈</span></div><div class="ph-ni "><span>정산</span></div><div class="ph-ni on"><span>상품관리</span></div><div class="ph-ni "><span>조황</span></div><div class="ph-ni "><span>공지</span></div></div>
   </div>
 </div>
       <div class="spec-mock-label">인원조정 바텀시트 모달</div>
@@ -5968,9 +6067,9 @@ document.addEventListener('click', function(e) {
     <div class="spec-hd-num" style="background:var(--green);">M2</div>
     <div style="flex:1;">
       <div class="spec-hd-title" data-eid="eid-5" data-editable="1" data-orig="예약 직접 추가 (DirectReservationModal)">예약 직접 추가 (DirectReservationModal)</div>
-      <div class="spec-hd-sub" data-eid="eid-16" data-editable="1" data-orig="전화·카카오·현장 등 플랫폼 외 경로 예약을 선주가 직접 등록">전화·카카오·현장 등 플랫폼 외 경로 예약을 선주가 직접 등록</div>
+      <div class="spec-hd-sub" data-eid="eid-16" data-editable="1" data-orig="전화·네이버·카카오·갈치365·직접방문·기타 — 6개 경로 예약을 선주가 직접 등록">전화·네이버·카카오·갈치365·직접방문·기타 — 6개 경로 예약을 선주가 직접 등록</div>
     </div>
-    <button class="nav-to-btn" onclick="startWalkthrough('m2')">
+    <button class="nav-to-btn" onclick="navigateProto('m2')">
       <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polygon points="5 3 19 12 5 21 5 3"></polygon></svg>
       프로토타입에서 보기
     </button>
@@ -6000,7 +6099,7 @@ document.addEventListener('click', function(e) {
 </div>
   <div style="background:rgba(0,0,0,.40);flex:1;min-height:0;display:flex;flex-direction:column;justify-content:flex-end;">
     <div style="background:#fff;border-radius:6px 6px 0 0;">
-      <div style="display:flex;align-items:center;justify-content:space-between;padding:6px 8px;border-bottom:1px solid #eee;"><div><div style="font-size:9px;font-weight:800;color:var(--blk);">예약 직접 추가</div><div style="font-size:5px;color:#aaa;margin-top:1px;">전화·현장·타플랫폼</div></div><span style="font-size:10px;color:#aaa;cursor:pointer;">✕</span></div>
+      <div style="display:flex;align-items:center;justify-content:space-between;padding:6px 8px;border-bottom:1px solid #eee;"><div><div style="font-size:9px;font-weight:800;color:var(--blk);">예약 직접 추가</div><div style="font-size:5px;color:#aaa;margin-top:1px;">전화·네이버·카카오·갈치365·직접방문·기타</div></div><span style="font-size:10px;color:#aaa;cursor:pointer;">✕</span></div>
       <div style="padding:5px 8px;">
         <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:2px;margin-bottom:4px;">
           <div style="padding:3px;text-align:center;background:var(--blk);color:#fff;border-radius:3px;font-size:5px;font-weight:700;">전화예약</div>
@@ -6023,7 +6122,7 @@ document.addEventListener('click', function(e) {
   </div>
 </div>
 </div>
-    <div class="ph-nav"><div class="ph-ni "><span>홈</span></div><div class="ph-ni "><span>예약</span></div><div class="ph-ni on"><span>상품관리</span></div><div class="ph-ni "><span>조황</span></div><div class="ph-ni "><span>공지</span></div></div>
+    <div class="ph-nav"><div class="ph-ni "><span>홈</span></div><div class="ph-ni "><span>정산</span></div><div class="ph-ni on"><span>상품관리</span></div><div class="ph-ni "><span>조황</span></div><div class="ph-ni "><span>공지</span></div></div>
   </div>
 </div>
       <div class="spec-mock-label">예약 직접 추가 모달</div>
@@ -6138,7 +6237,7 @@ document.addEventListener('click', function(e) {
       <div class="spec-hd-title" data-eid="eid-6" data-editable="1" data-orig="예약자 명단 (ReservationListModal)">예약자 명단 (ReservationListModal)</div>
       <div class="spec-hd-sub" data-eid="eid-17" data-editable="1" data-orig="취소 건 포함 전체 이력 · 연락처/명단 복사 · 예약 취소">취소 건 포함 전체 이력 · 연락처/명단 복사 · 예약 취소</div>
     </div>
-    <button class="nav-to-btn" onclick="startWalkthrough('m3')">
+    <button class="nav-to-btn" onclick="navigateProto('m3')">
       <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polygon points="5 3 19 12 5 21 5 3"></polygon></svg>
       프로토타입에서 보기
     </button>
@@ -6204,7 +6303,7 @@ document.addEventListener('click', function(e) {
   </div>
 </div>
 </div>
-    <div class="ph-nav"><div class="ph-ni "><span>홈</span></div><div class="ph-ni "><span>예약</span></div><div class="ph-ni on"><span>상품관리</span></div><div class="ph-ni "><span>조황</span></div><div class="ph-ni "><span>공지</span></div></div>
+    <div class="ph-nav"><div class="ph-ni "><span>홈</span></div><div class="ph-ni "><span>정산</span></div><div class="ph-ni on"><span>상품관리</span></div><div class="ph-ni "><span>조황</span></div><div class="ph-ni "><span>공지</span></div></div>
   </div>
 </div>
       <div class="spec-mock-label">예약자 명단 모달</div>
@@ -6314,7 +6413,7 @@ document.addEventListener('click', function(e) {
       <div class="spec-hd-title" data-eid="eid-7" data-editable="1" data-orig="일자별 개별수정 (DailyProductEditModal)">일자별 개별수정 (DailyProductEditModal)</div>
       <div class="spec-hd-sub" data-eid="eid-18" data-editable="1" data-orig="이 날짜의 개별상품만 수정 · 출조종류(마스터) 설정 변경 불가 (bpi)">이 날짜의 개별상품만 수정 · 출조종류(마스터) 설정 변경 불가 (bpi)</div>
     </div>
-    <button class="nav-to-btn" onclick="startWalkthrough('m4')">
+    <button class="nav-to-btn" onclick="navigateProto('m4')">
       <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polygon points="5 3 19 12 5 21 5 3"></polygon></svg>
       프로토타입에서 보기
     </button>
@@ -6359,7 +6458,7 @@ document.addEventListener('click', function(e) {
   </div>
 </div>
 </div>
-    <div class="ph-nav"><div class="ph-ni "><span>홈</span></div><div class="ph-ni "><span>예약</span></div><div class="ph-ni on"><span>상품관리</span></div><div class="ph-ni "><span>조황</span></div><div class="ph-ni "><span>공지</span></div></div>
+    <div class="ph-nav"><div class="ph-ni "><span>홈</span></div><div class="ph-ni "><span>정산</span></div><div class="ph-ni on"><span>상품관리</span></div><div class="ph-ni "><span>조황</span></div><div class="ph-ni "><span>공지</span></div></div>
   </div>
 </div>
       <div class="spec-mock-label">일자별 개별수정 모달</div>
@@ -6474,7 +6573,7 @@ document.addEventListener('click', function(e) {
       <div class="spec-hd-title" data-eid="eid-8" data-editable="1" data-orig="출조종류 관리 탭 (마스터상품 목록)">출조종류 관리 탭 (마스터상품 목록)</div>
       <div class="spec-hd-sub" data-eid="eid-19" data-editable="1" data-orig="1개 출조종류(마스터) 등록 → N개 날짜별 개별상품(bpi) 자동 생성 · 수정·삭제 진입점">1개 출조종류(마스터) 등록 → N개 날짜별 개별상품(bpi) 자동 생성 · 수정·삭제 진입점</div>
     </div>
-    <button class="nav-to-btn" onclick="startWalkthrough('s4')">
+    <button class="nav-to-btn" onclick="navigateProto('s4')">
       <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polygon points="5 3 19 12 5 21 5 3"></polygon></svg>
       프로토타입에서 보기
     </button>
@@ -6525,7 +6624,7 @@ document.addEventListener('click', function(e) {
   </div>
 </div>
 </div>
-    <div class="ph-nav"><div class="ph-ni "><span>홈</span></div><div class="ph-ni "><span>예약</span></div><div class="ph-ni on"><span>상품관리</span></div><div class="ph-ni "><span>조황</span></div><div class="ph-ni "><span>공지</span></div></div>
+    <div class="ph-nav"><div class="ph-ni "><span>홈</span></div><div class="ph-ni "><span>정산</span></div><div class="ph-ni on"><span>상품관리</span></div><div class="ph-ni "><span>조황</span></div><div class="ph-ni "><span>공지</span></div></div>
   </div>
 </div>
       <div class="spec-mock-label">마스터상품 카드 목록</div>
@@ -6615,7 +6714,7 @@ document.addEventListener('click', function(e) {
       <div class="spec-hd-title" data-eid="eid-9" data-editable="1" data-orig="출조종류 등록 (MasterProductModal)">출조종류 등록 (MasterProductModal)</div>
       <div class="spec-hd-sub" data-eid="eid-20" data-editable="1" data-orig="등록 후 운영기간 × 요일 조합으로 날짜별 개별상품(bpi) 자동 생성">등록 후 운영기간 × 요일 조합으로 날짜별 개별상품(bpi) 자동 생성</div>
     </div>
-    <button class="nav-to-btn" onclick="startWalkthrough('m5')">
+    <button class="nav-to-btn" onclick="navigateProto('m5')">
       <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polygon points="5 3 19 12 5 21 5 3"></polygon></svg>
       프로토타입에서 보기
     </button>
@@ -6650,7 +6749,7 @@ document.addEventListener('click', function(e) {
   </div>
 </div>
 </div>
-    <div class="ph-nav"><div class="ph-ni "><span>홈</span></div><div class="ph-ni "><span>예약</span></div><div class="ph-ni on"><span>상품관리</span></div><div class="ph-ni "><span>조황</span></div><div class="ph-ni "><span>공지</span></div></div>
+    <div class="ph-nav"><div class="ph-ni "><span>홈</span></div><div class="ph-ni "><span>정산</span></div><div class="ph-ni on"><span>상품관리</span></div><div class="ph-ni "><span>조황</span></div><div class="ph-ni "><span>공지</span></div></div>
   </div>
 </div>
       <div class="spec-mock-label">출조종류 등록 모달</div>
@@ -6790,7 +6889,7 @@ document.addEventListener('click', function(e) {
       <div class="spec-hd-title" data-eid="eid-10" data-editable="1" data-orig="출조종류 수정 (MasterProductModal)">출조종류 수정 (MasterProductModal)</div>
       <div class="spec-hd-sub" data-eid="eid-21" data-editable="1" data-orig="기존 날짜별 개별상품에는 소급 미적용 · 이후 생성분에만 적용 (bpi)">기존 날짜별 개별상품에는 소급 미적용 · 이후 생성분에만 적용 (bpi)</div>
     </div>
-    <button class="nav-to-btn" onclick="startWalkthrough('m6')">
+    <button class="nav-to-btn" onclick="navigateProto('m6')">
       <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polygon points="5 3 19 12 5 21 5 3"></polygon></svg>
       프로토타입에서 보기
     </button>
@@ -6824,7 +6923,7 @@ document.addEventListener('click', function(e) {
   </div>
 </div>
 </div>
-    <div class="ph-nav"><div class="ph-ni "><span>홈</span></div><div class="ph-ni "><span>예약</span></div><div class="ph-ni on"><span>상품관리</span></div><div class="ph-ni "><span>조황</span></div><div class="ph-ni "><span>공지</span></div></div>
+    <div class="ph-nav"><div class="ph-ni "><span>홈</span></div><div class="ph-ni "><span>정산</span></div><div class="ph-ni on"><span>상품관리</span></div><div class="ph-ni "><span>조황</span></div><div class="ph-ni "><span>공지</span></div></div>
   </div>
 </div>
       <div class="spec-mock-label">출조종류 수정 모달</div>
@@ -6924,7 +7023,7 @@ document.addEventListener('click', function(e) {
       <div class="spec-hd-title" data-eid="eid-11" data-editable="1" data-orig="출조종류 삭제 — 2단계 처리">출조종류 삭제 — 2단계 처리</div>
       <div class="spec-hd-sub" data-eid="eid-22" data-editable="1" data-orig="C14 차단 → C15 Confirm → masterProducts + bpi 연쇄 삭제">C14 차단 → C15 Confirm → masterProducts + bpi 연쇄 삭제</div>
     </div>
-    <button class="nav-to-btn" onclick="startWalkthrough('m7')">
+    <button class="nav-to-btn" onclick="navigateProto('m7')">
       <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polygon points="5 3 19 12 5 21 5 3"></polygon></svg>
       프로토타입에서 보기
     </button>
@@ -6958,7 +7057,7 @@ document.addEventListener('click', function(e) {
   </div>
 </div>
 </div>
-    <div class="ph-nav"><div class="ph-ni "><span>홈</span></div><div class="ph-ni "><span>예약</span></div><div class="ph-ni on"><span>상품관리</span></div><div class="ph-ni "><span>조황</span></div><div class="ph-ni "><span>공지</span></div></div>
+    <div class="ph-nav"><div class="ph-ni "><span>홈</span></div><div class="ph-ni "><span>정산</span></div><div class="ph-ni on"><span>상품관리</span></div><div class="ph-ni "><span>조황</span></div><div class="ph-ni "><span>공지</span></div></div>
   </div>
 </div>
       <div class="spec-mock-label">삭제 확인 다이얼로그</div>
@@ -7098,98 +7197,7 @@ document.addEventListener('click', function(e) {
 </div>
 
 <script>
-var _walkTimer  = null;
-var _walkSteps  = [];
-var _walkIdx    = 0;
-var _walkTarget = '';
-var WALK_STEPS = {
-  // x,y = 영역 좌상단 (% of phone-screen 386×878)  w,h = 영역 크기 (%)
-  // q = CSS selector for dynamic position detection inside iframe DOM
-  // ── phone-screen 386×878 실측 레이아웃 (v6.0 보정) ──
-  //  status-bar          0 ~ 6.4%    (0~56px)
-  //  AppHeader           6.4~12.5%   (56~110px) height:54 + border
-  //  BoatSelector       12.5~18.9%   (110~166px)
-  //  탭(일자별/출조)    18.9~23.7%   (166~208px) padding:13*2=26 + text
-  //  캘린더 월 네비     23.7~28.2%   (208~248px) ~40px
-  //  캘린더 그리드      28.2~52.2%   (248~458px) 5주*30+pad
-  //  요약통계           52.2~58.1%   (458~510px)
-  //  날짜그룹헤더       58.1~63.1%   (510~554px) — 첫 날짜 그룹
-  //  카드영역           63.1~85.5%   (554~751px) — 첫 카드 전체
-  //    카드본문          63.1~78.1%  (554~686px)
-  //    1행 액션(인원조정등) 78.1~81.8% (686~718px)
-  //    2행 액션(개별수정등) 81.8~85.5% (718~751px)
-  //  BottomNav          93.2~100%    (818~878px) abs bottom:0 h:60
-  //    홈(0~20) 정산(20~40) 상품관리(40~60) 조황(60~80) 공지(80~100)
 
-  s1:        [{l:'하단 탭바 상품관리 클릭', d:'하단 네비게이션 3번째 탭 — 상품관리를 선택합니다',
-               x:40, y:93, w:20, h:7, after:'s2_card'}],
-
-  s2:        [{l:'하단 탭바 상품관리 클릭', d:'상품관리 탭 진입 — 기본 화면(일자별상품)이 열립니다',
-               x:40, y:93, w:20, h:7, after:'s2_card'}],
-
-  s2_filter: [{l:'하단 탭바 상품관리 클릭', d:'먼저 상품관리 탭으로 진입합니다',
-               x:40, y:93, w:20, h:7, after:'s2_card'},
-              {l:'캘린더에서 날짜 선택', d:'캘린더에서 날짜를 탭해 해당 날짜만 필터링합니다',
-               x:3, y:28, w:94, h:24}],
-
-  s2_card:   [{l:'하단 탭바 상품관리 클릭', d:'먼저 상품관리 탭으로 진입합니다',
-               x:40, y:93, w:20, h:7, after:'s2_card'},
-              {l:'날짜 그룹 헤더 터치 → 카드 접기/펼치기', d:'검은 날짜 헤더를 탭하면 해당 날짜의 출조 카드를 접거나 펼칠 수 있습니다',
-               x:3, y:58, w:94, h:5}],
-
-  m1:        [{l:'하단 탭바 상품관리 클릭', d:'먼저 상품관리 탭으로 진입합니다',
-               x:40, y:93, w:20, h:7, after:'s2_card'},
-              {l:'인원조정 버튼 클릭', d:'카드 하단 좌측 [인원조정] 버튼을 누릅니다',
-               x:3, y:78, w:32, h:4, after:'m1'}],
-
-  m2:        [{l:'하단 탭바 상품관리 클릭', d:'먼저 상품관리 탭으로 진입합니다',
-               x:40, y:93, w:20, h:7, after:'s2_card'},
-              {l:'예약추가 버튼 클릭', d:'카드 하단 가운데 [예약추가] 버튼을 누릅니다',
-               x:34, y:78, w:32, h:4, after:'m2'}],
-
-  m3:        [{l:'하단 탭바 상품관리 클릭', d:'먼저 상품관리 탭으로 진입합니다',
-               x:40, y:93, w:20, h:7, after:'s2_card'},
-              {l:'예약명단 버튼 클릭', d:'카드 하단 우측 [예약명단] 버튼을 누릅니다',
-               x:66, y:78, w:32, h:4, after:'m3'}],
-
-  m4:        [{l:'하단 탭바 상품관리 클릭', d:'먼저 상품관리 탭으로 진입합니다',
-               x:40, y:93, w:20, h:7, after:'s2_card'},
-              {l:'개별수정 텍스트 클릭', d:'카드 최하단 좌측 [개별수정] 텍스트 링크를 누릅니다',
-               x:10, y:82, w:35, h:4, after:'m4'}],
-
-  s4:        [{l:'하단 탭바 상품관리 클릭', d:'먼저 상품관리 탭으로 진입합니다',
-               x:40, y:93, w:20, h:7, after:'s2_card'},
-              {l:'출조종류 관리 탭 클릭', d:'상단 [일자별상품] 옆 [출조종류 관리] 탭을 선택합니다',
-               x:50, y:19, w:50, h:5, after:'s4'}],
-
-  m5:        [{l:'하단 탭바 상품관리 클릭', d:'먼저 상품관리 탭으로 진입합니다',
-               x:40, y:93, w:20, h:7, after:'s2_card'},
-              {l:'출조종류 관리 탭 클릭', d:'상단 [출조종류 관리] 탭을 선택합니다',
-               x:50, y:19, w:50, h:5, after:'s4'},
-              {l:'+ 출조종류 등록 버튼 클릭', d:'안내 박스 아래 우측의 파란 [+ 출조종류 등록] 버튼을 누릅니다',
-               x:50, y:35, w:47, h:5, after:'m5'}],
-
-  m6:        [{l:'하단 탭바 상품관리 클릭', d:'먼저 상품관리 탭으로 진입합니다',
-               x:40, y:93, w:20, h:7, after:'s2_card'},
-              {l:'출조종류 관리 탭 클릭', d:'상단 [출조종류 관리] 탭을 선택합니다',
-               x:50, y:19, w:50, h:5, after:'s4'},
-              {l:'상품수정 버튼 클릭', d:'마스터 상품 카드 하단 좌측 [상품수정] 텍스트를 누릅니다',
-               x:10, y:57, w:35, h:4, after:'m6'}],
-
-  m7:        [{l:'하단 탭바 상품관리 클릭', d:'먼저 상품관리 탭으로 진입합니다',
-               x:40, y:93, w:20, h:7, after:'s2_card'},
-              {l:'출조종류 관리 탭 클릭', d:'상단 [출조종류 관리] 탭을 선택합니다',
-               x:50, y:19, w:50, h:5, after:'s4'},
-              {l:'상품삭제 버튼 클릭', d:'마스터 상품 카드 하단 우측 빨간 [상품삭제] 텍스트를 누릅니다',
-               x:52, y:57, w:35, h:4, after:'c15'}],
-
-  c15:       [{l:'하단 탭바 상품관리 클릭', d:'먼저 상품관리 탭으로 진입합니다',
-               x:40, y:93, w:20, h:7, after:'s2_card'},
-              {l:'출조종류 관리 탭 클릭', d:'상단 [출조종류 관리] 탭을 선택합니다',
-               x:50, y:19, w:50, h:5, after:'s4'},
-              {l:'상품삭제 버튼 클릭', d:'예약 없는 상품의 빨간 [상품삭제] 버튼을 누릅니다',
-               x:52, y:57, w:35, h:4, after:'c15'}],
-};
 
 document.addEventListener('DOMContentLoaded', function() {
   loadAllCommentCounts();
@@ -7580,177 +7588,6 @@ function handleCommentHash() {
   }, 400);
 }
 
-
-function startWalkthrough(target) {
-  var steps = WALK_STEPS[target];
-  if (!steps || steps.length === 0) { navigateProto(target); return; }
-
-  _walkTarget = target;
-  _walkSteps  = steps;
-  _walkIdx    = 0;
-
-  var overlay = document.getElementById('walk-overlay');
-  overlay.style.display = 'flex';
-  overlay.classList.add('active');
-
-  // postMessage로 기본 화면 이동 후 첫 스텝
-  var f = document.getElementById('proto-iframe');
-  if (f) f._lastTarget = null;
-  // s1은 홈 화면에서 시작, 나머지는 상품관리 화면에서 시작
-  var initScreen = (target === 's1') ? 'home' : 's2_card';
-  navigateProto(initScreen);
-  setTimeout(function() { showWalkStep(0); }, 400);
-}
-
-// ── iframe 내 phone-screen의 실제 위치를 overlay 기준으로 반환 ──
-function getPhoneScreenRect() {
-  var iframe = document.getElementById('proto-iframe');
-  var overlay = document.getElementById('walk-overlay');
-  if (!iframe || !overlay) return null;
-  try {
-    var iframeDoc = iframe.contentDocument || iframe.contentWindow.document;
-    var ps = iframeDoc.querySelector('.phone-screen');
-    if (!ps) return null;
-    var psR  = ps.getBoundingClientRect();   // iframe 뷰포트 기준
-    var iR   = iframe.getBoundingClientRect(); // 메인 페이지 뷰포트 기준
-    var ovR  = overlay.getBoundingClientRect(); // overlay 기준 (= proto-panel 기준)
-    return {
-      left:   (iR.left + psR.left)  - ovR.left,
-      top:    (iR.top  + psR.top)   - ovR.top,
-      width:  psR.width,
-      height: psR.height
-    };
-  } catch(e) { return null; }
-}
-
-function showWalkStep(idx) {
-  var steps = _walkSteps;
-  if (idx >= steps.length) { endWalkthrough(); return; }
-
-  var step = steps[idx];
-  var overlay = document.getElementById('walk-overlay');
-
-  // ★ iframe DOM 직접 쿼리로 phone-screen 실측 위치 획득
-  var ps = getPhoneScreenRect();
-  var screenLeft, screenTop, screenW, screenH;
-  if (ps) {
-    screenLeft = ps.left;
-    screenTop  = ps.top;
-    screenW    = ps.width;
-    screenH    = ps.height;
-  } else {
-    // fallback: 수동 계산
-    var frame = document.querySelector('.proto-frame');
-    var fw = frame ? frame.offsetWidth  : 420;
-    var fh = frame ? frame.offsetHeight : 700;
-    var frameTop = frame ? frame.offsetTop : 0;
-    var scale = Math.min(fh / 910, fw / 414, 1);
-    screenLeft = (fw - 414 * scale) / 2 + 14 * scale;
-    screenTop  = frameTop + 16 * scale;
-    screenW    = 386 * scale;
-    screenH    = 878 * scale;
-  }
-
-  // ★ DOM 기반 동적 위치 감지 — step.q (CSS selector)가 있으면 iframe 내 실제 요소 위치 사용
-  var tx = step.x, ty = step.y, tw = step.w || 30, th = step.h || 6;
-  if (step.q && ps) {
-    try {
-      var iframe = document.getElementById('proto-iframe');
-      var iDoc = iframe.contentDocument || iframe.contentWindow.document;
-      var phoneScreen = iDoc.querySelector('.phone-screen');
-      var el = iDoc.querySelector(step.q);
-      if (el && phoneScreen) {
-        var elR = el.getBoundingClientRect();
-        var psR = phoneScreen.getBoundingClientRect();
-        tx = (elR.left - psR.left) / psR.width * 100;
-        ty = (elR.top - psR.top) / psR.height * 100;
-        tw = elR.width / psR.width * 100;
-        th = elR.height / psR.height * 100;
-      }
-    } catch(e) { /* cross-origin fallback to % coords */ }
-  }
-
-
-  // ★ 자동 스크롤: 타겟 영역이 보이지 않으면 app-scroll 컨테이너를 스크롤
-  if (ps) {
-    try {
-      var iframe = document.getElementById('proto-iframe');
-      var iDoc = iframe.contentDocument || iframe.contentWindow.document;
-      var appScroll = iDoc.querySelector('.app-scroll') || iDoc.querySelector('[style*="overflow"]');
-      if (appScroll) {
-        var targetPx = ty / 100 * ps.height;  // phone-screen 내 타겟 Y 위치 (px)
-        var viewH = ps.height * 0.68;  // 대략적 visible height (BottomNav 위까지)
-        // 타겟이 현재 보이는 영역 아래에 있으면 스크롤
-        if (targetPx > appScroll.scrollTop + viewH) {
-          appScroll.scrollTo({top: Math.max(0, targetPx - viewH * 0.4), behavior: 'smooth'});
-        }
-      }
-    } catch(e) { /* cross-origin fallback */ }
-  }
-
-  // 이전 터치 제거, 새 하이라이트 영역 표시
-  var old = overlay.querySelector('.walk-touch');
-  if (old) old.remove();
-  var touch = document.createElement('div');
-  touch.className = 'walk-touch';
-  touch.style.left   = (screenLeft + tx / 100 * screenW) + 'px';
-  touch.style.top    = (screenTop  + ty / 100 * screenH) + 'px';
-  touch.style.width  = tw / 100 * screenW + 'px';
-  touch.style.height = th / 100 * screenH + 'px';
-  var lbl = document.createElement('div');
-  lbl.className = 'walk-touch-label';
-  lbl.textContent = 'STEP ' + (idx+1);
-  touch.appendChild(lbl);
-  overlay.appendChild(touch);
-
-  // 스텝 카드 업데이트
-  document.getElementById('walk-num').textContent   = 'STEP ' + (idx+1) + ' / ' + steps.length;
-  document.getElementById('walk-label').textContent = step.l;
-  document.getElementById('walk-desc').textContent  = step.d;
-
-  // 닷 인디케이터
-  var dotsContainer = document.getElementById('walk-dots');
-  if (dotsContainer) {
-    var dotsHtml = '';
-    for (var di = 0; di < steps.length; di++) {
-      dotsHtml += '<div class="walk-dot' + (di===idx?' on':'') + '"></div>';
-    }
-    dotsContainer.innerHTML = dotsHtml;
-  }
-
-  if (_walkTimer) clearTimeout(_walkTimer);
-  _walkTimer = setTimeout(function() {
-    if (step.after) {
-      var f = document.getElementById('proto-iframe');
-      if (f) f._lastTarget = null;
-      navigateProto(step.after);
-      setTimeout(function() { showWalkStep(idx + 1); }, 700);
-    } else {
-      showWalkStep(idx + 1);
-    }
-  }, 2000);
-}
-
-function endWalkthrough() {
-  var overlay = document.getElementById('walk-overlay');
-  overlay.style.display = 'none';
-  overlay.classList.remove('active');
-  var old = overlay.querySelector('.walk-touch');
-  if (old) old.remove();
-  if (_walkTimer) clearTimeout(_walkTimer);
-  var f = document.getElementById('proto-iframe');
-  if (f) f._lastTarget = null;
-  navigateProto(_walkTarget);
-}
-
-function closeWalkthrough() {
-  if (_walkTimer) clearTimeout(_walkTimer);
-  var overlay = document.getElementById('walk-overlay');
-  overlay.style.display = 'none';
-  overlay.classList.remove('active');
-  var old = overlay.querySelector('.walk-touch');
-  if (old) old.remove();
-}
 
 // ── 프로토타입 화면 이동 (postMessage — 깜빡임 없음) ──
 function navigateProto(target) {
