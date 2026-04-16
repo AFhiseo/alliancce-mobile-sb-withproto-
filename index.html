@@ -792,7 +792,7 @@ body.edit-mode .add-row-btn{display:block;}
 
 .fb-vp{flex:1;overflow:hidden;cursor:grab;position:relative;}
 .fb-vp.grabbing{cursor:grabbing;}
-.fb-cv{position:absolute;width:2800px;height:3700px;transform-origin:0 0;will-change:transform;}
+.fb-cv{position:absolute;width:3200px;height:4000px;transform-origin:0 0;will-change:transform;}
 .fb-grid2{position:absolute;inset:0;background-image:radial-gradient(circle,rgba(255,255,255,.045) 1px,transparent 1px);background-size:28px 28px;}
 
 /* Section labels */
@@ -805,7 +805,7 @@ body.edit-mode .add-row-btn{display:block;}
 .fb-node{position:absolute;display:flex;flex-direction:column;align-items:center;cursor:pointer;z-index:10;}
 .fb-node:hover{z-index:100;}
 .fb-node:hover .fb-node-screen{box-shadow:0 8px 48px rgba(0,65,255,.35);}
-.fb-node-badge{font-size:14px;font-weight:800;color:#fff;padding:7px 16px;border-radius:7px;
+.fb-node-badge{font-size:16px;font-weight:800;color:#fff;padding:7px 16px;border-radius:7px;
   margin-bottom:8px;white-space:nowrap;box-shadow:0 2px 10px rgba(0,0,0,.4);}
 .fb-node-screen{border-radius:34px;box-shadow:0 4px 28px rgba(0,0,0,.45);overflow:hidden;}
 .fb-node-screen .ph-frame{box-shadow:none;border:none;}
@@ -849,8 +849,8 @@ body.edit-mode .add-row-btn{display:block;}
 
 /* ══ Popup Visual Cards ══ */
 .fpc{position:absolute;width:180px;display:flex;flex-direction:column;align-items:center;z-index:5;}
-.fpc-badge{font-size:11px;font-weight:800;color:#fff;padding:5px 12px;border-radius:6px;margin-bottom:4px;white-space:nowrap;text-align:center;}
-.fpc-trigger{font-size:11px;color:#ddd;margin-top:4px;text-align:center;max-width:180px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;}
+.fpc-badge{font-size:13px;font-weight:800;color:#fff;padding:5px 12px;border-radius:6px;margin-bottom:4px;white-space:nowrap;text-align:center;}
+.fpc-trigger{font-size:13px;color:#ddd;margin-top:4px;text-align:center;max-width:180px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;}
 .fpc-phone{width:160px;height:220px;border-radius:20px;background:#1a1a1a;overflow:hidden;box-shadow:0 2px 12px rgba(0,0,0,.3);padding:4px;}
 .fpc-phone-bg{width:100%;height:100%;background:#f5f5f5;border-radius:16px;overflow:hidden;position:relative;}
 /* Toast */
@@ -24044,7 +24044,7 @@ window.addEventListener('load', handleHashRoute);
 // ══════════════════════════════════════════════════════
 (function(){
   // Canvas dimensions
-  var CW = 2800, CH = 3700;
+  var CW = 3200, CH = 4000;
   // State
   var sc = 0.32, px = 20, py = 10;
   var panning = false, startX = 0, startY = 0, spaceDown = false;
@@ -24249,74 +24249,74 @@ window.addEventListener('load', handleHashRoute);
   <div class="fb-vp" id="fbVP">
     <div class="fb-cv" id="fbCV">
       <div class="fb-grid2"></div>
-<svg class="fb-svg" style="position:absolute;top:0;left:0;width:2800px;height:3700px;pointer-events:none;z-index:5;">
+<svg class="fb-svg" style="position:absolute;top:0;left:0;width:3200px;height:4000px;pointer-events:none;z-index:5;">
 <defs>
-<filter id="lbl-shadow"><feDropShadow dx="0" dy="1" stdDeviation="2" flood-opacity="0.15"/></filter>
-<marker id="nav-0" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto"><polygon points="0 0, 10 3.5, 0 7" fill="#0041FF" opacity="0.9"/></marker>
-<marker id="nav-1" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto"><polygon points="0 0, 10 3.5, 0 7" fill="#0041FF" opacity="0.9"/></marker>
-<marker id="nav-2" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto"><polygon points="0 0, 10 3.5, 0 7" fill="#C96A00" opacity="0.9"/></marker>
-<marker id="nav-3" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto"><polygon points="0 0, 10 3.5, 0 7" fill="#00A86B" opacity="0.9"/></marker>
-<marker id="nav-4" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto"><polygon points="0 0, 10 3.5, 0 7" fill="#00A86B" opacity="0.9"/></marker>
-<marker id="nav-5" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto"><polygon points="0 0, 10 3.5, 0 7" fill="#6D28D9" opacity="0.9"/></marker>
-<marker id="nav-6" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto"><polygon points="0 0, 10 3.5, 0 7" fill="#6D28D9" opacity="0.9"/></marker>
-<marker id="nav-7" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto"><polygon points="0 0, 10 3.5, 0 7" fill="#6D28D9" opacity="0.9"/></marker>
-<marker id="nav-8" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto"><polygon points="0 0, 10 3.5, 0 7" fill="#C96A00" opacity="0.9"/></marker>
-<marker id="nav-9" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto"><polygon points="0 0, 10 3.5, 0 7" fill="#C96A00" opacity="0.9"/></marker>
-<marker id="nav-10" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto"><polygon points="0 0, 10 3.5, 0 7" fill="#D93025" opacity="0.9"/></marker>
-<marker id="nav-11" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto"><polygon points="0 0, 10 3.5, 0 7" fill="#8CB88C" opacity="0.9"/></marker>
-<marker id="nav-12" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto"><polygon points="0 0, 10 3.5, 0 7" fill="#8CB88C" opacity="0.9"/></marker>
-<marker id="nav-13" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto"><polygon points="0 0, 10 3.5, 0 7" fill="#9988BB" opacity="0.9"/></marker>
-<marker id="nav-14" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto"><polygon points="0 0, 10 3.5, 0 7" fill="#BB9966" opacity="0.9"/></marker>
-<marker id="nav-15" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto"><polygon points="0 0, 10 3.5, 0 7" fill="#BB9966" opacity="0.9"/></marker>
-<marker id="nav-16" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto"><polygon points="0 0, 10 3.5, 0 7" fill="#BB8888" opacity="0.9"/></marker>
+<filter id="lbl-shadow"><feDropShadow dx="0" dy="1" stdDeviation="2" flood-opacity="0.2"/></filter>
+<marker id="nav-0" markerWidth="12" markerHeight="8" refX="10" refY="4" orient="auto"><polygon points="0 0, 12 4, 0 8" fill="#0041FF" opacity="0.9"/></marker>
+<marker id="nav-1" markerWidth="12" markerHeight="8" refX="10" refY="4" orient="auto"><polygon points="0 0, 12 4, 0 8" fill="#0041FF" opacity="0.9"/></marker>
+<marker id="nav-2" markerWidth="12" markerHeight="8" refX="10" refY="4" orient="auto"><polygon points="0 0, 12 4, 0 8" fill="#C96A00" opacity="0.9"/></marker>
+<marker id="nav-3" markerWidth="12" markerHeight="8" refX="10" refY="4" orient="auto"><polygon points="0 0, 12 4, 0 8" fill="#00A86B" opacity="0.9"/></marker>
+<marker id="nav-4" markerWidth="12" markerHeight="8" refX="10" refY="4" orient="auto"><polygon points="0 0, 12 4, 0 8" fill="#00A86B" opacity="0.9"/></marker>
+<marker id="nav-5" markerWidth="12" markerHeight="8" refX="10" refY="4" orient="auto"><polygon points="0 0, 12 4, 0 8" fill="#6D28D9" opacity="0.9"/></marker>
+<marker id="nav-6" markerWidth="12" markerHeight="8" refX="10" refY="4" orient="auto"><polygon points="0 0, 12 4, 0 8" fill="#6D28D9" opacity="0.9"/></marker>
+<marker id="nav-7" markerWidth="12" markerHeight="8" refX="10" refY="4" orient="auto"><polygon points="0 0, 12 4, 0 8" fill="#6D28D9" opacity="0.9"/></marker>
+<marker id="nav-8" markerWidth="12" markerHeight="8" refX="10" refY="4" orient="auto"><polygon points="0 0, 12 4, 0 8" fill="#C96A00" opacity="0.9"/></marker>
+<marker id="nav-9" markerWidth="12" markerHeight="8" refX="10" refY="4" orient="auto"><polygon points="0 0, 12 4, 0 8" fill="#C96A00" opacity="0.9"/></marker>
+<marker id="nav-10" markerWidth="12" markerHeight="8" refX="10" refY="4" orient="auto"><polygon points="0 0, 12 4, 0 8" fill="#D93025" opacity="0.9"/></marker>
+<marker id="nav-11" markerWidth="12" markerHeight="8" refX="10" refY="4" orient="auto"><polygon points="0 0, 12 4, 0 8" fill="#8CB88C" opacity="0.9"/></marker>
+<marker id="nav-12" markerWidth="12" markerHeight="8" refX="10" refY="4" orient="auto"><polygon points="0 0, 12 4, 0 8" fill="#8CB88C" opacity="0.9"/></marker>
+<marker id="nav-13" markerWidth="12" markerHeight="8" refX="10" refY="4" orient="auto"><polygon points="0 0, 12 4, 0 8" fill="#9988BB" opacity="0.9"/></marker>
+<marker id="nav-14" markerWidth="12" markerHeight="8" refX="10" refY="4" orient="auto"><polygon points="0 0, 12 4, 0 8" fill="#BB9966" opacity="0.9"/></marker>
+<marker id="nav-15" markerWidth="12" markerHeight="8" refX="10" refY="4" orient="auto"><polygon points="0 0, 12 4, 0 8" fill="#BB9966" opacity="0.9"/></marker>
+<marker id="nav-16" markerWidth="12" markerHeight="8" refX="10" refY="4" orient="auto"><polygon points="0 0, 12 4, 0 8" fill="#BB8888" opacity="0.9"/></marker>
 </defs>
-<path d="M364,418 C444,418 470,418 550,418" stroke="#0041FF" stroke-width="2.8" fill="none" opacity="0.8" marker-end="url(#nav-0)" class="fb-arrow"/>
-<circle cx="364" cy="418" r="6" fill="#0041FF" opacity="0.6"/>
-<g class="conn-label"><rect x="416" y="407" width="83" height="24" rx="6" fill="#fff" stroke="#0041FF" stroke-width="1.5" opacity="0.95" filter="url(#lbl-shadow)"/><text x="457" y="423" text-anchor="middle" font-size="12" font-weight="800" fill="#0041FF" font-family="'Pretendard',sans-serif">날짜 칩 선택</text></g>
-<path d="M814,418 C894,418 920,418 1000,418" stroke="#0041FF" stroke-width="2.8" fill="none" opacity="0.8" marker-end="url(#nav-1)" class="fb-arrow"/>
-<circle cx="814" cy="418" r="6" fill="#0041FF" opacity="0.6"/>
-<g class="conn-label"><rect x="857" y="407" width="101" height="24" rx="6" fill="#fff" stroke="#0041FF" stroke-width="1.5" opacity="0.95" filter="url(#lbl-shadow)"/><text x="907" y="423" text-anchor="middle" font-size="12" font-weight="800" fill="#0041FF" font-family="'Pretendard',sans-serif">날짜별 카드 영역</text></g>
-<path d="M285,237 C285,537 232,1350 232,1500" stroke="#C96A00" stroke-width="2.8" fill="none" opacity="0.8" marker-end="url(#nav-2)" class="fb-arrow"/>
-<circle cx="285" cy="237" r="6" fill="#C96A00" opacity="0.6"/>
-<g class="conn-label"><rect x="208" y="857" width="101" height="24" rx="6" fill="#fff" stroke="#C96A00" stroke-width="1.5" opacity="0.95" filter="url(#lbl-shadow)"/><text x="258" y="873" text-anchor="middle" font-size="12" font-weight="800" fill="#C96A00" font-family="'Pretendard',sans-serif">출조종류 관리 탭</text></g>
-<path d="M1050,552 C1250,352 1500,378 1650,378" stroke="#00A86B" stroke-width="2.8" fill="none" opacity="0.8" marker-end="url(#nav-3)" class="fb-arrow"/>
-<circle cx="1050" cy="552" r="6" fill="#00A86B" opacity="0.6"/>
-<g class="conn-label"><rect x="1310" y="454" width="80" height="24" rx="6" fill="#fff" stroke="#00A86B" stroke-width="1.5" opacity="0.95" filter="url(#lbl-shadow)"/><text x="1350" y="470" text-anchor="middle" font-size="12" font-weight="800" fill="#00A86B" font-family="'Pretendard',sans-serif">인원조정</text></g>
-<path d="M1130,552 C1380,552 1500,1098 1650,1098" stroke="#00A86B" stroke-width="2.8" fill="none" opacity="0.8" marker-end="url(#nav-4)" class="fb-arrow"/>
-<circle cx="1130" cy="552" r="6" fill="#00A86B" opacity="0.6"/>
-<g class="conn-label"><rect x="1350" y="814" width="80" height="24" rx="6" fill="#fff" stroke="#00A86B" stroke-width="1.5" opacity="0.95" filter="url(#lbl-shadow)"/><text x="1390" y="830" text-anchor="middle" font-size="12" font-weight="800" fill="#00A86B" font-family="'Pretendard',sans-serif">예약추가</text></g>
-<path d="M1215,552 C1515,852 1450,1818 1650,1818" stroke="#6D28D9" stroke-width="2.8" fill="none" opacity="0.8" marker-end="url(#nav-5)" class="fb-arrow"/>
-<circle cx="1215" cy="552" r="6" fill="#6D28D9" opacity="0.6"/>
-<g class="conn-label"><rect x="1392" y="1174" width="80" height="24" rx="6" fill="#fff" stroke="#6D28D9" stroke-width="1.5" opacity="0.95" filter="url(#lbl-shadow)"/><text x="1432" y="1190" text-anchor="middle" font-size="12" font-weight="800" fill="#6D28D9" font-family="'Pretendard',sans-serif">예약명단</text></g>
-<path d="M1050,580 C1550,1080 2200,1818 2400,1818" stroke="#6D28D9" stroke-width="2.8" fill="none" opacity="0.8" marker-end="url(#nav-6)" class="fb-arrow"/>
-<circle cx="1050" cy="580" r="6" fill="#6D28D9" opacity="0.6"/>
-<g class="conn-label"><rect x="1685" y="1188" width="80" height="24" rx="6" fill="#fff" stroke="#6D28D9" stroke-width="1.5" opacity="0.95" filter="url(#lbl-shadow)"/><text x="1725" y="1204" text-anchor="middle" font-size="12" font-weight="800" fill="#6D28D9" font-family="'Pretendard',sans-serif">개별수정</text></g>
-<path d="M1810,1872 C2010,1872 2200,1818 2400,1818" stroke="#6D28D9" stroke-width="2.8" fill="none" opacity="0.8" marker-end="url(#nav-7)" class="fb-arrow"/>
-<circle cx="1810" cy="1872" r="6" fill="#6D28D9" opacity="0.6"/>
-<g class="conn-label"><rect x="2059" y="1834" width="92" height="24" rx="6" fill="#fff" stroke="#6D28D9" stroke-width="1.5" opacity="0.95" filter="url(#lbl-shadow)"/><text x="2105" y="1850" text-anchor="middle" font-size="12" font-weight="800" fill="#6D28D9" font-family="'Pretendard',sans-serif">예약자 행 클릭</text></g>
-<path d="M295,1747 C295,1947 232,2480 232,2600" stroke="#C96A00" stroke-width="2.8" fill="none" opacity="0.8" marker-end="url(#nav-8)" class="fb-arrow"/>
-<circle cx="295" cy="1747" r="6" fill="#C96A00" opacity="0.6"/>
-<g class="conn-label"><rect x="213" y="2162" width="101" height="24" rx="6" fill="#fff" stroke="#C96A00" stroke-width="1.5" opacity="0.95" filter="url(#lbl-shadow)"/><text x="263" y="2178" text-anchor="middle" font-size="12" font-weight="800" fill="#C96A00" font-family="'Pretendard',sans-serif">+ 출조종류 등록</text></g>
-<path d="M160,1932 C160,2182 832,2480 832,2600" stroke="#C96A00" stroke-width="2.8" fill="none" opacity="0.8" marker-end="url(#nav-9)" class="fb-arrow"/>
-<circle cx="160" cy="1932" r="6" fill="#C96A00" opacity="0.6"/>
-<g class="conn-label"><rect x="456" y="2255" width="80" height="24" rx="6" fill="#fff" stroke="#C96A00" stroke-width="1.5" opacity="0.95" filter="url(#lbl-shadow)"/><text x="496" y="2271" text-anchor="middle" font-size="12" font-weight="800" fill="#C96A00" font-family="'Pretendard',sans-serif">상품수정</text></g>
-<path d="M300,1932 C700,2182 1432,2480 1432,2600" stroke="#D93025" stroke-width="2.8" fill="none" opacity="0.8" marker-end="url(#nav-10)" class="fb-arrow"/>
-<circle cx="300" cy="1932" r="6" fill="#D93025" opacity="0.6"/>
-<g class="conn-label"><rect x="826" y="2255" width="80" height="24" rx="6" fill="#fff" stroke="#D93025" stroke-width="1.5" opacity="0.95" filter="url(#lbl-shadow)"/><text x="866" y="2271" text-anchor="middle" font-size="12" font-weight="800" fill="#D93025" font-family="'Pretendard',sans-serif">상품삭제</text></g>
-<path d="M1650,378 C1530,298 1384,308 1264,388" stroke="#8CB88C" stroke-width="2.0" fill="none" opacity="0.5" stroke-dasharray="8,5" marker-end="url(#nav-11)" class="fb-arrow"/>
-<g class="conn-label"><rect x="1416" y="372" width="83" height="24" rx="6" fill="#fff" stroke="#8CB88C" stroke-width="1.5" opacity="0.95" filter="url(#lbl-shadow)"/><text x="1457" y="388" text-anchor="middle" font-size="12" font-weight="800" fill="#8CB88C" font-family="'Pretendard',sans-serif">저장→카드갱신</text></g>
-<path d="M1650,1098 C1500,1098 1414,448 1264,448" stroke="#8CB88C" stroke-width="2.0" fill="none" opacity="0.5" stroke-dasharray="8,5" marker-end="url(#nav-12)" class="fb-arrow"/>
-<g class="conn-label"><rect x="1416" y="762" width="83" height="24" rx="6" fill="#fff" stroke="#8CB88C" stroke-width="1.5" opacity="0.95" filter="url(#lbl-shadow)"/><text x="1457" y="778" text-anchor="middle" font-size="12" font-weight="800" fill="#8CB88C" font-family="'Pretendard',sans-serif">등록→카드갱신</text></g>
-<path d="M2400,1858 C2300,1858 2014,1858 1914,1858" stroke="#9988BB" stroke-width="2.0" fill="none" opacity="0.5" stroke-dasharray="8,5" marker-end="url(#nav-13)" class="fb-arrow"/>
-<g class="conn-label"><rect x="2117" y="1847" width="80" height="24" rx="6" fill="#fff" stroke="#9988BB" stroke-width="1.5" opacity="0.95" filter="url(#lbl-shadow)"/><text x="2157" y="1863" text-anchor="middle" font-size="12" font-weight="800" fill="#9988BB" font-family="'Pretendard',sans-serif">뒤로가기</text></g>
-<path d="M232,2600 C232,2480 252,2184 252,2104" stroke="#BB9966" stroke-width="2.0" fill="none" opacity="0.5" stroke-dasharray="8,5" marker-end="url(#nav-14)" class="fb-arrow"/>
-<g class="conn-label"><rect x="202" y="2341" width="80" height="24" rx="6" fill="#fff" stroke="#BB9966" stroke-width="1.5" opacity="0.95" filter="url(#lbl-shadow)"/><text x="242" y="2357" text-anchor="middle" font-size="12" font-weight="800" fill="#BB9966" font-family="'Pretendard',sans-serif">등록 완료</text></g>
-<path d="M832,2600 C832,2450 472,2204 272,2104" stroke="#BB9966" stroke-width="2.0" fill="none" opacity="0.5" stroke-dasharray="8,5" marker-end="url(#nav-15)" class="fb-arrow"/>
-<g class="conn-label"><rect x="512" y="2341" width="80" height="24" rx="6" fill="#fff" stroke="#BB9966" stroke-width="1.5" opacity="0.95" filter="url(#lbl-shadow)"/><text x="552" y="2357" text-anchor="middle" font-size="12" font-weight="800" fill="#BB9966" font-family="'Pretendard',sans-serif">수정 완료</text></g>
-<path d="M1432,2600 C1432,2400 664,1978 364,1878" stroke="#BB8888" stroke-width="2.0" fill="none" opacity="0.5" stroke-dasharray="8,5" marker-end="url(#nav-16)" class="fb-arrow"/>
-<g class="conn-label"><rect x="858" y="2228" width="80" height="24" rx="6" fill="#fff" stroke="#BB8888" stroke-width="1.5" opacity="0.95" filter="url(#lbl-shadow)"/><text x="898" y="2244" text-anchor="middle" font-size="12" font-weight="800" fill="#BB8888" font-family="'Pretendard',sans-serif">삭제 확인</text></g>
+<path d="M344,378 C424,378 440,378 520,378" stroke="#0041FF" stroke-width="3.2" fill="none" opacity="0.8" marker-end="url(#nav-0)" class="fb-arrow"/>
+<circle cx="344" cy="378" r="7" fill="#0041FF" opacity="0.6"/>
+<g class="conn-label"><rect x="378" y="363" width="108" height="30" rx="8" fill="#fff" stroke="#0041FF" stroke-width="1.8" opacity="0.97" filter="url(#lbl-shadow)"/><text x="432" y="384" text-anchor="middle" font-size="16" font-weight="800" fill="#0041FF" font-family="'Pretendard',sans-serif">날짜 칩 선택</text></g>
+<path d="M784,378 C864,378 880,378 960,378" stroke="#0041FF" stroke-width="3.2" fill="none" opacity="0.8" marker-end="url(#nav-1)" class="fb-arrow"/>
+<circle cx="784" cy="378" r="7" fill="#0041FF" opacity="0.6"/>
+<g class="conn-label"><rect x="806" y="363" width="132" height="30" rx="8" fill="#fff" stroke="#0041FF" stroke-width="1.8" opacity="0.97" filter="url(#lbl-shadow)"/><text x="872" y="384" text-anchor="middle" font-size="16" font-weight="800" fill="#0041FF" font-family="'Pretendard',sans-serif">날짜별 카드 영역</text></g>
+<path d="M265,197 C265,497 212,1350 212,1500" stroke="#C96A00" stroke-width="3.2" fill="none" opacity="0.8" marker-end="url(#nav-2)" class="fb-arrow"/>
+<circle cx="265" cy="197" r="7" fill="#C96A00" opacity="0.6"/>
+<g class="conn-label"><rect x="172" y="833" width="132" height="30" rx="8" fill="#fff" stroke="#C96A00" stroke-width="1.8" opacity="0.97" filter="url(#lbl-shadow)"/><text x="238" y="854" text-anchor="middle" font-size="16" font-weight="800" fill="#C96A00" font-family="'Pretendard',sans-serif">출조종류 관리 탭</text></g>
+<path d="M1010,512 C1210,312 1550,378 1700,378" stroke="#00A86B" stroke-width="3.2" fill="none" opacity="0.8" marker-end="url(#nav-3)" class="fb-arrow"/>
+<circle cx="1010" cy="512" r="7" fill="#00A86B" opacity="0.6"/>
+<g class="conn-label"><rect x="1305" y="430" width="100" height="30" rx="8" fill="#fff" stroke="#00A86B" stroke-width="1.8" opacity="0.97" filter="url(#lbl-shadow)"/><text x="1355" y="451" text-anchor="middle" font-size="16" font-weight="800" fill="#00A86B" font-family="'Pretendard',sans-serif">인원조정</text></g>
+<path d="M1090,512 C1340,712 1550,1268 1700,1268" stroke="#00A86B" stroke-width="3.2" fill="none" opacity="0.8" marker-end="url(#nav-4)" class="fb-arrow"/>
+<circle cx="1090" cy="512" r="7" fill="#00A86B" opacity="0.6"/>
+<g class="conn-label"><rect x="1345" y="875" width="100" height="30" rx="8" fill="#fff" stroke="#00A86B" stroke-width="1.8" opacity="0.97" filter="url(#lbl-shadow)"/><text x="1395" y="896" text-anchor="middle" font-size="16" font-weight="800" fill="#00A86B" font-family="'Pretendard',sans-serif">예약추가</text></g>
+<path d="M1175,512 C1475,1012 1500,2168 1700,2168" stroke="#6D28D9" stroke-width="3.2" fill="none" opacity="0.8" marker-end="url(#nav-5)" class="fb-arrow"/>
+<circle cx="1175" cy="512" r="7" fill="#6D28D9" opacity="0.6"/>
+<g class="conn-label"><rect x="1387" y="1325" width="100" height="30" rx="8" fill="#fff" stroke="#6D28D9" stroke-width="1.8" opacity="0.97" filter="url(#lbl-shadow)"/><text x="1437" y="1346" text-anchor="middle" font-size="16" font-weight="800" fill="#6D28D9" font-family="'Pretendard',sans-serif">예약명단</text></g>
+<path d="M1010,540 C1610,1140 2500,2168 2700,2168" stroke="#6D28D9" stroke-width="3.2" fill="none" opacity="0.8" marker-end="url(#nav-6)" class="fb-arrow"/>
+<circle cx="1010" cy="540" r="7" fill="#6D28D9" opacity="0.6"/>
+<g class="conn-label"><rect x="1805" y="1339" width="100" height="30" rx="8" fill="#fff" stroke="#6D28D9" stroke-width="1.8" opacity="0.97" filter="url(#lbl-shadow)"/><text x="1855" y="1360" text-anchor="middle" font-size="16" font-weight="800" fill="#6D28D9" font-family="'Pretendard',sans-serif">개별수정</text></g>
+<path d="M1860,2222 C2110,2222 2500,2168 2700,2168" stroke="#6D28D9" stroke-width="3.2" fill="none" opacity="0.8" marker-end="url(#nav-7)" class="fb-arrow"/>
+<circle cx="1860" cy="2222" r="7" fill="#6D28D9" opacity="0.6"/>
+<g class="conn-label"><rect x="2220" y="2180" width="120" height="30" rx="8" fill="#fff" stroke="#6D28D9" stroke-width="1.8" opacity="0.97" filter="url(#lbl-shadow)"/><text x="2280" y="2201" text-anchor="middle" font-size="16" font-weight="800" fill="#6D28D9" font-family="'Pretendard',sans-serif">예약자 행 클릭</text></g>
+<path d="M275,1747 C275,1997 212,2650 212,2800" stroke="#C96A00" stroke-width="3.2" fill="none" opacity="0.8" marker-end="url(#nav-8)" class="fb-arrow"/>
+<circle cx="275" cy="1747" r="7" fill="#C96A00" opacity="0.6"/>
+<g class="conn-label"><rect x="177" y="2258" width="132" height="30" rx="8" fill="#fff" stroke="#C96A00" stroke-width="1.8" opacity="0.97" filter="url(#lbl-shadow)"/><text x="243" y="2279" text-anchor="middle" font-size="16" font-weight="800" fill="#C96A00" font-family="'Pretendard',sans-serif">+ 출조종류 등록</text></g>
+<path d="M140,1932 C340,2182 882,2650 882,2800" stroke="#C96A00" stroke-width="3.2" fill="none" opacity="0.8" marker-end="url(#nav-9)" class="fb-arrow"/>
+<circle cx="140" cy="1932" r="7" fill="#C96A00" opacity="0.6"/>
+<g class="conn-label"><rect x="461" y="2351" width="100" height="30" rx="8" fill="#fff" stroke="#C96A00" stroke-width="1.8" opacity="0.97" filter="url(#lbl-shadow)"/><text x="511" y="2372" text-anchor="middle" font-size="16" font-weight="800" fill="#C96A00" font-family="'Pretendard',sans-serif">상품수정</text></g>
+<path d="M280,1932 C780,2182 1552,2650 1552,2800" stroke="#D93025" stroke-width="3.2" fill="none" opacity="0.8" marker-end="url(#nav-10)" class="fb-arrow"/>
+<circle cx="280" cy="1932" r="7" fill="#D93025" opacity="0.6"/>
+<g class="conn-label"><rect x="866" y="2351" width="100" height="30" rx="8" fill="#fff" stroke="#D93025" stroke-width="1.8" opacity="0.97" filter="url(#lbl-shadow)"/><text x="916" y="2372" text-anchor="middle" font-size="16" font-weight="800" fill="#D93025" font-family="'Pretendard',sans-serif">상품삭제</text></g>
+<path d="M1700,378 C1580,298 1344,268 1224,348" stroke="#8CB88C" stroke-width="2.2" fill="none" opacity="0.45" stroke-dasharray="10,6" marker-end="url(#nav-11)" class="fb-arrow"/>
+<g class="conn-label"><rect x="1408" y="348" width="108" height="30" rx="8" fill="#fff" stroke="#8CB88C" stroke-width="1.8" opacity="0.97" filter="url(#lbl-shadow)"/><text x="1462" y="369" text-anchor="middle" font-size="16" font-weight="800" fill="#8CB88C" font-family="'Pretendard',sans-serif">저장→카드갱신</text></g>
+<path d="M1700,1268 C1500,1368 1424,508 1224,408" stroke="#8CB88C" stroke-width="2.2" fill="none" opacity="0.45" stroke-dasharray="10,6" marker-end="url(#nav-12)" class="fb-arrow"/>
+<g class="conn-label"><rect x="1408" y="823" width="108" height="30" rx="8" fill="#fff" stroke="#8CB88C" stroke-width="1.8" opacity="0.97" filter="url(#lbl-shadow)"/><text x="1462" y="844" text-anchor="middle" font-size="16" font-weight="800" fill="#8CB88C" font-family="'Pretendard',sans-serif">등록→카드갱신</text></g>
+<path d="M2700,2208 C2600,2208 2064,2208 1964,2208" stroke="#9988BB" stroke-width="2.2" fill="none" opacity="0.45" stroke-dasharray="10,6" marker-end="url(#nav-13)" class="fb-arrow"/>
+<g class="conn-label"><rect x="2282" y="2193" width="100" height="30" rx="8" fill="#fff" stroke="#9988BB" stroke-width="1.8" opacity="0.97" filter="url(#lbl-shadow)"/><text x="2332" y="2214" text-anchor="middle" font-size="16" font-weight="800" fill="#9988BB" font-family="'Pretendard',sans-serif">뒤로가기</text></g>
+<path d="M212,2800 C212,2650 232,2204 232,2104" stroke="#BB9966" stroke-width="2.2" fill="none" opacity="0.45" stroke-dasharray="10,6" marker-end="url(#nav-14)" class="fb-arrow"/>
+<g class="conn-label"><rect x="172" y="2437" width="100" height="30" rx="8" fill="#fff" stroke="#BB9966" stroke-width="1.8" opacity="0.97" filter="url(#lbl-shadow)"/><text x="222" y="2458" text-anchor="middle" font-size="16" font-weight="800" fill="#BB9966" font-family="'Pretendard',sans-serif">등록 완료</text></g>
+<path d="M882,2800 C882,2600 502,2224 252,2104" stroke="#BB9966" stroke-width="2.2" fill="none" opacity="0.45" stroke-dasharray="10,6" marker-end="url(#nav-15)" class="fb-arrow"/>
+<g class="conn-label"><rect x="517" y="2437" width="100" height="30" rx="8" fill="#fff" stroke="#BB9966" stroke-width="1.8" opacity="0.97" filter="url(#lbl-shadow)"/><text x="567" y="2458" text-anchor="middle" font-size="16" font-weight="800" fill="#BB9966" font-family="'Pretendard',sans-serif">수정 완료</text></g>
+<path d="M1552,2800 C1552,2550 694,1998 344,1878" stroke="#BB8888" stroke-width="2.2" fill="none" opacity="0.45" stroke-dasharray="10,6" marker-end="url(#nav-16)" class="fb-arrow"/>
+<g class="conn-label"><rect x="898" y="2324" width="100" height="30" rx="8" fill="#fff" stroke="#BB8888" stroke-width="1.8" opacity="0.97" filter="url(#lbl-shadow)"/><text x="948" y="2345" text-anchor="middle" font-size="16" font-weight="800" fill="#BB8888" font-family="'Pretendard',sans-serif">삭제 확인</text></g>
 </svg>
-<div class="fb-node" id="fbnode-s1" style="left:100px;top:100px;" onclick="fbFocus('s1')">
+<div class="fb-node" id="fbnode-s1" style="left:80px;top:60px;" onclick="fbFocus('s1')">
   <div class="fb-node-badge" style="background:#0041FF;">S1 날짜접힘</div>
   <div class="fb-node-screen"><div class="ph-frame ph-lg">
   <div class="ph-island"></div>
@@ -24373,7 +24373,7 @@ window.addEventListener('load', handleHashRoute);
     </div>
 </div>
 </div></div>
-<div class="fb-node" id="fbnode-s2a" style="left:550px;top:100px;" onclick="fbFocus('s2a')">
+<div class="fb-node" id="fbnode-s2a" style="left:520px;top:60px;" onclick="fbFocus('s2a')">
   <div class="fb-node-badge" style="background:#0041FF;">S2a Empty</div>
   <div class="fb-node-screen"><div class="ph-frame ph-lg">
   <div class="ph-island"></div>
@@ -24425,7 +24425,7 @@ window.addEventListener('load', handleHashRoute);
 </div>
 </div></div>
 </div>
-<div class="fb-node" id="fbnode-s2b" style="left:1000px;top:100px;" onclick="fbFocus('s2b')">
+<div class="fb-node" id="fbnode-s2b" style="left:960px;top:60px;" onclick="fbFocus('s2b')">
   <div class="fb-node-badge" style="background:#0041FF;">S2b 카드펼침</div>
   <div class="fb-node-screen"><div class="ph-frame ph-lg">
   <div class="ph-island"></div>
@@ -24514,7 +24514,7 @@ window.addEventListener('load', handleHashRoute);
 </div>
 </div></div>
 </div>
-<div class="fb-node" id="fbnode-m1" style="left:1650px;top:60px;" onclick="fbFocus('m1')">
+<div class="fb-node" id="fbnode-m1" style="left:1700px;top:60px;" onclick="fbFocus('m1')">
   <div class="fb-node-badge" style="background:#00A86B;">M1 인원조정</div>
   <div class="fb-node-screen"><div class="ph-frame ph-lg">
   <div class="ph-island"></div>
@@ -24560,7 +24560,7 @@ window.addEventListener('load', handleHashRoute);
 </div>
 </div></div>
 </div>
-<div class="fb-node" id="fbnode-m2" style="left:1650px;top:780px;" onclick="fbFocus('m2')">
+<div class="fb-node" id="fbnode-m2" style="left:1700px;top:950px;" onclick="fbFocus('m2')">
   <div class="fb-node-badge" style="background:#00A86B;">M2 예약추가</div>
   <div class="fb-node-screen"><div class="ph-frame ph-lg">
   <div class="ph-island"></div>
@@ -24654,7 +24654,7 @@ window.addEventListener('load', handleHashRoute);
 </div>
 </div></div>
 </div>
-<div class="fb-node" id="fbnode-m3" style="left:1650px;top:1500px;" onclick="fbFocus('m3')">
+<div class="fb-node" id="fbnode-m3" style="left:1700px;top:1850px;" onclick="fbFocus('m3')">
   <div class="fb-node-badge" style="background:#6D28D9;">M3 예약명단</div>
   <div class="fb-node-screen"><div class="ph-frame ph-lg">
   <div class="ph-island"></div>
@@ -24693,7 +24693,7 @@ window.addEventListener('load', handleHashRoute);
 </div>
 </div></div>
 </div>
-<div class="fb-node" id="fbnode-m4" style="left:2400px;top:1500px;" onclick="fbFocus('m4')">
+<div class="fb-node" id="fbnode-m4" style="left:2700px;top:1850px;" onclick="fbFocus('m4')">
   <div class="fb-node-badge" style="background:#6D28D9;">M4 개별수정</div>
   <div class="fb-node-screen"><div class="ph-frame ph-lg">
   <div class="ph-island"></div>
@@ -24752,7 +24752,7 @@ window.addEventListener('load', handleHashRoute);
 </div>
 </div></div>
 </div>
-<div class="fb-node" id="fbnode-s4" style="left:100px;top:1500px;" onclick="fbFocus('s4')">
+<div class="fb-node" id="fbnode-s4" style="left:80px;top:1500px;" onclick="fbFocus('s4')">
   <div class="fb-node-badge" style="background:#C96A00;">S4 출조종류관리</div>
   <div class="fb-node-screen"><div class="ph-frame ph-lg">
   <div class="ph-island"></div>
@@ -24817,7 +24817,7 @@ window.addEventListener('load', handleHashRoute);
 </div>
 </div></div>
 </div>
-<div class="fb-node" id="fbnode-m5" style="left:100px;top:2600px;" onclick="fbFocus('m5')">
+<div class="fb-node" id="fbnode-m5" style="left:80px;top:2800px;" onclick="fbFocus('m5')">
   <div class="fb-node-badge" style="background:#C96A00;">M5 출조종류등록</div>
   <div class="fb-node-screen"><div class="ph-frame ph-lg">
   <div class="ph-island"></div>
@@ -24914,7 +24914,7 @@ window.addEventListener('load', handleHashRoute);
 </div>
 </div></div>
 </div>
-<div class="fb-node" id="fbnode-m6" style="left:700px;top:2600px;" onclick="fbFocus('m6')">
+<div class="fb-node" id="fbnode-m6" style="left:750px;top:2800px;" onclick="fbFocus('m6')">
   <div class="fb-node-badge" style="background:#C96A00;">M6 출조종류수정</div>
   <div class="fb-node-screen"><div class="ph-frame ph-lg">
   <div class="ph-island"></div>
@@ -24972,7 +24972,7 @@ window.addEventListener('load', handleHashRoute);
 </div>
 </div></div>
 </div>
-<div class="fb-node" id="fbnode-m7" style="left:1300px;top:2600px;" onclick="fbFocus('m7')">
+<div class="fb-node" id="fbnode-m7" style="left:1420px;top:2800px;" onclick="fbFocus('m7')">
   <div class="fb-node-badge" style="background:#D93025;">M7 출조종류삭제</div>
   <div class="fb-node-screen"><div class="ph-frame ph-lg">
   <div class="ph-island"></div>
@@ -24993,21 +24993,21 @@ window.addEventListener('load', handleHashRoute);
 </div>
 </div></div>
 </div>
-<div class="fpc" id="popup-T01" style="left:100px;top:800px;">
+<div class="fpc" id="popup-T01" style="left:80px;top:740px;">
   <div class="fpc-badge" style="background:#00A86B;">💬 T01</div>
   <div class="fpc-phone"><div class="fpc-phone-bg">
     <div class="fpc-toast" style="background:#00A86B;">상품 노출 상태가 변경되었습니다</div>
   </div></div>
   <div class="fpc-trigger">▸ 노출 토글 변경</div>
 </div>
-<div class="fpc" id="popup-T02" style="left:310px;top:800px;">
+<div class="fpc" id="popup-T02" style="left:280px;top:740px;">
   <div class="fpc-badge" style="background:#00A86B;">💬 T02</div>
   <div class="fpc-phone"><div class="fpc-phone-bg">
     <div class="fpc-toast" style="background:#00A86B;">즉시 마감되었습니다</div>
   </div></div>
   <div class="fpc-trigger">▸ 즉시마감</div>
 </div>
-<div class="fpc" id="popup-C02" style="left:520px;top:800px;">
+<div class="fpc" id="popup-C02" style="left:480px;top:740px;">
   <div class="fpc-badge" style="background:#C96A00;">⚠️ C02</div>
   <div class="fpc-phone"><div class="fpc-phone-bg">
     <div class="fpc-overlay"><div class="fpc-dialog">
@@ -25018,7 +25018,7 @@ window.addEventListener('load', handleHashRoute);
   </div></div>
   <div class="fpc-trigger">▸ 즉시마감 확인</div>
 </div>
-<div class="fpc" id="popup-C03" style="left:730px;top:800px;">
+<div class="fpc" id="popup-C03" style="left:680px;top:740px;">
   <div class="fpc-badge" style="background:#C96A00;">⚠️ C03</div>
   <div class="fpc-phone"><div class="fpc-phone-bg">
     <div class="fpc-overlay"><div class="fpc-dialog">
@@ -25029,14 +25029,14 @@ window.addEventListener('load', handleHashRoute);
   </div></div>
   <div class="fpc-trigger">▸ 노출 OFF + 예약 있을 때</div>
 </div>
-<div class="fpc" id="popup-T03" style="left:1960px;top:60px;">
+<div class="fpc" id="popup-T03" style="left:2020px;top:60px;">
   <div class="fpc-badge" style="background:#00A86B;">💬 T03</div>
   <div class="fpc-phone"><div class="fpc-phone-bg">
     <div class="fpc-toast" style="background:#00A86B;">판매 좌석이 변경되었습니다</div>
   </div></div>
   <div class="fpc-trigger">▸ 인원조정 저장</div>
 </div>
-<div class="fpc" id="popup-C05" style="left:1960px;top:220px;">
+<div class="fpc" id="popup-C05" style="left:2020px;top:220px;">
   <div class="fpc-badge" style="background:#C96A00;">⚠️ C05</div>
   <div class="fpc-phone"><div class="fpc-phone-bg">
     <div class="fpc-overlay"><div class="fpc-dialog">
@@ -25047,7 +25047,7 @@ window.addEventListener('load', handleHashRoute);
   </div></div>
   <div class="fpc-trigger">▸ M1 즉시마감</div>
 </div>
-<div class="fpc" id="popup-C04" style="left:2170px;top:60px;">
+<div class="fpc" id="popup-C04" style="left:2220px;top:60px;">
   <div class="fpc-badge" style="background:#D93025;">🚫 C04</div>
   <div class="fpc-phone"><div class="fpc-phone-bg">
     <div class="fpc-overlay"><div class="fpc-dialog">
@@ -25058,7 +25058,7 @@ window.addEventListener('load', handleHashRoute);
   </div></div>
   <div class="fpc-trigger">▸ 좌석 축소 시</div>
 </div>
-<div class="fpc" id="popup-C06" style="left:2170px;top:220px;">
+<div class="fpc" id="popup-C06" style="left:2220px;top:220px;">
   <div class="fpc-badge" style="background:#D93025;">🚫 C06</div>
   <div class="fpc-phone"><div class="fpc-phone-bg">
     <div class="fpc-overlay"><div class="fpc-dialog">
@@ -25069,7 +25069,7 @@ window.addEventListener('load', handleHashRoute);
   </div></div>
   <div class="fpc-trigger">▸ 마감 상태에서 마감 시도</div>
 </div>
-<div class="fpc" id="popup-C07" style="left:2380px;top:60px;">
+<div class="fpc" id="popup-C07" style="left:2420px;top:60px;">
   <div class="fpc-badge" style="background:#D93025;">🚫 C07</div>
   <div class="fpc-phone"><div class="fpc-phone-bg">
     <div class="fpc-overlay"><div class="fpc-dialog">
@@ -25080,14 +25080,14 @@ window.addEventListener('load', handleHashRoute);
   </div></div>
   <div class="fpc-trigger">▸ 0이하 입력</div>
 </div>
-<div class="fpc" id="popup-T04" style="left:1960px;top:780px;">
+<div class="fpc" id="popup-T04" style="left:2020px;top:950px;">
   <div class="fpc-badge" style="background:#00A86B;">💬 T04</div>
   <div class="fpc-phone"><div class="fpc-phone-bg">
     <div class="fpc-toast" style="background:#00A86B;">예약이 등록되었습니다</div>
   </div></div>
   <div class="fpc-trigger">▸ 예약 직접추가 완료</div>
 </div>
-<div class="fpc" id="popup-C08" style="left:2170px;top:780px;">
+<div class="fpc" id="popup-C08" style="left:2220px;top:950px;">
   <div class="fpc-badge" style="background:#D93025;">🚫 C08</div>
   <div class="fpc-phone"><div class="fpc-phone-bg">
     <div class="fpc-overlay"><div class="fpc-dialog">
@@ -25098,7 +25098,7 @@ window.addEventListener('load', handleHashRoute);
   </div></div>
   <div class="fpc-trigger">▸ 매진 상품 선택</div>
 </div>
-<div class="fpc" id="popup-C09" style="left:1960px;top:940px;">
+<div class="fpc" id="popup-C09" style="left:2020px;top:1120px;">
   <div class="fpc-badge" style="background:#D93025;">🚫 C09</div>
   <div class="fpc-phone"><div class="fpc-phone-bg">
     <div class="fpc-overlay"><div class="fpc-dialog">
@@ -25109,7 +25109,7 @@ window.addEventListener('load', handleHashRoute);
   </div></div>
   <div class="fpc-trigger">▸ 잔여석 초과 인원</div>
 </div>
-<div class="fpc" id="popup-C10" style="left:2170px;top:940px;">
+<div class="fpc" id="popup-C10" style="left:2220px;top:1120px;">
   <div class="fpc-badge" style="background:#C96A00;">⚠️ C10</div>
   <div class="fpc-phone"><div class="fpc-phone-bg">
     <div class="fpc-overlay"><div class="fpc-dialog">
@@ -25120,7 +25120,7 @@ window.addEventListener('load', handleHashRoute);
   </div></div>
   <div class="fpc-trigger">▸ 출항 당일 예약</div>
 </div>
-<div class="fpc" id="popup-P01" style="left:2380px;top:780px;">
+<div class="fpc" id="popup-P01" style="left:2420px;top:950px;">
   <div class="fpc-badge" style="background:#3B1198;">💛 P01</div>
   <div class="fpc-phone"><div class="fpc-phone-bg">
     <div class="fpc-push"><div class="fpc-push-row">
@@ -25130,7 +25130,7 @@ window.addEventListener('load', handleHashRoute);
   </div></div>
   <div class="fpc-trigger">▸ 예약추가 완료→예약자</div>
 </div>
-<div class="fpc" id="popup-P04" style="left:2380px;top:940px;">
+<div class="fpc" id="popup-P04" style="left:2420px;top:1120px;">
   <div class="fpc-badge" style="background:#0041FF;">🔔 P04</div>
   <div class="fpc-phone"><div class="fpc-phone-bg">
     <div class="fpc-push"><div class="fpc-push-row">
@@ -25140,21 +25140,21 @@ window.addEventListener('load', handleHashRoute);
   </div></div>
   <div class="fpc-trigger">▸ 플랫폼 예약→선주</div>
 </div>
-<div class="fpc" id="popup-T05" style="left:1960px;top:1500px;">
+<div class="fpc" id="popup-T05" style="left:2020px;top:1850px;">
   <div class="fpc-badge" style="background:#00A86B;">💬 T05</div>
   <div class="fpc-phone"><div class="fpc-phone-bg">
     <div class="fpc-toast" style="background:#00A86B;">[이름] 복사됨</div>
   </div></div>
   <div class="fpc-trigger">▸ 연락처 복사</div>
 </div>
-<div class="fpc" id="popup-T06" style="left:2400px;top:2150px;">
+<div class="fpc" id="popup-T06" style="left:2700px;top:2530px;">
   <div class="fpc-badge" style="background:#00A86B;">💬 T06</div>
   <div class="fpc-phone"><div class="fpc-phone-bg">
     <div class="fpc-toast" style="background:#00A86B;">예약 명단이 복사되었습니다</div>
   </div></div>
   <div class="fpc-trigger">▸ 명단 복사</div>
 </div>
-<div class="fpc" id="popup-C13" style="left:2170px;top:1500px;">
+<div class="fpc" id="popup-C13" style="left:2220px;top:1850px;">
   <div class="fpc-badge" style="background:#C96A00;">⚠️ C13</div>
   <div class="fpc-phone"><div class="fpc-phone-bg">
     <div class="fpc-overlay"><div class="fpc-dialog">
@@ -25165,14 +25165,14 @@ window.addEventListener('load', handleHashRoute);
   </div></div>
   <div class="fpc-trigger">▸ 예약 취소 버튼</div>
 </div>
-<div class="fpc" id="popup-T11" style="left:2610px;top:2150px;">
+<div class="fpc" id="popup-T11" style="left:2900px;top:2530px;">
   <div class="fpc-badge" style="background:#00A86B;">💬 T11</div>
   <div class="fpc-phone"><div class="fpc-phone-bg">
     <div class="fpc-toast" style="background:#00A86B;">예약이 취소됐습니다</div>
   </div></div>
   <div class="fpc-trigger">▸ 예약 취소 완료</div>
 </div>
-<div class="fpc" id="popup-P02" style="left:1960px;top:1660px;">
+<div class="fpc" id="popup-P02" style="left:2020px;top:2020px;">
   <div class="fpc-badge" style="background:#3B1198;">💛 P02</div>
   <div class="fpc-phone"><div class="fpc-phone-bg">
     <div class="fpc-push"><div class="fpc-push-row">
@@ -25182,7 +25182,7 @@ window.addEventListener('load', handleHashRoute);
   </div></div>
   <div class="fpc-trigger">▸ 예약취소→예약자</div>
 </div>
-<div class="fpc" id="popup-P05" style="left:2400px;top:2310px;">
+<div class="fpc" id="popup-P05" style="left:2700px;top:2700px;">
   <div class="fpc-badge" style="background:#0041FF;">🔔 P05</div>
   <div class="fpc-phone"><div class="fpc-phone-bg">
     <div class="fpc-push"><div class="fpc-push-row">
@@ -25192,14 +25192,14 @@ window.addEventListener('load', handleHashRoute);
   </div></div>
   <div class="fpc-trigger">▸ 취소요청→선주</div>
 </div>
-<div class="fpc" id="popup-T08" style="left:100px;top:3300px;">
+<div class="fpc" id="popup-T08" style="left:80px;top:3480px;">
   <div class="fpc-badge" style="background:#00A86B;">💬 T08</div>
   <div class="fpc-phone"><div class="fpc-phone-bg">
     <div class="fpc-toast" style="background:#00A86B;">출조종류가 등록되었습니다</div>
   </div></div>
   <div class="fpc-trigger">▸ 등록 완료</div>
 </div>
-<div class="fpc" id="popup-A16" style="left:310px;top:3300px;">
+<div class="fpc" id="popup-A16" style="left:280px;top:3480px;">
   <div class="fpc-badge" style="background:#D93025;">🚫 A16</div>
   <div class="fpc-phone"><div class="fpc-phone-bg">
     <div class="fpc-overlay"><div class="fpc-dialog">
@@ -25210,7 +25210,7 @@ window.addEventListener('load', handleHashRoute);
   </div></div>
   <div class="fpc-trigger">▸ 등록 성공</div>
 </div>
-<div class="fpc" id="popup-C16" style="left:520px;top:3300px;">
+<div class="fpc" id="popup-C16" style="left:480px;top:3480px;">
   <div class="fpc-badge" style="background:#D93025;">⛔ C16</div>
   <div class="fpc-phone"><div class="fpc-phone-bg">
     <div style="position:absolute;top:60px;left:12px;right:12px;">
@@ -25220,14 +25220,14 @@ window.addEventListener('load', handleHashRoute);
   </div></div>
   <div class="fpc-trigger">▸ 필수항목 미입력</div>
 </div>
-<div class="fpc" id="popup-T09" style="left:700px;top:3300px;">
+<div class="fpc" id="popup-T09" style="left:750px;top:3480px;">
   <div class="fpc-badge" style="background:#00A86B;">💬 T09</div>
   <div class="fpc-phone"><div class="fpc-phone-bg">
     <div class="fpc-toast" style="background:#00A86B;">출조종류 수정 완료</div>
   </div></div>
   <div class="fpc-trigger">▸ 수정 저장</div>
 </div>
-<div class="fpc" id="popup-C11" style="left:910px;top:3300px;">
+<div class="fpc" id="popup-C11" style="left:950px;top:3480px;">
   <div class="fpc-badge" style="background:#C96A00;">⚠️ C11</div>
   <div class="fpc-phone"><div class="fpc-phone-bg">
     <div class="fpc-overlay"><div class="fpc-dialog">
@@ -25238,7 +25238,7 @@ window.addEventListener('load', handleHashRoute);
   </div></div>
   <div class="fpc-trigger">▸ 요금 변경 시</div>
 </div>
-<div class="fpc" id="popup-C12" style="left:1120px;top:3300px;">
+<div class="fpc" id="popup-C12" style="left:1150px;top:3480px;">
   <div class="fpc-badge" style="background:#C96A00;">⚠️ C12</div>
   <div class="fpc-phone"><div class="fpc-phone-bg">
     <div class="fpc-overlay"><div class="fpc-dialog">
@@ -25249,7 +25249,7 @@ window.addEventListener('load', handleHashRoute);
   </div></div>
   <div class="fpc-trigger">▸ 기간 축소 시</div>
 </div>
-<div class="fpc" id="popup-C14" style="left:1510px;top:3300px;">
+<div class="fpc" id="popup-C14" style="left:1620px;top:3480px;">
   <div class="fpc-badge" style="background:#D93025;">🚫 C14</div>
   <div class="fpc-phone"><div class="fpc-phone-bg">
     <div class="fpc-overlay"><div class="fpc-dialog">
@@ -25260,7 +25260,7 @@ window.addEventListener('load', handleHashRoute);
   </div></div>
   <div class="fpc-trigger">▸ 예약 있는 상품 삭제</div>
 </div>
-<div class="fpc" id="popup-C15" style="left:1720px;top:3300px;">
+<div class="fpc" id="popup-C15" style="left:1820px;top:3480px;">
   <div class="fpc-badge" style="background:#C96A00;">⚠️ C15</div>
   <div class="fpc-phone"><div class="fpc-phone-bg">
     <div class="fpc-overlay"><div class="fpc-dialog">
@@ -25271,14 +25271,14 @@ window.addEventListener('load', handleHashRoute);
   </div></div>
   <div class="fpc-trigger">▸ 삭제 확인</div>
 </div>
-<div class="fpc" id="popup-T10" style="left:1300px;top:3300px;">
+<div class="fpc" id="popup-T10" style="left:1420px;top:3480px;">
   <div class="fpc-badge" style="background:#00A86B;">💬 T10</div>
   <div class="fpc-phone"><div class="fpc-phone-bg">
     <div class="fpc-toast" style="background:#00A86B;">출조종류가 삭제되었습니다</div>
   </div></div>
   <div class="fpc-trigger">▸ 삭제 완료</div>
 </div>
-<div class="fpc" id="popup-P03" style="left:1300px;top:3460px;">
+<div class="fpc" id="popup-P03" style="left:1420px;top:3650px;">
   <div class="fpc-badge" style="background:#3B1198;">💛 P03</div>
   <div class="fpc-phone"><div class="fpc-phone-bg">
     <div class="fpc-push"><div class="fpc-push-row">
@@ -25288,7 +25288,7 @@ window.addEventListener('load', handleHashRoute);
   </div></div>
   <div class="fpc-trigger">▸ 삭제(예약있는)→예약자 전체</div>
 </div>
-<div class="fpc" id="popup-P06" style="left:100px;top:2200px;">
+<div class="fpc" id="popup-P06" style="left:450px;top:1700px;">
   <div class="fpc-badge" style="background:#3B1198;">💛 P06</div>
   <div class="fpc-phone"><div class="fpc-phone-bg">
     <div class="fpc-push"><div class="fpc-push-row">
