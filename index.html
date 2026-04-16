@@ -792,7 +792,7 @@ body.edit-mode .add-row-btn{display:block;}
 
 .fb-vp{flex:1;overflow:hidden;cursor:grab;position:relative;}
 .fb-vp.grabbing{cursor:grabbing;}
-.fb-cv{position:absolute;width:3700px;height:3800px;transform-origin:0 0;will-change:transform;}
+.fb-cv{position:absolute;width:3200px;height:3700px;transform-origin:0 0;will-change:transform;}
 .fb-grid2{position:absolute;inset:0;background-image:radial-gradient(circle,rgba(255,255,255,.045) 1px,transparent 1px);background-size:28px 28px;}
 
 /* Section labels */
@@ -824,7 +824,7 @@ body.edit-mode .add-row-btn{display:block;}
 .fb-msg-trg{font-size:10px;color:rgba(255,255,255,.6);margin-left:auto;white-space:nowrap;}
 
 /* SVG */
-.fb-svg{position:absolute;top:0;left:0;width:3700px;height:3800px;pointer-events:none;z-index:5;}
+.fb-svg{position:absolute;top:0;left:0;width:3200px;height:3700px;pointer-events:none;z-index:5;}
 .fb-arrow{pointer-events:stroke;cursor:pointer;transition:opacity .15s;}
 .fb-arrow:hover{opacity:1!important;stroke-width:3.5!important;}
 
@@ -10484,60 +10484,76 @@ window.addEventListener('load', handleHashRoute);
   <div class="fb-vp" id="fbVP">
     <div class="fb-cv" id="fbCV">
       <div class="fb-grid2"></div>
-<svg class="fb-svg" style="position:absolute;top:0;left:0;width:3700px;height:3800px;pointer-events:none;z-index:5;">
+<svg class="fb-svg" style="position:absolute;top:0;left:0;width:3200px;height:3700px;pointer-events:none;z-index:5;">
 <defs>
 <filter id="lbl-shadow"><feDropShadow dx="0" dy="1" stdDeviation="2" flood-opacity="0.12"/></filter>
-<marker id="arr-s1-s2a" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto"><polygon points="0 0, 8 3, 0 6" fill="#0041FF" opacity="0.9"/></marker>
-<marker id="arr-s1-s4" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto"><polygon points="0 0, 8 3, 0 6" fill="#C96A00" opacity="0.9"/></marker>
-<marker id="arr-s2a-s2b" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto"><polygon points="0 0, 8 3, 0 6" fill="#0041FF" opacity="0.9"/></marker>
-<marker id="arr-s2b-m1" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto"><polygon points="0 0, 8 3, 0 6" fill="#00A86B" opacity="0.9"/></marker>
-<marker id="arr-s2b-m2" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto"><polygon points="0 0, 8 3, 0 6" fill="#00A86B" opacity="0.9"/></marker>
-<marker id="arr-s2b-m3" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto"><polygon points="0 0, 8 3, 0 6" fill="#6D28D9" opacity="0.9"/></marker>
-<marker id="arr-m3-m4" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto"><polygon points="0 0, 8 3, 0 6" fill="#6D28D9" opacity="0.9"/></marker>
-<marker id="arr-s4-m5" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto"><polygon points="0 0, 8 3, 0 6" fill="#C96A00" opacity="0.9"/></marker>
-<marker id="arr-s4-m6" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto"><polygon points="0 0, 8 3, 0 6" fill="#C96A00" opacity="0.9"/></marker>
-<marker id="arr-s4-m7" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto"><polygon points="0 0, 8 3, 0 6" fill="#D93025" opacity="0.9"/></marker>
-<marker id="arr-m1-s2b" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto"><polygon points="0 0, 8 3, 0 6" fill="#8CB88C" opacity="0.9"/></marker>
-<marker id="arr-m2-s2b" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto"><polygon points="0 0, 8 3, 0 6" fill="#8CB88C" opacity="0.9"/></marker>
-<marker id="arr-m4-m3" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto"><polygon points="0 0, 8 3, 0 6" fill="#9988BB" opacity="0.9"/></marker>
-<marker id="arr-m5-s4" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto"><polygon points="0 0, 8 3, 0 6" fill="#BB9966" opacity="0.9"/></marker>
-<marker id="arr-m6-s4" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto"><polygon points="0 0, 8 3, 0 6" fill="#BB9966" opacity="0.9"/></marker>
-<marker id="arr-m7-s4" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto"><polygon points="0 0, 8 3, 0 6" fill="#BB8888" opacity="0.9"/></marker>
+<marker id="nav-arr-0" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto"><polygon points="0 0, 8 3, 0 6" fill="#0041FF" opacity="0.9"/></marker>
+<marker id="nav-arr-1" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto"><polygon points="0 0, 8 3, 0 6" fill="#0041FF" opacity="0.9"/></marker>
+<marker id="nav-arr-2" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto"><polygon points="0 0, 8 3, 0 6" fill="#C96A00" opacity="0.9"/></marker>
+<marker id="nav-arr-3" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto"><polygon points="0 0, 8 3, 0 6" fill="#00A86B" opacity="0.9"/></marker>
+<marker id="nav-arr-4" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto"><polygon points="0 0, 8 3, 0 6" fill="#00A86B" opacity="0.9"/></marker>
+<marker id="nav-arr-5" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto"><polygon points="0 0, 8 3, 0 6" fill="#6D28D9" opacity="0.9"/></marker>
+<marker id="nav-arr-6" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto"><polygon points="0 0, 8 3, 0 6" fill="#6D28D9" opacity="0.9"/></marker>
+<marker id="nav-arr-7" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto"><polygon points="0 0, 8 3, 0 6" fill="#6D28D9" opacity="0.9"/></marker>
+<marker id="nav-arr-8" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto"><polygon points="0 0, 8 3, 0 6" fill="#C96A00" opacity="0.9"/></marker>
+<marker id="nav-arr-9" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto"><polygon points="0 0, 8 3, 0 6" fill="#C96A00" opacity="0.9"/></marker>
+<marker id="nav-arr-10" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto"><polygon points="0 0, 8 3, 0 6" fill="#D93025" opacity="0.9"/></marker>
+<marker id="nav-arr-11" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto"><polygon points="0 0, 8 3, 0 6" fill="#8CB88C" opacity="0.9"/></marker>
+<marker id="nav-arr-12" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto"><polygon points="0 0, 8 3, 0 6" fill="#8CB88C" opacity="0.9"/></marker>
+<marker id="nav-arr-13" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto"><polygon points="0 0, 8 3, 0 6" fill="#9988BB" opacity="0.9"/></marker>
+<marker id="nav-arr-14" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto"><polygon points="0 0, 8 3, 0 6" fill="#BB9966" opacity="0.9"/></marker>
+<marker id="nav-arr-15" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto"><polygon points="0 0, 8 3, 0 6" fill="#BB9966" opacity="0.9"/></marker>
+<marker id="nav-arr-16" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto"><polygon points="0 0, 8 3, 0 6" fill="#BB8888" opacity="0.9"/></marker>
 </defs>
-<!-- Navigation arrows (screen-to-screen) -->
-<path d="M344,701 C444,701 520,701 620,701" stroke="#0041FF" stroke-width="2.2" fill="none" opacity="0.7" marker-end="url(#arr-s1-s2a)" class="fb-arrow"/>
-<g class="conn-label"><rect x="447" y="679" width="70" height="18" rx="5" fill="#fff" stroke="#0041FF" stroke-width="1.2" opacity="0.95" filter="url(#lbl-shadow)"/><text x="482" y="691" text-anchor="middle" font-size="9" font-weight="700" fill="#0041FF" font-family="'Noto Sans KR',sans-serif">날짜 칩 선택</text></g>
-<path d="M212,1002 C212,1152 752,1450 752,1600" stroke="#C96A00" stroke-width="2.2" fill="none" opacity="0.7" marker-end="url(#arr-s1-s4)" class="fb-arrow"/>
-<g class="conn-label"><rect x="443" y="1283" width="79" height="18" rx="5" fill="#fff" stroke="#C96A00" stroke-width="1.2" opacity="0.95" filter="url(#lbl-shadow)"/><text x="482" y="1295" text-anchor="middle" font-size="9" font-weight="700" fill="#C96A00" font-family="'Noto Sans KR',sans-serif">출조종류 관리 탭</text></g>
-<path d="M884,701 C984,701 1060,701 1160,701" stroke="#0041FF" stroke-width="2.2" fill="none" opacity="0.7" marker-end="url(#arr-s2a-s2b)" class="fb-arrow"/>
-<g class="conn-label"><rect x="983" y="679" width="79" height="18" rx="5" fill="#fff" stroke="#0041FF" stroke-width="1.2" opacity="0.95" filter="url(#lbl-shadow)"/><text x="1022" y="691" text-anchor="middle" font-size="9" font-weight="700" fill="#0041FF" font-family="'Noto Sans KR',sans-serif">날짜별 카드 영역</text></g>
-<path d="M1424,701 C1574,701 1650,331 1800,331" stroke="#00A86B" stroke-width="2.2" fill="none" opacity="0.7" marker-end="url(#arr-s2b-m1)" class="fb-arrow"/>
-<g class="conn-label"><rect x="1577" y="494" width="70" height="18" rx="5" fill="#fff" stroke="#00A86B" stroke-width="1.2" opacity="0.95" filter="url(#lbl-shadow)"/><text x="1612" y="506" text-anchor="middle" font-size="9" font-weight="700" fill="#00A86B" font-family="'Noto Sans KR',sans-serif">인원조정 버튼</text></g>
-<path d="M1424,701 C1574,701 1650,1021 1800,1021" stroke="#00A86B" stroke-width="2.2" fill="none" opacity="0.7" marker-end="url(#arr-s2b-m2)" class="fb-arrow"/>
-<g class="conn-label"><rect x="1577" y="839" width="70" height="18" rx="5" fill="#fff" stroke="#00A86B" stroke-width="1.2" opacity="0.95" filter="url(#lbl-shadow)"/><text x="1612" y="851" text-anchor="middle" font-size="9" font-weight="700" fill="#00A86B" font-family="'Noto Sans KR',sans-serif">예약추가 버튼</text></g>
-<path d="M1424,701 C1624,701 1600,1711 1800,1711" stroke="#6D28D9" stroke-width="2.2" fill="none" opacity="0.7" marker-end="url(#arr-s2b-m3)" class="fb-arrow"/>
-<g class="conn-label"><rect x="1577" y="1184" width="70" height="18" rx="5" fill="#fff" stroke="#6D28D9" stroke-width="1.2" opacity="0.95" filter="url(#lbl-shadow)"/><text x="1612" y="1196" text-anchor="middle" font-size="9" font-weight="700" fill="#6D28D9" font-family="'Noto Sans KR',sans-serif">예약명단 버튼</text></g>
-<path d="M2064,1711 C2194,1711 2330,1711 2460,1711" stroke="#6D28D9" stroke-width="2.2" fill="none" opacity="0.7" marker-end="url(#arr-m3-m4)" class="fb-arrow"/>
-<g class="conn-label"><rect x="2226" y="1689" width="72" height="18" rx="5" fill="#fff" stroke="#6D28D9" stroke-width="1.2" opacity="0.95" filter="url(#lbl-shadow)"/><text x="2262" y="1701" text-anchor="middle" font-size="9" font-weight="700" fill="#6D28D9" font-family="'Noto Sans KR',sans-serif">예약자 행 클릭</text></g>
-<path d="M752,2202 C752,2302 1392,2250 1392,2350" stroke="#C96A00" stroke-width="2.2" fill="none" opacity="0.7" marker-end="url(#arr-s4-m5)" class="fb-arrow"/>
-<g class="conn-label"><rect x="1033" y="2258" width="79" height="18" rx="5" fill="#fff" stroke="#C96A00" stroke-width="1.2" opacity="0.95" filter="url(#lbl-shadow)"/><text x="1072" y="2270" text-anchor="middle" font-size="9" font-weight="700" fill="#C96A00" font-family="'Noto Sans KR',sans-serif">+ 출조종류 등록</text></g>
-<path d="M884,1961 C1084,1961 2052,2250 2052,2350" stroke="#C96A00" stroke-width="2.2" fill="none" opacity="0.7" marker-end="url(#arr-s4-m6)" class="fb-arrow"/>
-<g class="conn-label"><rect x="1433" y="2137" width="70" height="18" rx="5" fill="#fff" stroke="#C96A00" stroke-width="1.2" opacity="0.95" filter="url(#lbl-shadow)"/><text x="1468" y="2149" text-anchor="middle" font-size="9" font-weight="700" fill="#C96A00" font-family="'Noto Sans KR',sans-serif">상품수정 버튼</text></g>
-<path d="M884,2001 C1284,2001 2712,2250 2712,2350" stroke="#D93025" stroke-width="2.2" fill="none" opacity="0.7" marker-end="url(#arr-s4-m7)" class="fb-arrow"/>
-<g class="conn-label"><rect x="1763" y="2157" width="70" height="18" rx="5" fill="#fff" stroke="#D93025" stroke-width="1.2" opacity="0.95" filter="url(#lbl-shadow)"/><text x="1798" y="2169" text-anchor="middle" font-size="9" font-weight="700" fill="#D93025" font-family="'Noto Sans KR',sans-serif">상품삭제 버튼</text></g>
-<path d="M1800,331 C1680,331 1544,661 1424,661" stroke="#8CB88C" stroke-width="1.5" fill="none" opacity="0.4" stroke-dasharray="6,4" marker-end="url(#arr-m1-s2b)" class="fb-arrow"/>
-<g class="conn-label"><rect x="1573" y="502" width="79" height="18" rx="5" fill="#fff" stroke="#8CB88C" stroke-width="1.2" opacity="0.95" filter="url(#lbl-shadow)"/><text x="1612" y="514" text-anchor="middle" font-size="9" font-weight="700" fill="#8CB88C" font-family="'Noto Sans KR',sans-serif">저장 → 카드갱신</text></g>
-<path d="M1800,1021 C1680,1021 1544,741 1424,741" stroke="#8CB88C" stroke-width="1.5" fill="none" opacity="0.4" stroke-dasharray="6,4" marker-end="url(#arr-m2-s2b)" class="fb-arrow"/>
-<g class="conn-label"><rect x="1573" y="887" width="79" height="18" rx="5" fill="#fff" stroke="#8CB88C" stroke-width="1.2" opacity="0.95" filter="url(#lbl-shadow)"/><text x="1612" y="899" text-anchor="middle" font-size="9" font-weight="700" fill="#8CB88C" font-family="'Noto Sans KR',sans-serif">등록 → 카드갱신</text></g>
-<path d="M2460,1751 C2330,1751 2194,1751 2064,1751" stroke="#9988BB" stroke-width="1.5" fill="none" opacity="0.4" stroke-dasharray="6,4" marker-end="url(#arr-m4-m3)" class="fb-arrow"/>
-<g class="conn-label"><rect x="2227" y="1757" width="70" height="18" rx="5" fill="#fff" stroke="#9988BB" stroke-width="1.2" opacity="0.95" filter="url(#lbl-shadow)"/><text x="2262" y="1769" text-anchor="middle" font-size="9" font-weight="700" fill="#9988BB" font-family="'Noto Sans KR',sans-serif">뒤로가기</text></g>
-<path d="M1392,2350 C1392,2270 782,2282 782,2202" stroke="#BB9966" stroke-width="1.5" fill="none" opacity="0.4" stroke-dasharray="6,4" marker-end="url(#arr-m5-s4)" class="fb-arrow"/>
-<g class="conn-label"><rect x="1057" y="2278" width="70" height="18" rx="5" fill="#fff" stroke="#BB9966" stroke-width="1.2" opacity="0.95" filter="url(#lbl-shadow)"/><text x="1092" y="2290" text-anchor="middle" font-size="9" font-weight="700" fill="#BB9966" font-family="'Noto Sans KR',sans-serif">등록 완료</text></g>
-<path d="M2052,2350 C2052,2270 1094,1981 894,1981" stroke="#BB9966" stroke-width="1.5" fill="none" opacity="0.4" stroke-dasharray="6,4" marker-end="url(#arr-m6-s4)" class="fb-arrow"/>
-<g class="conn-label"><rect x="1438" y="2167" width="70" height="18" rx="5" fill="#fff" stroke="#BB9966" stroke-width="1.2" opacity="0.95" filter="url(#lbl-shadow)"/><text x="1473" y="2179" text-anchor="middle" font-size="9" font-weight="700" fill="#BB9966" font-family="'Noto Sans KR',sans-serif">수정 완료</text></g>
-<path d="M2712,2350 C2712,2270 1294,2021 894,2021" stroke="#BB8888" stroke-width="1.5" fill="none" opacity="0.4" stroke-dasharray="6,4" marker-end="url(#arr-m7-s4)" class="fb-arrow"/>
-<g class="conn-label"><rect x="1768" y="2187" width="70" height="18" rx="5" fill="#fff" stroke="#BB8888" stroke-width="1.2" opacity="0.95" filter="url(#lbl-shadow)"/><text x="1803" y="2199" text-anchor="middle" font-size="9" font-weight="700" fill="#BB8888" font-family="'Noto Sans KR',sans-serif">삭제 확인</text></g>
+<!-- Navigation arrows (17 connections) -->
+<path d="M344,466 C424,466 470,466 550,466" stroke="#0041FF" stroke-width="2.2" fill="none" opacity="0.75" marker-end="url(#nav-arr-0)" class="fb-arrow"/>
+<circle cx="344" cy="466" r="4" fill="#0041FF" opacity="0.6"/>
+<g class="conn-label"><rect x="412" y="455" width="70" height="18" rx="5" fill="#fff" stroke="#0041FF" stroke-width="1.2" opacity="0.95" filter="url(#lbl-shadow)"/><text x="447" y="468" text-anchor="middle" font-size="8.5" font-weight="700" fill="#0041FF" font-family="'Pretendard','Noto Sans KR',sans-serif">날짜 칩 선택</text></g>
+<path d="M814,466 C894,466 940,466 1020,466" stroke="#0041FF" stroke-width="2.2" fill="none" opacity="0.75" marker-end="url(#nav-arr-1)" class="fb-arrow"/>
+<circle cx="814" cy="466" r="4" fill="#0041FF" opacity="0.6"/>
+<g class="conn-label"><rect x="878" y="455" width="79" height="18" rx="5" fill="#fff" stroke="#0041FF" stroke-width="1.2" opacity="0.95" filter="url(#lbl-shadow)"/><text x="917" y="468" text-anchor="middle" font-size="8.5" font-weight="700" fill="#0041FF" font-family="'Pretendard','Noto Sans KR',sans-serif">날짜별 카드 영역</text></g>
+<path d="M265,285 C265,435 212,850 212,1000" stroke="#C96A00" stroke-width="2.2" fill="none" opacity="0.75" marker-end="url(#nav-arr-2)" class="fb-arrow"/>
+<circle cx="265" cy="285" r="4" fill="#C96A00" opacity="0.6"/>
+<g class="conn-label"><rect x="199" y="631" width="79" height="18" rx="5" fill="#fff" stroke="#C96A00" stroke-width="1.2" opacity="0.95" filter="url(#lbl-shadow)"/><text x="238" y="644" text-anchor="middle" font-size="8.5" font-weight="700" fill="#C96A00" font-family="'Pretendard','Noto Sans KR',sans-serif">출조종류 관리 탭</text></g>
+<path d="M1070,600 C1270,450 1530,366 1680,366" stroke="#00A86B" stroke-width="2.2" fill="none" opacity="0.75" marker-end="url(#nav-arr-3)" class="fb-arrow"/>
+<circle cx="1070" cy="600" r="4" fill="#00A86B" opacity="0.6"/>
+<g class="conn-label"><rect x="1340" y="472" width="70" height="18" rx="5" fill="#fff" stroke="#00A86B" stroke-width="1.2" opacity="0.95" filter="url(#lbl-shadow)"/><text x="1375" y="485" text-anchor="middle" font-size="8.5" font-weight="700" fill="#00A86B" font-family="'Pretendard','Noto Sans KR',sans-serif">인원조정 버튼</text></g>
+<path d="M1150,600 C1400,600 1530,1136 1680,1136" stroke="#00A86B" stroke-width="2.2" fill="none" opacity="0.75" marker-end="url(#nav-arr-4)" class="fb-arrow"/>
+<circle cx="1150" cy="600" r="4" fill="#00A86B" opacity="0.6"/>
+<g class="conn-label"><rect x="1380" y="857" width="70" height="18" rx="5" fill="#fff" stroke="#00A86B" stroke-width="1.2" opacity="0.95" filter="url(#lbl-shadow)"/><text x="1415" y="870" text-anchor="middle" font-size="8.5" font-weight="700" fill="#00A86B" font-family="'Pretendard','Noto Sans KR',sans-serif">예약추가 버튼</text></g>
+<path d="M1235,600 C1535,800 1480,1936 1680,1936" stroke="#6D28D9" stroke-width="2.2" fill="none" opacity="0.75" marker-end="url(#nav-arr-5)" class="fb-arrow"/>
+<circle cx="1235" cy="600" r="4" fill="#6D28D9" opacity="0.6"/>
+<g class="conn-label"><rect x="1422" y="1257" width="70" height="18" rx="5" fill="#fff" stroke="#6D28D9" stroke-width="1.2" opacity="0.95" filter="url(#lbl-shadow)"/><text x="1457" y="1270" text-anchor="middle" font-size="8.5" font-weight="700" fill="#6D28D9" font-family="'Pretendard','Noto Sans KR',sans-serif">예약명단 버튼</text></g>
+<path d="M1070,628 C1470,1028 2150,1936 2350,1936" stroke="#6D28D9" stroke-width="2.2" fill="none" opacity="0.75" marker-end="url(#nav-arr-6)" class="fb-arrow"/>
+<circle cx="1070" cy="628" r="4" fill="#6D28D9" opacity="0.6"/>
+<g class="conn-label"><rect x="1675" y="1271" width="70" height="18" rx="5" fill="#fff" stroke="#6D28D9" stroke-width="1.2" opacity="0.95" filter="url(#lbl-shadow)"/><text x="1710" y="1284" text-anchor="middle" font-size="8.5" font-weight="700" fill="#6D28D9" font-family="'Pretendard','Noto Sans KR',sans-serif">개별수정 버튼</text></g>
+<path d="M1840,1990 C1970,1990 2220,1936 2350,1936" stroke="#6D28D9" stroke-width="2.2" fill="none" opacity="0.75" marker-end="url(#nav-arr-7)" class="fb-arrow"/>
+<circle cx="1840" cy="1990" r="4" fill="#6D28D9" opacity="0.6"/>
+<g class="conn-label"><rect x="2059" y="1952" width="72" height="18" rx="5" fill="#fff" stroke="#6D28D9" stroke-width="1.2" opacity="0.95" filter="url(#lbl-shadow)"/><text x="2095" y="1965" text-anchor="middle" font-size="8.5" font-weight="700" fill="#6D28D9" font-family="'Pretendard','Noto Sans KR',sans-serif">예약자 행 클릭</text></g>
+<path d="M275,1245 C275,1365 212,1860 212,1980" stroke="#C96A00" stroke-width="2.2" fill="none" opacity="0.75" marker-end="url(#nav-arr-8)" class="fb-arrow"/>
+<circle cx="275" cy="1245" r="4" fill="#C96A00" opacity="0.6"/>
+<g class="conn-label"><rect x="204" y="1601" width="79" height="18" rx="5" fill="#fff" stroke="#C96A00" stroke-width="1.2" opacity="0.95" filter="url(#lbl-shadow)"/><text x="243" y="1614" text-anchor="middle" font-size="8.5" font-weight="700" fill="#C96A00" font-family="'Pretendard','Noto Sans KR',sans-serif">+ 출조종류 등록</text></g>
+<path d="M140,1430 C140,1630 732,1860 732,1980" stroke="#C96A00" stroke-width="2.2" fill="none" opacity="0.75" marker-end="url(#nav-arr-9)" class="fb-arrow"/>
+<circle cx="140" cy="1430" r="4" fill="#C96A00" opacity="0.6"/>
+<g class="conn-label"><rect x="401" y="1694" width="70" height="18" rx="5" fill="#fff" stroke="#C96A00" stroke-width="1.2" opacity="0.95" filter="url(#lbl-shadow)"/><text x="436" y="1707" text-anchor="middle" font-size="8.5" font-weight="700" fill="#C96A00" font-family="'Pretendard','Noto Sans KR',sans-serif">상품수정 버튼</text></g>
+<path d="M280,1430 C580,1630 1252,1860 1252,1980" stroke="#D93025" stroke-width="2.2" fill="none" opacity="0.75" marker-end="url(#nav-arr-10)" class="fb-arrow"/>
+<circle cx="280" cy="1430" r="4" fill="#D93025" opacity="0.6"/>
+<g class="conn-label"><rect x="731" y="1694" width="70" height="18" rx="5" fill="#fff" stroke="#D93025" stroke-width="1.2" opacity="0.95" filter="url(#lbl-shadow)"/><text x="766" y="1707" text-anchor="middle" font-size="8.5" font-weight="700" fill="#D93025" font-family="'Pretendard','Noto Sans KR',sans-serif">상품삭제 버튼</text></g>
+<path d="M1680,366 C1560,286 1404,356 1284,436" stroke="#8CB88C" stroke-width="1.5" fill="none" opacity="0.45" stroke-dasharray="6,4" marker-end="url(#nav-arr-11)" class="fb-arrow"/>
+<g class="conn-label"><rect x="1443" y="390" width="79" height="18" rx="5" fill="#fff" stroke="#8CB88C" stroke-width="1.2" opacity="0.95" filter="url(#lbl-shadow)"/><text x="1482" y="403" text-anchor="middle" font-size="8.5" font-weight="700" fill="#8CB88C" font-family="'Pretendard','Noto Sans KR',sans-serif">저장 → 카드갱신</text></g>
+<path d="M1680,1136 C1530,1136 1434,496 1284,496" stroke="#8CB88C" stroke-width="1.5" fill="none" opacity="0.45" stroke-dasharray="6,4" marker-end="url(#nav-arr-12)" class="fb-arrow"/>
+<g class="conn-label"><rect x="1443" y="805" width="79" height="18" rx="5" fill="#fff" stroke="#8CB88C" stroke-width="1.2" opacity="0.95" filter="url(#lbl-shadow)"/><text x="1482" y="818" text-anchor="middle" font-size="8.5" font-weight="700" fill="#8CB88C" font-family="'Pretendard','Noto Sans KR',sans-serif">등록 → 카드갱신</text></g>
+<path d="M2350,1976 C2250,1976 2044,1976 1944,1976" stroke="#9988BB" stroke-width="1.5" fill="none" opacity="0.45" stroke-dasharray="6,4" marker-end="url(#nav-arr-13)" class="fb-arrow"/>
+<g class="conn-label"><rect x="2112" y="1965" width="70" height="18" rx="5" fill="#fff" stroke="#9988BB" stroke-width="1.2" opacity="0.95" filter="url(#lbl-shadow)"/><text x="2147" y="1978" text-anchor="middle" font-size="8.5" font-weight="700" fill="#9988BB" font-family="'Pretendard','Noto Sans KR',sans-serif">뒤로가기</text></g>
+<path d="M212,1980 C212,1860 232,1722 232,1602" stroke="#BB9966" stroke-width="1.5" fill="none" opacity="0.45" stroke-dasharray="6,4" marker-end="url(#nav-arr-14)" class="fb-arrow"/>
+<g class="conn-label"><rect x="187" y="1780" width="70" height="18" rx="5" fill="#fff" stroke="#BB9966" stroke-width="1.2" opacity="0.95" filter="url(#lbl-shadow)"/><text x="222" y="1793" text-anchor="middle" font-size="8.5" font-weight="700" fill="#BB9966" font-family="'Pretendard','Noto Sans KR',sans-serif">등록 완료</text></g>
+<path d="M732,1980 C732,1830 452,1702 252,1602" stroke="#BB9966" stroke-width="1.5" fill="none" opacity="0.45" stroke-dasharray="6,4" marker-end="url(#nav-arr-15)" class="fb-arrow"/>
+<g class="conn-label"><rect x="457" y="1780" width="70" height="18" rx="5" fill="#fff" stroke="#BB9966" stroke-width="1.2" opacity="0.95" filter="url(#lbl-shadow)"/><text x="492" y="1793" text-anchor="middle" font-size="8.5" font-weight="700" fill="#BB9966" font-family="'Pretendard','Noto Sans KR',sans-serif">수정 완료</text></g>
+<path d="M1252,1980 C1252,1780 644,1476 344,1376" stroke="#BB8888" stroke-width="1.5" fill="none" opacity="0.45" stroke-dasharray="6,4" marker-end="url(#nav-arr-16)" class="fb-arrow"/>
+<g class="conn-label"><rect x="763" y="1667" width="70" height="18" rx="5" fill="#fff" stroke="#BB8888" stroke-width="1.2" opacity="0.95" filter="url(#lbl-shadow)"/><text x="798" y="1680" text-anchor="middle" font-size="8.5" font-weight="700" fill="#BB8888" font-family="'Pretendard','Noto Sans KR',sans-serif">삭제 확인</text></g>
 </svg>
+
+
 
       <div class="fb-sec" style="left:60px;top:80px;">
         <div class="fb-sec-badge" style="background:#0041FF;">A</div>
@@ -10549,27 +10565,65 @@ window.addEventListener('load', handleHashRoute);
         <div><div class="fb-sec-title" style="color:#C96A00;">출조종류 관리 흐름</div>
         <div class="fb-sec-sub">출조종류 관리 탭 → 등록 / 수정 / 삭제</div></div>
       </div>
-      <svg class="fb-svg" style="position:absolute;top:0;left:0;width:3700px;height:3800px;pointer-events:none;z-index:4;">
-<defs>
-<marker id="ap-grp-0" markerWidth="8" markerHeight="8" refX="7" refY="3" orient="auto"><path d="M0,0 L0,6 L7,3 z" fill="#667eea" opacity=".5"/></marker>
-<marker id="ap-grp-1" markerWidth="8" markerHeight="8" refX="7" refY="3" orient="auto"><path d="M0,0 L0,6 L7,3 z" fill="#EA580C" opacity=".5"/></marker>
-<marker id="ap-grp-2" markerWidth="8" markerHeight="8" refX="7" refY="3" orient="auto"><path d="M0,0 L0,6 L7,3 z" fill="#EA580C" opacity=".5"/></marker>
-<marker id="ap-grp-3" markerWidth="8" markerHeight="8" refX="7" refY="3" orient="auto"><path d="M0,0 L0,6 L7,3 z" fill="#EA580C" opacity=".5"/></marker>
-<marker id="ap-grp-4" markerWidth="8" markerHeight="8" refX="7" refY="3" orient="auto"><path d="M0,0 L0,6 L7,3 z" fill="#8B5CF6" opacity=".5"/></marker>
-<marker id="ap-grp-5" markerWidth="8" markerHeight="8" refX="7" refY="3" orient="auto"><path d="M0,0 L0,6 L7,3 z" fill="#8B5CF6" opacity=".5"/></marker>
-<marker id="ap-grp-6" markerWidth="8" markerHeight="8" refX="7" refY="3" orient="auto"><path d="M0,0 L0,6 L7,3 z" fill="#8B5CF6" opacity=".5"/></marker>
-</defs>
-<!-- popup group arrows -->
-<path d="M230,700 Q315.0,910.0 400,1120" stroke="#667eea" stroke-width="1.8" fill="none" opacity="0.3" stroke-dasharray="8,5" marker-end="url(#ap-grp-0)"/>
-<path d="M1950,330 Q2475.0,265.0 3000,200" stroke="#EA580C" stroke-width="1.8" fill="none" opacity="0.3" stroke-dasharray="8,5" marker-end="url(#ap-grp-1)"/>
-<path d="M1950,1020 Q2475.0,935.0 3000,850" stroke="#EA580C" stroke-width="1.8" fill="none" opacity="0.3" stroke-dasharray="8,5" marker-end="url(#ap-grp-2)"/>
-<path d="M1950,1710 Q2475.0,1620.0 3000,1530" stroke="#EA580C" stroke-width="1.8" fill="none" opacity="0.3" stroke-dasharray="8,5" marker-end="url(#ap-grp-3)"/>
-<path d="M1392,2650 Q1436.0,2900.0 1480,3150" stroke="#8B5CF6" stroke-width="1.8" fill="none" opacity="0.3" stroke-dasharray="8,5" marker-end="url(#ap-grp-4)"/>
-<path d="M2052,2650 Q2096.0,2900.0 2140,3150" stroke="#8B5CF6" stroke-width="1.8" fill="none" opacity="0.3" stroke-dasharray="8,5" marker-end="url(#ap-grp-5)"/>
-<path d="M2712,2650 Q2756.0,2900.0 2800,3150" stroke="#8B5CF6" stroke-width="1.8" fill="none" opacity="0.3" stroke-dasharray="8,5" marker-end="url(#ap-grp-6)"/>
-</svg>
-      <div class="fb-node" id="fbnode-s1" style="left:80px;top:400px;" onclick="fbFocus('s1')">
-  <div class="fb-node-badge" style="background:#1A1A1A;">S1 상품관리 (일자별상품)</div>
+      
+      <div class="fb-node" id="fbnode-s1" style="left:80px;top:150px;" onclick="fbFocus('s1')">
+  <div class="fb-node-badge" style="background:#0041FF;">S1 날짜접힘</div>
+  <div class="fb-node-screen"><div class="ph-frame ph-lg">
+  <div class="ph-island"></div>
+  <div class="ph-screen">
+    <div class="ph-body">
+<div class="ph-sb"><span>9:41</span><span style="font-size:7px;">●●● ▐▐ ▊</span></div>
+<div class="ph-hd" style="padding:5px 8px;border-bottom:none;">
+  <div class="ph-ht">상품관리.</div>
+  <div style="display:flex;gap:5px;align-items:center;">
+    <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="#191919" stroke-width="2"><path d="M3 18v-6a9 9 0 0118 0v6"/><path d="M21 19a2 2 0 01-2 2H5a2 2 0 01-2-2v-1h18v1z"/></svg>
+    <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="#191919" stroke-width="2"><path d="M18 8A6 6 0 006 8c0 7-3 9-3 9h18s-3-2-3-9"/><path d="M13.73 21a2 2 0 01-3.46 0"/></svg>
+    <div style="width:14px;height:14px;border-radius:50%;background:#3182F6;display:flex;align-items:center;justify-content:center;"><span style="color:#fff;font-size:6px;font-weight:800;">AI</span></div>
+  </div>
+</div>
+<div class="ph-drop" style="display:flex;align-items:center;gap:4px;margin:0 6px 3px;padding:5px 8px;border-radius:6px;">왕감자호 <span style="font-size:7px;color:#aaa;">20인승 · 9.77t</span><span style="font-size:7px;color:#aaa;margin-left:auto;">▼</span></div>
+<div class="ph-tabs"><div class="ph-tab on" style="border-bottom:2px solid #191919;color:#191919;">일자별상품</div><div class="ph-tab">출조종류 관리</div></div>
+<div style="padding:3px 6px;background:#fff;flex-shrink:0;">
+  <div style="display:flex;justify-content:center;align-items:center;gap:2px;font-size:8px;font-weight:800;color:#191919;margin-bottom:3px;">
+    <span style="color:#ccc;">‹</span> 2026년 2월 <span style="color:#ccc;">›</span>
+  </div>
+  <div style="display:flex;gap:3px;">
+    <span style="font-size:7px;font-weight:800;padding:2px 6px;border-radius:50px;background:#191919;color:#fff;">전체</span>
+    <span style="font-size:6px;padding:2px 4px;border-radius:50px;border:1px solid #eee;color:#767676;text-align:center;"><span style="font-size:4px;display:block;">금</span>27</span>
+    <span style="font-size:6px;padding:2px 4px;border-radius:50px;border:1px solid #eee;color:#767676;text-align:center;"><span style="font-size:4px;display:block;">토</span>28</span>
+  </div>
+</div>
+<div style="margin:3px 6px;background:#F7F8FA;border-radius:6px;padding:4px;">
+  <div style="font-size:5px;color:#888;margin-bottom:2px;padding:0 2px;">2026년 2월 일자별 현황</div>
+  <div style="display:grid;grid-template-columns:repeat(4,1fr);text-align:center;">
+    <div><div style="font-size:5px;color:#888;">노출</div><div style="font-size:10px;font-weight:900;color:#191919;">6개</div></div>
+    <div><div style="font-size:5px;color:#888;">숨김</div><div style="font-size:10px;font-weight:900;color:#191919;">0개</div></div>
+    <div><div style="font-size:5px;color:#888;">총 예약</div><div style="font-size:10px;font-weight:900;color:#191919;">24명</div></div>
+    <div><div style="font-size:5px;color:#888;">잔여</div><div style="font-size:10px;font-weight:900;color:#10B981;">24/70석</div></div>
+  </div>
+</div>
+<div class="ph-scroll">
+<div style="display:flex;justify-content:space-between;align-items:center;padding:5px 8px;background:#333;border-radius:4px;margin:2px 6px;flex-shrink:0;"><span style="font-size:8px;font-weight:800;color:#fff;">2026.02.27 (금)</span><span style="font-size:6px;color:#fff;opacity:.7;">3개</span><span style="font-size:6px;color:#aaa;">노출 3 · 예약 10/33명 ∨</span></div>
+<div style="margin:2px 6px;background:#fff;border:1px solid #eee;border-radius:6px;padding:5px 7px;flex-shrink:0;">
+  <div style="display:flex;align-items:center;gap:4px;margin-bottom:2px;">
+    <div style="width:20px;height:10px;border-radius:5px;background:#191919;position:relative;"><div style="width:7px;height:7px;border-radius:50%;background:#fff;position:absolute;top:1.5px;right:2px;"></div></div>
+    <span style="font-size:5px;font-weight:700;color:#10B981;">노출중</span>
+  </div>
+</div>
+<div style="display:flex;justify-content:space-between;align-items:center;padding:5px 8px;background:#333;border-radius:4px;margin:2px 6px;flex-shrink:0;"><span style="font-size:8px;font-weight:800;color:#fff;">2026.02.28 (토)</span><span style="font-size:6px;color:#fff;opacity:.7;">3개</span><span style="font-size:6px;color:#aaa;">노출 3 · 예약 14/37명 ∨</span></div>
+</div>
+</div>
+<div class="ph-nav" style="height:36px;background:#FBFBFB;border-top:1px solid #eee;display:flex;padding:3px 0 0;">
+  <div class="ph-ni"><span style="font-size:6px;color:#BCBCBC;">홈</span></div>
+  <div class="ph-ni"><span style="font-size:6px;color:#BCBCBC;">정산관리</span></div>
+  <div class="ph-ni on"><span style="font-size:6px;color:#191919;font-weight:800;">상품관리</span></div>
+  <div class="ph-ni"><span style="font-size:6px;color:#BCBCBC;">조황관리</span></div>
+  <div class="ph-ni"><span style="font-size:6px;color:#BCBCBC;">공지관리</span></div>
+</div>
+    </div>
+</div>
+</div></div>
+</div>
   <div class="fb-node-screen"><div class="ph-frame ph-lg">
   <div class="ph-island"></div>
   <div class="ph-screen">
@@ -10671,8 +10725,58 @@ window.addEventListener('load', handleHashRoute);
   </div>
 </div></div>
   
-</div><div class="fb-node" id="fbnode-s2a" style="left:620px;top:400px;" onclick="fbFocus('s2a')">
-  <div class="fb-node-badge" style="background:#0041FF;">S1 빈 상태</div>
+</div><div class="fb-node" id="fbnode-s2a" style="left:550px;top:150px;" onclick="fbFocus('s2a')">
+  <div class="fb-node-badge" style="background:#0041FF;">S2a Empty</div>
+  <div class="fb-node-screen"><div class="ph-frame ph-lg">
+  <div class="ph-island"></div>
+  <div class="ph-screen">
+    <div class="ph-body">
+<div class="ph-sb"><span>9:41</span><span style="font-size:7px;">●●● ▐▐ ▊</span></div>
+<div class="ph-hd" style="padding:5px 8px;border-bottom:none;">
+  <div class="ph-ht">상품관리.</div>
+  <div style="display:flex;gap:5px;align-items:center;">
+    <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="#191919" stroke-width="2"><path d="M3 18v-6a9 9 0 0118 0v6"/><path d="M21 19a2 2 0 01-2 2H5a2 2 0 01-2-2v-1h18v1z"/></svg>
+    <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="#191919" stroke-width="2"><path d="M18 8A6 6 0 006 8c0 7-3 9-3 9h18s-3-2-3-9"/><path d="M13.73 21a2 2 0 01-3.46 0"/></svg>
+    <div style="width:14px;height:14px;border-radius:50%;background:#3182F6;display:flex;align-items:center;justify-content:center;"><span style="color:#fff;font-size:6px;font-weight:800;">AI</span></div>
+  </div>
+</div>
+<div class="ph-drop" style="display:flex;align-items:center;gap:4px;margin:0 6px 3px;padding:5px 8px;border-radius:6px;">왕감자호 <span style="font-size:7px;color:#aaa;">20인승 · 9.77t</span><span style="font-size:7px;color:#aaa;margin-left:auto;">▼</span></div>
+<div class="ph-tabs"><div class="ph-tab on" style="border-bottom:2px solid #191919;color:#191919;">일자별상품</div><div class="ph-tab">출조종류 관리</div></div>
+<div style="padding:3px 6px;background:#fff;flex-shrink:0;">
+  <div style="display:flex;justify-content:center;align-items:center;gap:2px;font-size:8px;font-weight:800;color:#191919;margin-bottom:3px;">
+    <span style="color:#ccc;">‹</span> 2026년 4월 <span style="color:#ccc;">›</span>
+  </div>
+  <div style="display:flex;gap:3px;">
+    <span style="font-size:7px;font-weight:800;padding:2px 6px;border-radius:50px;background:#191919;color:#fff;">전체</span>
+  </div>
+</div>
+<div style="margin:3px 6px;background:#F7F8FA;border-radius:6px;padding:4px;">
+  <div style="font-size:5px;color:#888;margin-bottom:2px;padding:0 2px;">2026년 4월 일자별 현황</div>
+  <div style="display:grid;grid-template-columns:repeat(4,1fr);text-align:center;">
+    <div><div style="font-size:5px;color:#888;">노출</div><div style="font-size:10px;font-weight:900;color:#191919;">0개</div></div>
+    <div><div style="font-size:5px;color:#888;">숨김</div><div style="font-size:10px;font-weight:900;color:#191919;">0개</div></div>
+    <div><div style="font-size:5px;color:#888;">총 예약</div><div style="font-size:10px;font-weight:900;color:#191919;">0명</div></div>
+    <div><div style="font-size:5px;color:#888;">잔여</div><div style="font-size:10px;font-weight:900;color:#10B981;">0/0석</div></div>
+  </div>
+</div>
+<div class="ph-scroll" style="display:flex;flex-direction:column;align-items:center;justify-content:center;">
+<div style="text-align:center;padding:20px 10px;">
+  <div style="font-size:24px;margin-bottom:5px;">📅</div>
+  <div style="font-size:8px;font-weight:800;color:#191919;margin-bottom:3px;">해당 기간에 일자별 상품이 없습니다</div>
+  <div style="font-size:5px;color:#888;">출조종류 등록 후 날짜별 출조가 자동 생성됩니다</div>
+</div>
+</div>
+<div class="ph-nav" style="height:36px;background:#FBFBFB;border-top:1px solid #eee;display:flex;padding:3px 0 0;">
+  <div class="ph-ni"><span style="font-size:6px;color:#BCBCBC;">홈</span></div>
+  <div class="ph-ni"><span style="font-size:6px;color:#BCBCBC;">정산관리</span></div>
+  <div class="ph-ni on"><span style="font-size:6px;color:#191919;font-weight:800;">상품관리</span></div>
+  <div class="ph-ni"><span style="font-size:6px;color:#BCBCBC;">조황관리</span></div>
+  <div class="ph-ni"><span style="font-size:6px;color:#BCBCBC;">공지관리</span></div>
+</div>
+    </div>
+</div>
+</div></div>
+</div>
   <div class="fb-node-screen"><div class="ph-frame ph-lg">
   <div class="ph-island"></div>
   <div class="ph-screen">
@@ -10725,8 +10829,95 @@ window.addEventListener('load', handleHashRoute);
   </div>
 </div></div>
   
-</div><div class="fb-node" id="fbnode-s2b" style="left:1160px;top:400px;" onclick="fbFocus('s2b')">
-  <div class="fb-node-badge" style="background:#0041FF;">S1 날짜접힘</div>
+</div><div class="fb-node" id="fbnode-s2b" style="left:1020px;top:150px;" onclick="fbFocus('s2b')">
+  <div class="fb-node-badge" style="background:#0041FF;">S2b 카드펼침</div>
+  <div class="fb-node-screen"><div class="ph-frame ph-lg">
+  <div class="ph-island"></div>
+  <div class="ph-screen">
+    <div class="ph-body">
+<div class="ph-sb"><span>9:41</span><span style="font-size:7px;">●●● ▐▐ ▊</span></div>
+<div class="ph-hd" style="padding:5px 8px;border-bottom:none;">
+  <div class="ph-ht">상품관리.</div>
+  <div style="display:flex;gap:5px;align-items:center;">
+    <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="#191919" stroke-width="2"><path d="M3 18v-6a9 9 0 0118 0v6"/><path d="M21 19a2 2 0 01-2 2H5a2 2 0 01-2-2v-1h18v1z"/></svg>
+    <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="#191919" stroke-width="2"><path d="M18 8A6 6 0 006 8c0 7-3 9-3 9h18s-3-2-3-9"/><path d="M13.73 21a2 2 0 01-3.46 0"/></svg>
+    <div style="width:14px;height:14px;border-radius:50%;background:#3182F6;display:flex;align-items:center;justify-content:center;"><span style="color:#fff;font-size:6px;font-weight:800;">AI</span></div>
+  </div>
+</div>
+<div class="ph-drop" style="display:flex;align-items:center;gap:4px;margin:0 6px 3px;padding:5px 8px;border-radius:6px;">왕감자호 <span style="font-size:7px;color:#aaa;">20인승 · 9.77t</span><span style="font-size:7px;color:#aaa;margin-left:auto;">▼</span></div>
+<div class="ph-tabs"><div class="ph-tab on" style="border-bottom:2px solid #191919;color:#191919;">일자별상품</div><div class="ph-tab">출조종류 관리</div></div>
+<div style="padding:3px 6px;background:#fff;flex-shrink:0;">
+  <div style="display:flex;justify-content:center;align-items:center;gap:2px;font-size:8px;font-weight:800;color:#191919;margin-bottom:3px;">
+    <span style="color:#ccc;">‹</span> 2026년 2월 <span style="color:#ccc;">›</span>
+  </div>
+  <div style="display:flex;gap:3px;">
+    <span style="font-size:7px;font-weight:800;padding:2px 6px;border-radius:50px;background:#191919;color:#fff;">전체</span>
+    <span style="font-size:6px;padding:2px 4px;border-radius:50px;border:1px solid #eee;color:#767676;text-align:center;"><span style="font-size:4px;display:block;">금</span>27</span>
+    <span style="font-size:6px;padding:2px 4px;border-radius:50px;border:1px solid #eee;color:#767676;text-align:center;"><span style="font-size:4px;display:block;">토</span>28</span>
+  </div>
+</div>
+<div style="margin:3px 6px;background:#F7F8FA;border-radius:6px;padding:4px;">
+  <div style="font-size:5px;color:#888;margin-bottom:2px;padding:0 2px;">2026년 2월 일자별 현황</div>
+  <div style="display:grid;grid-template-columns:repeat(4,1fr);text-align:center;">
+    <div><div style="font-size:5px;color:#888;">노출</div><div style="font-size:10px;font-weight:900;color:#191919;">6개</div></div>
+    <div><div style="font-size:5px;color:#888;">숨김</div><div style="font-size:10px;font-weight:900;color:#191919;">0개</div></div>
+    <div><div style="font-size:5px;color:#888;">총 예약</div><div style="font-size:10px;font-weight:900;color:#191919;">24명</div></div>
+    <div><div style="font-size:5px;color:#888;">잔여</div><div style="font-size:10px;font-weight:900;color:#10B981;">24/70석</div></div>
+  </div>
+</div>
+<div class="ph-scroll">
+<div style="display:flex;justify-content:space-between;align-items:center;padding:5px 8px;background:#333;border-radius:4px;margin:2px 6px;flex-shrink:0;"><span style="font-size:8px;font-weight:800;color:#fff;">2026.02.27 (금)</span><span style="font-size:6px;color:#fff;opacity:.7;">3개</span><span style="font-size:6px;color:#aaa;">노출 3 · 예약 10/33명 ∧</span></div>
+<div style="margin:2px 6px;background:#fff;border:1px solid #eee;border-radius:6px;padding:5px 7px;flex-shrink:0;border-left:4px solid #3182F6;">
+  <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:3px;">
+    <div style="display:flex;align-items:center;gap:4px;">
+      <div style="width:20px;height:10px;border-radius:5px;background:#191919;position:relative;"><div style="width:7px;height:7px;border-radius:50%;background:#fff;position:absolute;top:1.5px;right:2px;"></div></div>
+      <span style="font-size:5px;font-weight:700;color:#10B981;">노출중</span>
+    </div>
+    <span style="font-size:5px;color:#888;"></span>
+  </div>
+  <div style="font-size:5px;color:#888;margin-bottom:1px;">출조종류: 갑오징어/주꾸미</div>
+  <div style="display:flex;justify-content:space-between;align-items:baseline;margin-bottom:1px;">
+    <span style="font-size:9px;font-weight:800;color:#191919;">갑오징어/주꾸미</span>
+    <div style="text-align:right;"><div style="font-size:9px;font-weight:800;color:#3182F6;">94,000원</div><div style="font-size:5px;color:#888;">대인 1건</div></div>
+  </div>
+  <div style="font-size:5px;color:#888;margin:1px 0;">갑오징어·주꾸미·05:00~15:30·당일·소인 70,000원</div>
+  <div style="display:flex;justify-content:space-between;font-size:6px;margin-top:2px;margin-bottom:3px;">
+    <span style="color:#555;">예약 <b style="color:#191919;">5명</b> / 판매 11석</span>
+    <span style="font-weight:800;color:#10B981;">5/11석</span>
+  </div>
+  <div style="display:grid;grid-template-columns:1fr 1fr 1fr;border-top:1px solid #eee;margin-top:3px;">
+    <div style="text-align:center;padding:3px 0;font-size:5px;font-weight:700;color:#191919;">인원조정</div>
+    <div style="text-align:center;padding:3px 0;font-size:5px;font-weight:800;color:#3182F6;border-left:1px solid #eee;border-right:1px solid #eee;">예약추가</div>
+    <div style="text-align:center;padding:3px 0;font-size:5px;font-weight:700;color:#191919;">예약명단(2)</div>
+  </div>
+  <div style="display:grid;grid-template-columns:1fr 1fr;border-top:1px solid #eee;margin-top:2px;">
+    <div style="text-align:center;padding:3px 0;font-size:5px;font-weight:700;color:#191919;">개별수정</div>
+    <div style="text-align:center;padding:3px 0;font-size:5px;font-weight:700;color:#FF5050;border-left:1px solid #eee;">즉시마감</div>
+  </div>
+</div>
+<div style="margin:2px 6px;background:#fff;border:1px solid #eee;border-radius:6px;padding:5px 7px;flex-shrink:0;border-left:4px solid #3182F6;">
+  <div style="display:flex;align-items:center;gap:4px;margin-bottom:2px;">
+    <div style="width:20px;height:10px;border-radius:5px;background:#191919;position:relative;"><div style="width:7px;height:7px;border-radius:50%;background:#fff;position:absolute;top:1.5px;right:2px;"></div></div>
+    <span style="font-size:5px;font-weight:700;color:#10B981;">노출중</span>
+  </div>
+  <div style="font-size:5px;color:#888;margin-bottom:1px;">출조종류: 영흥도 광어/우럭</div>
+  <div style="display:flex;justify-content:space-between;align-items:baseline;">
+    <span style="font-size:9px;font-weight:800;color:#191919;">영흥도 광어/우럭</span>
+    <span style="font-size:9px;font-weight:800;color:#3182F6;">120,000원</span>
+  </div>
+</div>
+</div>
+<div class="ph-nav" style="height:36px;background:#FBFBFB;border-top:1px solid #eee;display:flex;padding:3px 0 0;">
+  <div class="ph-ni"><span style="font-size:6px;color:#BCBCBC;">홈</span></div>
+  <div class="ph-ni"><span style="font-size:6px;color:#BCBCBC;">정산관리</span></div>
+  <div class="ph-ni on"><span style="font-size:6px;color:#191919;font-weight:800;">상품관리</span></div>
+  <div class="ph-ni"><span style="font-size:6px;color:#BCBCBC;">조황관리</span></div>
+  <div class="ph-ni"><span style="font-size:6px;color:#BCBCBC;">공지관리</span></div>
+</div>
+    </div>
+</div>
+</div></div>
+</div>
   <div class="fb-node-screen"><div class="ph-frame ph-lg">
   <div class="ph-island"></div>
   <div class="ph-screen">
@@ -10778,9 +10969,53 @@ window.addEventListener('load', handleHashRoute);
 </div>
   </div>
 </div></div>
-  <div class="fb-msg-panel"><div class="fb-msg"><span class="fb-msg-cat" style="background:#E8F8F1;color:#00A86B;">💬 Toast <b>T01</b></span><span class="fb-msg-txt">노출 상태 변경</span><span class="fb-msg-trg">▸ 노출 토글</span></div><div class="fb-msg"><span class="fb-msg-cat" style="background:#E8F8F1;color:#00A86B;">💬 Toast <b>T02</b></span><span class="fb-msg-txt">즉시 마감 처리</span><span class="fb-msg-trg">▸ 즉시마감 버튼</span></div><div class="fb-msg"><span class="fb-msg-cat" style="background:#FFF4E5;color:#C96A00;">⚠️ Confirm <b>C02</b></span><span class="fb-msg-txt">잔여 N석 폐기 마감</span><span class="fb-msg-trg">▸ 즉시마감</span></div><div class="fb-msg"><span class="fb-msg-cat" style="background:#FFF4E5;color:#C96A00;">⚠️ Confirm <b>C03</b></span><span class="fb-msg-txt">노출OFF + 예약유지</span><span class="fb-msg-trg">▸ 노출끄기 시</span></div></div>
-</div><div class="fb-node" id="fbnode-m1" style="left:1800px;top:30px;" onclick="fbFocus('m1')">
+  <div class="fb-msg"><span class="fb-msg-cat" style="background:#E8F8F1;color:#00A86B;">💬 Toast <b>T02</b></span><span class="fb-msg-txt">즉시 마감 처리</span><span class="fb-msg-trg">▸ 즉시마감 버튼</span></div><div class="fb-msg"><span class="fb-msg-cat" style="background:#FFF4E5;color:#C96A00;">⚠️ Confirm <b>C02</b></span><span class="fb-msg-txt">잔여 N석 폐기 마감</span><span class="fb-msg-trg">▸ 즉시마감</span></div><div class="fb-msg"><span class="fb-msg-cat" style="background:#FFF4E5;color:#C96A00;">⚠️ Confirm <b>C03</b></span><span class="fb-msg-txt">노출OFF + 예약유지</span><span class="fb-msg-trg">▸ 노출끄기 시</span></div></div>
+</div><div class="fb-node" id="fbnode-m1" style="left:1680px;top:50px;" onclick="fbFocus('m1')">
   <div class="fb-node-badge" style="background:#00A86B;">M1 인원조정</div>
+  <div class="fb-node-screen"><div class="ph-frame ph-lg">
+  <div class="ph-island"></div>
+  <div class="ph-screen">
+    <div class="ph-body">
+<div class="ph-dim">
+<div class="ph-modal" style="opacity:0.3;pointer-events:none;">
+<div class="ph-sb"><span>9:41</span><span style="font-size:7px;">●●● ▐▐ ▊</span></div>
+<div style="height:60px;background:#f5f5f5;opacity:0.5;"></div>
+</div>
+<div class="ph-modal" style="border-radius:12px 12px 0 0;">
+  <div class="ph-mhd"><div class="ph-mtt">인원 조정</div><span style="font-size:14px;cursor:pointer;">×</span></div>
+  <div class="ph-mbody">
+    <div class="ph-mrow"><div class="ph-mlbl">· 현재 예약 <b style="color:#3182F6;">5명</b></div></div>
+    <div class="ph-mrow">
+      <div style="display:flex;align-items:center;justify-content:center;gap:8px;margin:5px 0;">
+        <button style="width:24px;height:24px;border:1px solid #eee;border-radius:4px;background:#fff;cursor:pointer;font-size:10px;font-weight:700;">−</button>
+        <div style="display:flex;align-items:center;justify-content:center;width:40px;height:40px;border:1.5px solid #eee;border-radius:6px;font-size:18px;font-weight:900;color:#191919;">11</div>
+        <button style="width:24px;height:24px;border:1px solid #eee;border-radius:4px;background:#fff;cursor:pointer;font-size:10px;font-weight:700;">+</button>
+      </div>
+    </div>
+    <div style="display:flex;gap:2px;margin:5px 0;">
+      <button style="flex:1;font-size:6px;font-weight:700;padding:4px;border:1px solid #eee;border-radius:3px;cursor:pointer;">+1</button>
+      <button style="flex:1;font-size:6px;font-weight:700;padding:4px;border:1px solid #eee;border-radius:3px;cursor:pointer;">+2</button>
+      <button style="flex:1;font-size:6px;font-weight:700;padding:4px;border:1px solid #eee;border-radius:3px;cursor:pointer;">+3</button>
+      <button style="flex:1;font-size:6px;font-weight:700;padding:4px;border:1px solid #eee;border-radius:3px;cursor:pointer;">+5</button>
+      <button style="flex:1;font-size:6px;font-weight:700;padding:4px;border:1px solid #FFCDD2;border-radius:3px;color:#FF5050;cursor:pointer;">마감</button>
+    </div>
+    <div style="display:grid;grid-template-columns:1fr 1fr 1fr 1fr;gap:3px;margin:5px 0;font-size:5px;font-weight:700;">
+      <div style="background:#F5F5F7;padding:4px;border-radius:3px;text-align:center;"><div style="color:#888;margin-bottom:1px;">총 정원</div><div style="color:#191919;font-size:8px;font-weight:800;">11명</div></div>
+      <div style="background:#EBF0FF;padding:4px;border-radius:3px;text-align:center;"><div style="color:#3361CC;margin-bottom:1px;">예약</div><div style="color:#3182F6;font-size:8px;font-weight:800;">5명</div></div>
+      <div style="background:#E8F8F1;padding:4px;border-radius:3px;text-align:center;"><div style="color:#00A86B;margin-bottom:1px;">잔여</div><div style="color:#00A86B;font-size:8px;font-weight:800;">6석</div></div>
+      <div style="background:#FFF9E6;padding:4px;border-radius:3px;text-align:center;"><div style="color:#C96A00;margin-bottom:1px;">점유율</div><div style="color:#C96A00;font-size:8px;font-weight:800;">45%</div></div>
+    </div>
+  </div>
+  <div class="ph-mfoot">
+    <button style="background:#fff;border:1px solid #eee;border-radius:3px;font-size:7px;font-weight:700;cursor:pointer;">취소</button>
+    <button style="background:#3182F6;color:#fff;border:none;border-radius:3px;font-size:7px;font-weight:700;cursor:pointer;">저장</button>
+  </div>
+</div>
+</div>
+    </div>
+</div>
+</div></div>
+</div>
   <div class="fb-node-screen"><div class="ph-frame ph-lg">
   <div class="ph-island"></div>
   <div class="ph-screen">
@@ -10842,9 +11077,101 @@ window.addEventListener('load', handleHashRoute);
     </div>
   </div>
 </div></div>
-  <div class="fb-msg-panel"><div class="fb-msg"><span class="fb-msg-cat" style="background:#E8F8F1;color:#00A86B;">💬 Toast <b>T03</b></span><span class="fb-msg-txt">판매 좌석 변경</span><span class="fb-msg-trg">▸ 저장</span></div><div class="fb-msg"><span class="fb-msg-cat" style="background:#FFF4E5;color:#C96A00;">⚠️ Confirm <b>C05</b></span><span class="fb-msg-txt">즉시 마감 확인</span><span class="fb-msg-trg">▸ 즉시마감</span></div><div class="fb-msg"><span class="fb-msg-cat" style="background:#FDECEA;color:#D93025;">🚫 Alert <b>C04</b></span><span class="fb-msg-txt">좌석 축소 제한</span><span class="fb-msg-trg">▸ 결제완료 건 존재</span></div><div class="fb-msg"><span class="fb-msg-cat" style="background:#FDECEA;color:#D93025;">🚫 Alert <b>C06</b></span><span class="fb-msg-txt">이미 마감 상태</span><span class="fb-msg-trg">▸ 마감상품</span></div><div class="fb-msg"><span class="fb-msg-cat" style="background:#FDECEA;color:#D93025;">🚫 Alert <b>C07</b></span><span class="fb-msg-txt">1석 이상 설정 필요</span><span class="fb-msg-trg">▸ 0석 입력</span></div></div>
-</div><div class="fb-node" id="fbnode-m2" style="left:1800px;top:720px;" onclick="fbFocus('m2')">
+  <div class="fb-msg"><span class="fb-msg-cat" style="background:#FFF4E5;color:#C96A00;">⚠️ Confirm <b>C05</b></span><span class="fb-msg-txt">즉시 마감 확인</span><span class="fb-msg-trg">▸ 즉시마감</span></div><div class="fb-msg"><span class="fb-msg-cat" style="background:#FDECEA;color:#D93025;">🚫 Alert <b>C04</b></span><span class="fb-msg-txt">좌석 축소 제한</span><span class="fb-msg-trg">▸ 결제완료 건 존재</span></div><div class="fb-msg"><span class="fb-msg-cat" style="background:#FDECEA;color:#D93025;">🚫 Alert <b>C06</b></span><span class="fb-msg-txt">이미 마감 상태</span><span class="fb-msg-trg">▸ 마감상품</span></div><div class="fb-msg"><span class="fb-msg-cat" style="background:#FDECEA;color:#D93025;">🚫 Alert <b>C07</b></span><span class="fb-msg-txt">1석 이상 설정 필요</span><span class="fb-msg-trg">▸ 0석 입력</span></div></div>
+</div><div class="fb-node" id="fbnode-m2" style="left:1680px;top:820px;" onclick="fbFocus('m2')">
   <div class="fb-node-badge" style="background:#00A86B;">M2 예약추가</div>
+  <div class="fb-node-screen"><div class="ph-frame ph-lg">
+  <div class="ph-island"></div>
+  <div class="ph-screen">
+    <div class="ph-body">
+<div class="ph-sb"><span>9:41</span><span style="font-size:7px;">●●● ▐▐ ▊</span></div>
+<div style="padding:6px 8px;border-bottom:1px solid #eee;display:flex;align-items:center;justify-content:space-between;">
+  <div style="font-size:9px;font-weight:800;">예약 직접 추가</div>
+  <span style="font-size:12px;cursor:pointer;">×</span>
+</div>
+<div style="padding:4px 8px;font-size:5px;color:#888;border-bottom:1px solid #eee;">전화·타플랫폼·현장 예약을 직접 등록합니다</div>
+<div class="ph-scroll" style="padding:6px;">
+<div class="ph-mrow">
+  <div class="ph-mlbl">예약 경로 <span style="color:#FF5050;">*</span></div>
+  <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:2px;margin-bottom:3px;">
+    <button style="background:#191919;color:#fff;border:none;border-radius:3px;padding:3px;font-size:5px;font-weight:700;cursor:pointer;">전화예약</button>
+    <button style="background:#fff;border:1px solid #eee;color:#191919;border-radius:3px;padding:3px;font-size:5px;font-weight:700;cursor:pointer;">네이버</button>
+    <button style="background:#fff;border:1px solid #eee;color:#191919;border-radius:3px;padding:3px;font-size:5px;font-weight:700;cursor:pointer;">카카오</button>
+  </div>
+  <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:2px;">
+    <button style="background:#fff;border:1px solid #eee;color:#191919;border-radius:3px;padding:3px;font-size:5px;font-weight:700;cursor:pointer;">갈치365</button>
+    <button style="background:#fff;border:1px solid #eee;color:#191919;border-radius:3px;padding:3px;font-size:5px;font-weight:700;cursor:pointer;">직접방문</button>
+    <button style="background:#fff;border:1px solid #eee;color:#191919;border-radius:3px;padding:3px;font-size:5px;font-weight:700;cursor:pointer;">기타</button>
+  </div>
+</div>
+<div class="ph-mrow">
+  <div class="ph-mlbl">예약자 이름 <span style="color:#FF5050;">*</span></div>
+  <input class="ph-minp" style="border:1px solid #eee;" value="홍길동">
+</div>
+<div class="ph-mrow">
+  <div class="ph-mlbl">연락처 <span style="color:#FF5050;">*</span></div>
+  <input class="ph-minp" style="border:1px solid #eee;" value="010-0000-0000">
+</div>
+<div class="ph-mrow">
+  <div class="ph-mlbl">상품 선택 <span style="color:#FF5050;">*</span></div>
+  <input class="ph-minp" style="border:1px solid #eee;" value="상품을 선택해주세요">
+  <div style="margin-top:2px;display:flex;gap:2px;">
+    <span style="font-size:4px;font-weight:700;background:#3182F6;color:#fff;padding:1px 3px;border-radius:2px;">05:00~15:30</span>
+    <span style="font-size:4px;font-weight:700;background:#3182F6;color:#fff;padding:1px 3px;border-radius:2px;">5/11석</span>
+  </div>
+</div>
+<div class="ph-mrow">
+  <div class="ph-mlbl">탑승 인원</div>
+  <div style="display:flex;gap:3px;margin-bottom:2px;"><span style="font-size:6px;color:#888;">대인</span><button style="width:16px;height:16px;border:1px solid #eee;border-radius:2px;font-size:8px;cursor:pointer;">−</button><input class="ph-minp" style="width:30px;text-align:center;border:1px solid #eee;" value="1"><button style="width:16px;height:16px;border:1px solid #eee;border-radius:2px;font-size:8px;cursor:pointer;">+</button></div>
+  <div style="display:flex;gap:3px;"><span style="font-size:6px;color:#888;">소인</span><button style="width:16px;height:16px;border:1px solid #eee;border-radius:2px;font-size:8px;cursor:pointer;">−</button><input class="ph-minp" style="width:30px;text-align:center;border:1px solid #eee;" value="0"><button style="width:16px;height:16px;border:1px solid #eee;border-radius:2px;font-size:8px;cursor:pointer;">+</button></div>
+</div>
+<div class="ph-mrow">
+  <div class="ph-mlbl">출항시간 / 입항시간</div>
+  <div style="display:flex;gap:2px;font-size:6px;">
+    <input class="ph-minp" style="width:50%;border:1px solid #eee;" value="05:00">
+    <span style="align-self:center;">/</span>
+    <input class="ph-minp" style="width:50%;border:1px solid #eee;" value="15:30">
+  </div>
+</div>
+<div class="ph-mrow">
+  <div class="ph-mlbl">결제 방법</div>
+  <div style="display:grid;grid-template-columns:1fr 1fr;gap:2px;">
+    <button style="background:#191919;color:#fff;border:none;border-radius:3px;padding:3px;font-size:5px;font-weight:700;cursor:pointer;">직접입금</button>
+    <button style="background:#fff;border:1px solid #eee;color:#191919;border-radius:3px;padding:3px;font-size:5px;font-weight:700;cursor:pointer;">현금</button>
+  </div>
+  <div style="display:grid;grid-template-columns:1fr 1fr;gap:2px;margin-top:2px;">
+    <button style="background:#fff;border:1px solid #eee;color:#191919;border-radius:3px;padding:3px;font-size:5px;font-weight:700;cursor:pointer;">카카오페이</button>
+    <button style="background:#fff;border:1px solid #eee;color:#191919;border-radius:3px;padding:3px;font-size:5px;font-weight:700;cursor:pointer;">네이버페이</button>
+  </div>
+</div>
+<div class="ph-mrow">
+  <div class="ph-mlbl">결제 금액</div>
+  <div style="display:flex;justify-content:space-between;align-items:center;">
+    <span style="font-size:5px;color:#3182F6;font-weight:700;">자동계산</span>
+    <input class="ph-minp" style="border:1px solid #eee;width:80px;text-align:right;" value="94000">
+    <span style="font-size:6px;color:#191919;">원</span>
+  </div>
+</div>
+<div class="ph-mrow">
+  <div class="ph-mlbl">예약 상태</div>
+  <div style="display:grid;grid-template-columns:1fr 1fr;gap:2px;">
+    <button style="background:#fff;border:1.5px solid #3182F6;color:#3182F6;border-radius:3px;padding:3px;font-size:5px;font-weight:700;cursor:pointer;">예약완료</button>
+    <button style="background:#fff;border:1px solid #eee;color:#888;border-radius:3px;padding:3px;font-size:5px;font-weight:700;cursor:pointer;">입금대기</button>
+  </div>
+</div>
+<div class="ph-mrow">
+  <div class="ph-mlbl">메모</div>
+  <textarea class="ph-minp" style="border:1px solid #eee;height:30px;">특이사항, 낚시 경력 등</textarea>
+</div>
+</div>
+<div class="ph-mfoot" style="border-top:1px solid #eee;">
+  <button style="background:#fff;border:1px solid #eee;border-radius:3px;font-size:7px;font-weight:700;cursor:pointer;">취소</button>
+  <button style="background:#FF5050;color:#fff;border:none;border-radius:3px;font-size:7px;font-weight:700;cursor:pointer;">수정 저장</button>
+</div>
+    </div>
+</div>
+</div></div>
+</div>
   <div class="fb-node-screen"><div class="ph-frame ph-lg">
   <div class="ph-island"></div>
   <div class="ph-screen">
@@ -10910,9 +11237,46 @@ window.addEventListener('load', handleHashRoute);
 </div>
   </div>
 </div></div>
-  <div class="fb-msg-panel"><div class="fb-msg"><span class="fb-msg-cat" style="background:#E8F8F1;color:#00A86B;">💬 Toast <b>T04</b></span><span class="fb-msg-txt">예약 등록 완료</span><span class="fb-msg-trg">▸ 등록</span></div><div class="fb-msg"><span class="fb-msg-cat" style="background:#FDECEA;color:#D93025;">🚫 Alert <b>C08</b></span><span class="fb-msg-txt">매진상품 — 좌석추가 필요</span><span class="fb-msg-trg">▸ 매진상품</span></div><div class="fb-msg"><span class="fb-msg-cat" style="background:#FDECEA;color:#D93025;">🚫 Alert <b>C09</b></span><span class="fb-msg-txt">잔여석 초과</span><span class="fb-msg-trg">▸ 정원초과</span></div><div class="fb-msg"><span class="fb-msg-cat" style="background:#FFF4E5;color:#C96A00;">⚠️ Confirm <b>C10</b></span><span class="fb-msg-txt">출항 당일 예약</span><span class="fb-msg-trg">▸ 당일예약</span></div><div class="fb-msg"><span class="fb-msg-cat" style="background:#F3EEFF;color:#3B1198;">💛 알림톡 <b>P01</b></span><span class="fb-msg-txt">예약확인 (번호/상품/일시/금액)</span><span class="fb-msg-trg">▸ 예약완료→예약자</span></div><div class="fb-msg"><span class="fb-msg-cat" style="background:#EBF0FF;color:#0041FF;">🔔 앱푸시 <b>P04</b></span><span class="fb-msg-txt">새 예약 알림</span><span class="fb-msg-trg">▸ 선주에게</span></div></div>
-</div><div class="fb-node" id="fbnode-m3" style="left:1800px;top:1410px;" onclick="fbFocus('m3')">
+  <div class="fb-msg"><span class="fb-msg-cat" style="background:#FDECEA;color:#D93025;">🚫 Alert <b>C08</b></span><span class="fb-msg-txt">매진상품 — 좌석추가 필요</span><span class="fb-msg-trg">▸ 매진상품</span></div><div class="fb-msg"><span class="fb-msg-cat" style="background:#FDECEA;color:#D93025;">🚫 Alert <b>C09</b></span><span class="fb-msg-txt">잔여석 초과</span><span class="fb-msg-trg">▸ 정원초과</span></div><div class="fb-msg"><span class="fb-msg-cat" style="background:#FFF4E5;color:#C96A00;">⚠️ Confirm <b>C10</b></span><span class="fb-msg-txt">출항 당일 예약</span><span class="fb-msg-trg">▸ 당일예약</span></div><div class="fb-msg"><span class="fb-msg-cat" style="background:#F3EEFF;color:#3B1198;">💛 알림톡 <b>P01</b></span><span class="fb-msg-txt">예약확인 (번호/상품/일시/금액)</span><span class="fb-msg-trg">▸ 예약완료→예약자</span></div><div class="fb-msg"><span class="fb-msg-cat" style="background:#EBF0FF;color:#0041FF;">🔔 앱푸시 <b>P04</b></span><span class="fb-msg-txt">새 예약 알림</span><span class="fb-msg-trg">▸ 선주에게</span></div></div>
+</div><div class="fb-node" id="fbnode-m3" style="left:1680px;top:1620px;" onclick="fbFocus('m3')">
   <div class="fb-node-badge" style="background:#6D28D9;">M3 예약명단</div>
+  <div class="fb-node-screen"><div class="ph-frame ph-lg">
+  <div class="ph-island"></div>
+  <div class="ph-screen">
+    <div class="ph-body">
+<div class="ph-dim" style="opacity:0.3;">
+<div style="height:180px;background:#f5f5f5;"></div>
+</div>
+<div class="ph-modal" style="border-radius:12px 12px 0 0;max-height:220px;">
+  <div class="ph-mhd"><div class="ph-mtt">예약자 명단</div><span style="font-size:14px;cursor:pointer;">×</span></div>
+  <div style="padding:6px 8px;border-bottom:1px solid #eee;font-size:5px;color:#888;"><span style="color:#191919;font-weight:800;">갑오징어/주꾸미</span> · 2026년 2월 27일 · 총 <b>2건</b></div>
+  <div class="ph-mbody" style="max-height:120px;">
+    <div style="padding:6px 8px;border-bottom:1px solid #eee;margin:-5px -8px 0;">
+      <div style="font-size:7px;font-weight:800;color:#191919;margin-bottom:2px;">김채린</div>
+      <div style="font-size:5px;color:#888;margin-bottom:2px;">대인 1명 · 010-5678-1234</div>
+      <div style="display:flex;gap:2px;">
+        <span style="font-size:4px;font-weight:700;background:#FF5050;color:#fff;padding:1px 3px;border-radius:2px;">취소완료</span>
+        <span style="font-size:4px;color:#888;">직접입금</span>
+      </div>
+    </div>
+    <div style="padding:6px 8px;margin:-5px -8px 0;">
+      <div style="font-size:7px;font-weight:800;color:#191919;margin-bottom:2px;">서현일테스트</div>
+      <div style="font-size:5px;color:#888;margin-bottom:2px;">대인 2명 · 010-9999-0001</div>
+      <div style="display:flex;gap:2px;">
+        <span style="font-size:4px;font-weight:700;background:#00A86B;color:#fff;padding:1px 3px;border-radius:2px;">이용완료</span>
+        <span style="font-size:4px;color:#888;">신용카드</span>
+      </div>
+    </div>
+  </div>
+  <div class="ph-mfoot">
+    <button style="background:#FF5050;color:#fff;border:none;border-radius:3px;font-size:7px;font-weight:700;cursor:pointer;">명단 복사</button>
+    <button style="background:#fff;border:1px solid #eee;border-radius:3px;font-size:7px;font-weight:700;cursor:pointer;">닫기</button>
+  </div>
+</div>
+    </div>
+</div>
+</div></div>
+</div>
   <div class="fb-node-screen"><div class="ph-frame ph-lg">
   <div class="ph-island"></div>
   <div class="ph-screen">
@@ -10968,9 +11332,66 @@ window.addEventListener('load', handleHashRoute);
     </div>
   </div>
 </div></div>
-  <div class="fb-msg-panel"><div class="fb-msg"><span class="fb-msg-cat" style="background:#E8F8F1;color:#00A86B;">💬 Toast <b>T05</b></span><span class="fb-msg-txt">연락처 복사</span><span class="fb-msg-trg">▸ 복사 버튼</span></div><div class="fb-msg"><span class="fb-msg-cat" style="background:#E8F8F1;color:#00A86B;">💬 Toast <b>T06</b></span><span class="fb-msg-txt">명단 복사</span><span class="fb-msg-trg">▸ 명단 복사</span></div><div class="fb-msg"><span class="fb-msg-cat" style="background:#FFF4E5;color:#C96A00;">⚠️ Confirm <b>C13</b></span><span class="fb-msg-txt">예약취소 + 환불안내</span><span class="fb-msg-trg">▸ 취소 버튼</span></div><div class="fb-msg"><span class="fb-msg-cat" style="background:#E8F8F1;color:#00A86B;">💬 Toast <b>T11</b></span><span class="fb-msg-txt">예약 취소됨</span><span class="fb-msg-trg">▸ 취소 확인</span></div><div class="fb-msg"><span class="fb-msg-cat" style="background:#F3EEFF;color:#3B1198;">💛 알림톡 <b>P02</b></span><span class="fb-msg-txt">취소+환불 안내</span><span class="fb-msg-trg">▸ 취소→예약자</span></div><div class="fb-msg"><span class="fb-msg-cat" style="background:#EBF0FF;color:#0041FF;">🔔 앱푸시 <b>P05</b></span><span class="fb-msg-txt">취소 요청 알림</span><span class="fb-msg-trg">▸ 선주에게</span></div></div>
-</div><div class="fb-node" id="fbnode-m4" style="left:2460px;top:1410px;" onclick="fbFocus('m4')">
-  <div class="fb-node-badge" style="background:#6D28D9;">M4 일자별수정</div>
+  <div class="fb-msg"><span class="fb-msg-cat" style="background:#E8F8F1;color:#00A86B;">💬 Toast <b>T06</b></span><span class="fb-msg-txt">명단 복사</span><span class="fb-msg-trg">▸ 명단 복사</span></div><div class="fb-msg"><span class="fb-msg-cat" style="background:#FFF4E5;color:#C96A00;">⚠️ Confirm <b>C13</b></span><span class="fb-msg-txt">예약취소 + 환불안내</span><span class="fb-msg-trg">▸ 취소 버튼</span></div><div class="fb-msg"><span class="fb-msg-cat" style="background:#E8F8F1;color:#00A86B;">💬 Toast <b>T11</b></span><span class="fb-msg-txt">예약 취소됨</span><span class="fb-msg-trg">▸ 취소 확인</span></div><div class="fb-msg"><span class="fb-msg-cat" style="background:#F3EEFF;color:#3B1198;">💛 알림톡 <b>P02</b></span><span class="fb-msg-txt">취소+환불 안내</span><span class="fb-msg-trg">▸ 취소→예약자</span></div><div class="fb-msg"><span class="fb-msg-cat" style="background:#EBF0FF;color:#0041FF;">🔔 앱푸시 <b>P05</b></span><span class="fb-msg-txt">취소 요청 알림</span><span class="fb-msg-trg">▸ 선주에게</span></div></div>
+</div><div class="fb-node" id="fbnode-m4" style="left:2350px;top:1620px;" onclick="fbFocus('m4')">
+  <div class="fb-node-badge" style="background:#6D28D9;">M4 개별수정</div>
+  <div class="fb-node-screen"><div class="ph-frame ph-lg">
+  <div class="ph-island"></div>
+  <div class="ph-screen">
+    <div class="ph-body">
+<div class="ph-sb"><span>9:41</span><span style="font-size:7px;">●●● ▐▐ ▊</span></div>
+<div style="padding:6px 8px;border-bottom:1px solid #eee;display:flex;align-items:center;justify-content:space-between;">
+  <div style="font-size:9px;font-weight:800;">일자별 상품 개별수정</div>
+  <span style="font-size:12px;cursor:pointer;">×</span>
+</div>
+<div style="padding:4px 8px;font-size:5px;color:#888;border-bottom:1px solid #eee;">2026.02.27 · 갑오징어/주꾸미</div>
+<div class="ph-scroll" style="padding:6px;">
+<div class="ph-warn" style="border:1px dashed #FFD54F;background:#FFFBEB;">⚠ 이 날짜 상품만 개별적으로 수정됩니다. 출조종류 설정은 변경되지 않습니다.</div>
+<div class="ph-mrow">
+  <div class="ph-mlbl">상품명</div>
+  <input class="ph-minp" style="border:1px solid #eee;" value="갑오징어/주꾸미">
+</div>
+<div class="ph-mrow">
+  <div class="ph-mlbl">출조/복귀 시간</div>
+  <div style="display:flex;gap:2px;font-size:6px;">
+    <input class="ph-minp" style="width:50%;border:1px solid #eee;" value="05:00">
+    <span style="align-self:center;">~</span>
+    <input class="ph-minp" style="width:50%;border:1px solid #eee;" value="15:30">
+  </div>
+  <div style="display:flex;gap:2px;margin-top:2px;">
+    <button style="background:#3182F6;color:#fff;border:none;border-radius:3px;padding:3px;font-size:5px;font-weight:700;cursor:pointer;flex:1;">당일 복귀</button>
+    <button style="background:#fff;border:1px solid #eee;color:#191919;border-radius:3px;padding:3px;font-size:5px;font-weight:700;cursor:pointer;flex:1;">익일 복귀</button>
+  </div>
+</div>
+<div class="ph-mrow">
+  <div class="ph-mlbl">판매 좌석 수</div>
+  <input class="ph-minp" style="border:1px solid #eee;" value="11">
+  <div style="font-size:5px;color:#FF5050;margin-top:1px;">현재 예약 5명 이하로 줄일 수 없습니다</div>
+</div>
+<div class="ph-mrow">
+  <div class="ph-mlbl" style="margin-bottom:3px;">요금</div>
+  <div style="font-size:5px;color:#888;margin-bottom:2px;">대인</div>
+  <div style="display:flex;gap:2px;margin-bottom:3px;">
+    <div style="flex:1;"><span style="font-size:5px;color:#888;display:block;">평일</span><input class="ph-minp" style="border:1px solid #eee;font-size:7px;" value="94000"></div>
+    <div style="flex:1;"><span style="font-size:5px;color:#888;display:block;">주말</span><input class="ph-minp" style="border:1px solid #eee;font-size:7px;" value="110000"></div>
+  </div>
+  <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:3px;"><span style="font-size:5px;color:#888;">주말 요금 별도 적용</span><div style="width:20px;height:12px;border-radius:6px;background:#3182F6;position:relative;"><div style="width:9px;height:9px;border-radius:50%;background:#fff;position:absolute;top:1.5px;right:2px;"></div></div></div>
+  <div style="font-size:5px;color:#888;margin-bottom:2px;">소인</div>
+  <div style="display:flex;gap:2px;margin-bottom:3px;">
+    <div style="flex:1;"><span style="font-size:5px;color:#888;display:block;">평일</span><input class="ph-minp" style="border:1px solid #eee;font-size:7px;" value="70000"></div>
+    <div style="flex:1;"><span style="font-size:5px;color:#888;display:block;">주말</span><input class="ph-minp" style="border:1px solid #eee;font-size:7px;" value="84000"></div>
+  </div>
+  <div style="display:flex;align-items:center;justify-content:space-between;"><span style="font-size:5px;color:#888;">소인 요금 사용</span><div style="width:20px;height:12px;border-radius:6px;background:#3182F6;position:relative;"><div style="width:9px;height:9px;border-radius:50%;background:#fff;position:absolute;top:1.5px;right:2px;"></div></div></div>
+</div>
+</div>
+<div class="ph-mfoot" style="border-top:1px solid #eee;">
+  <button style="background:#fff;border:1px solid #eee;border-radius:3px;font-size:7px;font-weight:700;cursor:pointer;">취소</button>
+  <button style="background:#FF5050;color:#fff;border:none;border-radius:3px;font-size:7px;font-weight:700;cursor:pointer;">수정 저장</button>
+</div>
+    </div>
+</div>
+</div></div>
+</div>
   <div class="fb-node-screen"><div class="ph-frame ph-lg">
   <div class="ph-island"></div>
   <div class="ph-screen">
@@ -11031,9 +11452,72 @@ window.addEventListener('load', handleHashRoute);
 </div>
   </div>
 </div></div>
-  <div class="fb-msg-panel"><div class="fb-msg"><span class="fb-msg-cat" style="background:#FFF4E5;color:#C96A00;">⚠️ Confirm <b>C13</b></span><span class="fb-msg-txt">예약취소 + 알림톡 발송</span><span class="fb-msg-trg">▸ 취소 버튼</span></div><div class="fb-msg"><span class="fb-msg-cat" style="background:#E8F8F1;color:#00A86B;">💬 Toast <b>T11</b></span><span class="fb-msg-txt">예약 취소됨</span><span class="fb-msg-trg">▸ 취소 확인</span></div><div class="fb-msg"><span class="fb-msg-cat" style="background:#F3EEFF;color:#3B1198;">💛 알림톡 <b>P02</b></span><span class="fb-msg-txt">취소+환불 안내</span><span class="fb-msg-trg">▸ 예약자에게</span></div></div>
-</div><div class="fb-node" id="fbnode-s4" style="left:620px;top:1600px;" onclick="fbFocus('s4')">
+  <div class="fb-msg"><span class="fb-msg-cat" style="background:#E8F8F1;color:#00A86B;">💬 Toast <b>T11</b></span><span class="fb-msg-txt">예약 취소됨</span><span class="fb-msg-trg">▸ 취소 확인</span></div><div class="fb-msg"><span class="fb-msg-cat" style="background:#F3EEFF;color:#3B1198;">💛 알림톡 <b>P02</b></span><span class="fb-msg-txt">취소+환불 안내</span><span class="fb-msg-trg">▸ 예약자에게</span></div></div>
+</div><div class="fb-node" id="fbnode-s4" style="left:80px;top:1000px;" onclick="fbFocus('s4')">
   <div class="fb-node-badge" style="background:#C96A00;">S4 출조종류관리</div>
+  <div class="fb-node-screen"><div class="ph-frame ph-lg">
+  <div class="ph-island"></div>
+  <div class="ph-screen">
+    <div class="ph-body">
+<div class="ph-sb"><span>9:41</span><span style="font-size:7px;">●●● ▐▐ ▊</span></div>
+<div class="ph-hd" style="padding:5px 8px;border-bottom:none;">
+  <div class="ph-ht">상품관리.</div>
+  <div style="display:flex;gap:5px;align-items:center;">
+    <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="#191919" stroke-width="2"><path d="M3 18v-6a9 9 0 0118 0v6"/><path d="M21 19a2 2 0 01-2 2H5a2 2 0 01-2-2v-1h18v1z"/></svg>
+    <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="#191919" stroke-width="2"><path d="M18 8A6 6 0 006 8c0 7-3 9-3 9h18s-3-2-3-9"/><path d="M13.73 21a2 2 0 01-3.46 0"/></svg>
+    <div style="width:14px;height:14px;border-radius:50%;background:#3182F6;display:flex;align-items:center;justify-content:center;"><span style="color:#fff;font-size:6px;font-weight:800;">AI</span></div>
+  </div>
+</div>
+<div class="ph-drop" style="display:flex;align-items:center;gap:4px;margin:0 6px 3px;padding:5px 8px;border-radius:6px;">왕감자호 <span style="font-size:7px;color:#aaa;">20인승 · 9.77t</span><span style="font-size:7px;color:#aaa;margin-left:auto;">▼</span></div>
+<div class="ph-tabs"><div class="ph-tab">일자별상품</div><div class="ph-tab on" style="border-bottom:2px solid #191919;color:#191919;">출조종류 관리</div></div>
+<div style="background:#EBF0FF;border-radius:4px;margin:3px 6px;padding:4px;flex-shrink:0;">
+  <div style="font-size:6px;font-weight:800;color:#3182F6;margin-bottom:2px;">출조종류 관리란?</div>
+  <div style="font-size:5px;color:#3361CC;line-height:1.4;">배의 운영 일정과 요금을 종류별로 미리 등록하면, 날짜별 상품이 자동으로 생성됩니다.</div>
+</div>
+<div style="text-align:right;padding:3px 6px;flex-shrink:0;">
+  <span style="display:inline-block;background:#3182F6;color:#fff;font-size:6px;font-weight:700;padding:3px 8px;border-radius:3px;cursor:pointer;">+ 출조종류 등록</span>
+</div>
+<div class="ph-scroll">
+<div style="margin:3px 6px;background:#fff;border:1px solid #eee;border-radius:6px;padding:5px;flex-shrink:0;">
+  <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:3px;">
+    <span style="font-size:8px;font-weight:800;color:#191919;">갑오징어/주꾸미</span>
+    <span style="font-size:5px;font-weight:700;background:#EBF0FF;color:#3182F6;padding:1px 4px;border-radius:2px;">출조일정 4건</span>
+  </div>
+  <div style="display:flex;gap:1px;margin-bottom:3px;flex-wrap:wrap;">
+    <span style="font-size:4px;font-weight:700;background:#F5F5F7;color:#767676;padding:2px 4px;border-radius:2px;">갑오징어</span>
+    <span style="font-size:4px;font-weight:700;background:#F5F5F7;color:#767676;padding:2px 4px;border-radius:2px;">주꾸미</span>
+  </div>
+  <div style="font-size:5px;color:#888;line-height:1.6;margin-bottom:3px;">
+    <div>운영기간 · 01/01~12/31</div>
+    <div>운영요일 · 월~일</div>
+    <div>출조시간 · 05:00~15:30(당일)</div>
+    <div>대인요금 · 94,000원/주말 110,000원</div>
+  </div>
+  <div style="display:flex;gap:1px;">
+    <button style="flex:1;font-size:5px;font-weight:700;padding:2px;border:1px solid #eee;border-radius:2px;cursor:pointer;">상품수정</button>
+    <button style="flex:1;font-size:5px;font-weight:700;padding:2px;border:1px solid #FFCDD2;color:#FF5050;border-radius:2px;cursor:pointer;">상품삭제</button>
+  </div>
+</div>
+<div style="margin:3px 6px;background:#fff;border:1px solid #eee;border-radius:6px;padding:5px;flex-shrink:0;">
+  <div style="font-size:8px;font-weight:800;color:#191919;margin-bottom:2px;">영흥도 광어/우럭</div>
+  <div style="font-size:5px;color:#888;">120,000원 · 당일</div>
+</div>
+<div style="margin:3px 6px;background:#fff;border:1px solid #eee;border-radius:6px;padding:5px;flex-shrink:0;">
+  <div style="font-size:8px;font-weight:800;color:#191919;margin-bottom:2px;">야간 쭈꾸미/낙지</div>
+  <div style="font-size:5px;color:#888;">85,000원 · 당일</div>
+</div>
+</div>
+<div class="ph-nav" style="height:36px;background:#FBFBFB;border-top:1px solid #eee;display:flex;padding:3px 0 0;">
+  <div class="ph-ni"><span style="font-size:6px;color:#BCBCBC;">홈</span></div>
+  <div class="ph-ni"><span style="font-size:6px;color:#BCBCBC;">정산관리</span></div>
+  <div class="ph-ni on"><span style="font-size:6px;color:#191919;font-weight:800;">상품관리</span></div>
+  <div class="ph-ni"><span style="font-size:6px;color:#BCBCBC;">조황관리</span></div>
+  <div class="ph-ni"><span style="font-size:6px;color:#BCBCBC;">공지관리</span></div>
+</div>
+    </div>
+</div>
+</div></div>
+</div>
   <div class="fb-node-screen"><div class="ph-frame ph-lg">
   <div class="ph-island"></div>
   <div class="ph-screen">
@@ -11109,8 +11593,103 @@ window.addEventListener('load', handleHashRoute);
   </div>
 </div></div>
   
-</div><div class="fb-node" id="fbnode-m5" style="left:1260px;top:2350px;" onclick="fbFocus('m5')">
+</div><div class="fb-node" id="fbnode-m5" style="left:80px;top:1980px;" onclick="fbFocus('m5')">
   <div class="fb-node-badge" style="background:#C96A00;">M5 출조종류등록</div>
+  <div class="fb-node-screen"><div class="ph-frame ph-lg">
+  <div class="ph-island"></div>
+  <div class="ph-screen">
+    <div class="ph-body">
+<div class="ph-sb"><span>9:41</span><span style="font-size:7px;">●●● ▐▐ ▊</span></div>
+<div style="padding:6px 8px;border-bottom:1px solid #eee;display:flex;align-items:center;justify-content:space-between;">
+  <div style="font-size:9px;font-weight:800;">출조종류 등록</div>
+  <span style="font-size:12px;cursor:pointer;">×</span>
+</div>
+<div class="ph-scroll" style="padding:6px;">
+<div class="ph-mrow">
+  <div class="ph-mlbl">상품명 <span style="color:#FF5050;">*</span></div>
+  <input class="ph-minp" style="border:1px solid #eee;color:#aaa;" placeholder="예) 갑오징어/주꾸미">
+</div>
+<div class="ph-mrow">
+  <div class="ph-mlbl">어종 <span style="color:#FF5050;">*</span></div>
+  <div style="display:flex;gap:2px;flex-wrap:wrap;">
+    <span style="font-size:5px;font-weight:700;background:#F5F5F7;color:#767676;padding:2px 5px;border-radius:3px;cursor:pointer;">갑오징어</span>
+    <span style="font-size:5px;font-weight:700;background:#F5F5F7;color:#767676;padding:2px 5px;border-radius:3px;cursor:pointer;">고등어</span>
+    <span style="font-size:5px;font-weight:700;background:#F5F5F7;color:#767676;padding:2px 5px;border-radius:3px;cursor:pointer;">광어</span>
+    <span style="font-size:5px;font-weight:700;background:#F5F5F7;color:#767676;padding:2px 5px;border-radius:3px;cursor:pointer;">낙지</span>
+    <span style="font-size:5px;font-weight:700;background:#F5F5F7;color:#767676;padding:2px 5px;border-radius:3px;cursor:pointer;">노래미</span>
+  </div>
+</div>
+<div class="ph-mrow">
+  <div class="ph-mlbl">탑승 인원</div>
+  <div style="display:flex;gap:2px;">
+    <input class="ph-minp" style="width:50%;border:1px solid #eee;font-size:7px;" placeholder="최소">
+    <span>~</span>
+    <input class="ph-minp" style="width:50%;border:1px solid #eee;font-size:7px;" placeholder="최대">
+  </div>
+</div>
+<div class="ph-mrow">
+  <div class="ph-mlbl">운영 기간</div>
+  <div style="display:flex;gap:2px;">
+    <input class="ph-minp" style="width:50%;border:1px solid #eee;font-size:7px;" value="0101">
+    <span>~</span>
+    <input class="ph-minp" style="width:50%;border:1px solid #eee;font-size:7px;" value="1231">
+  </div>
+</div>
+<div class="ph-mrow">
+  <div class="ph-mlbl">운영 요일</div>
+  <div style="display:grid;grid-template-columns:repeat(7,1fr);gap:1px;font-size:5px;font-weight:700;">
+    <label style="display:flex;gap:2px;"><input type="checkbox"> 월</label>
+    <label style="display:flex;gap:2px;"><input type="checkbox"> 화</label>
+    <label style="display:flex;gap:2px;"><input type="checkbox"> 수</label>
+    <label style="display:flex;gap:2px;"><input type="checkbox"> 목</label>
+    <label style="display:flex;gap:2px;"><input type="checkbox"> 금</label>
+    <label style="display:flex;gap:2px;"><input type="checkbox"> 토</label>
+    <label style="display:flex;gap:2px;"><input type="checkbox"> 일</label>
+  </div>
+</div>
+<div class="ph-mrow">
+  <div class="ph-mlbl">출조/복귀 시간</div>
+  <div style="display:flex;gap:2px;">
+    <input class="ph-minp" style="width:50%;border:1px solid #eee;font-size:7px;" placeholder="출조">
+    <span>~</span>
+    <input class="ph-minp" style="width:50%;border:1px solid #eee;font-size:7px;" placeholder="복귀">
+  </div>
+</div>
+<div class="ph-mrow">
+  <div class="ph-mlbl">요금 설정 · 대인</div>
+  <div style="display:flex;gap:2px;">
+    <div style="flex:1;"><span style="font-size:5px;color:#888;display:block;">평일</span><input class="ph-minp" style="border:1px solid #eee;font-size:7px;" value="0"></div>
+    <div style="flex:1;"><span style="font-size:5px;color:#888;display:block;">주말</span><input class="ph-minp" style="border:1px solid #eee;font-size:7px;" value="0"></div>
+  </div>
+  <div style="display:flex;align-items:center;justify-content:space-between;margin-top:2px;"><span style="font-size:5px;color:#888;">주말 요금 별도 적용</span><div style="width:16px;height:10px;border-radius:5px;background:#ddd;position:relative;"><div style="width:7px;height:7px;border-radius:50%;background:#fff;position:absolute;top:1.5px;left:1.5px;"></div></div></div>
+</div>
+<div class="ph-mrow">
+  <div class="ph-mlbl">자리 배정 방식</div>
+  <div style="display:flex;gap:2px;">
+    <button style="flex:1;background:#3182F6;color:#fff;border:none;border-radius:3px;padding:3px;font-size:5px;font-weight:700;cursor:pointer;">추첨</button>
+    <button style="flex:1;background:#fff;border:1px solid #eee;color:#191919;border-radius:3px;padding:3px;font-size:5px;font-weight:700;cursor:pointer;">지정</button>
+  </div>
+</div>
+<div class="ph-mrow">
+  <div class="ph-mlbl">상품 수수료</div>
+  <div style="display:flex;gap:1px;">
+    <input class="ph-minp" style="flex:1;border:1px solid #eee;font-size:7px;" value="3">
+    <span style="align-self:center;font-size:7px;color:#888;">%</span>
+  </div>
+</div>
+<div class="ph-mrow">
+  <div class="ph-mlbl">유의사항</div>
+  <textarea class="ph-minp" style="border:1px solid #eee;height:30px;color:#aaa;">유의사항을 입력하세요</textarea>
+</div>
+</div>
+<div class="ph-mfoot" style="border-top:1px solid #eee;">
+  <button style="background:#fff;border:1px solid #eee;border-radius:3px;font-size:7px;font-weight:700;cursor:pointer;">취소</button>
+  <button style="background:#FF5050;color:#fff;border:none;border-radius:3px;font-size:7px;font-weight:700;cursor:pointer;">등록</button>
+</div>
+    </div>
+</div>
+</div></div>
+</div>
   <div class="fb-node-screen"><div class="ph-frame ph-lg">
   <div class="ph-island"></div>
   <div class="ph-screen">
@@ -11175,9 +11754,65 @@ window.addEventListener('load', handleHashRoute);
 </div>
   </div>
 </div></div>
-  <div class="fb-msg-panel"><div class="fb-msg"><span class="fb-msg-cat" style="background:#E8F8F1;color:#00A86B;">💬 Toast <b>T08</b></span><span class="fb-msg-txt">출조종류 등록 완료</span><span class="fb-msg-trg">▸ 등록</span></div><div class="fb-msg"><span class="fb-msg-cat" style="background:#FDECEA;color:#D93025;">🚫 Alert <b>A16</b></span><span class="fb-msg-txt">등록 완료 안내</span><span class="fb-msg-trg">▸ 등록 성공</span></div><div class="fb-msg"><span class="fb-msg-cat" style="background:#FFF0F0;color:#D93025;">⛔ 인라인 <b>C16</b></span><span class="fb-msg-txt">필수항목 미입력</span><span class="fb-msg-trg">▸ 검증 실패</span></div></div>
-</div><div class="fb-node" id="fbnode-m6" style="left:1920px;top:2350px;" onclick="fbFocus('m6')">
+  <div class="fb-msg"><span class="fb-msg-cat" style="background:#FDECEA;color:#D93025;">🚫 Alert <b>A16</b></span><span class="fb-msg-txt">등록 완료 안내</span><span class="fb-msg-trg">▸ 등록 성공</span></div><div class="fb-msg"><span class="fb-msg-cat" style="background:#FFF0F0;color:#D93025;">⛔ 인라인 <b>C16</b></span><span class="fb-msg-txt">필수항목 미입력</span><span class="fb-msg-trg">▸ 검증 실패</span></div></div>
+</div><div class="fb-node" id="fbnode-m6" style="left:600px;top:1980px;" onclick="fbFocus('m6')">
   <div class="fb-node-badge" style="background:#C96A00;">M6 출조종류수정</div>
+  <div class="fb-node-screen"><div class="ph-frame ph-lg">
+  <div class="ph-island"></div>
+  <div class="ph-screen">
+    <div class="ph-body">
+<div class="ph-sb"><span>9:41</span><span style="font-size:7px;">●●● ▐▐ ▊</span></div>
+<div style="padding:6px 8px;border-bottom:1px solid #eee;display:flex;align-items:center;justify-content:space-between;">
+  <div style="font-size:9px;font-weight:800;">출조종류 수정</div>
+  <span style="font-size:12px;cursor:pointer;">×</span>
+</div>
+<div class="ph-scroll" style="padding:6px;">
+<div class="ph-mrow">
+  <div class="ph-mlbl">상품명</div>
+  <input class="ph-minp" style="border:1px solid #eee;" value="갑오징어/주꾸미">
+</div>
+<div class="ph-mrow">
+  <div class="ph-mlbl">어종</div>
+  <div style="display:flex;gap:2px;flex-wrap:wrap;">
+    <span style="font-size:5px;font-weight:700;background:#EBF0FF;color:#3182F6;padding:2px 5px;border-radius:3px;cursor:pointer;">갑오징어</span>
+    <span style="font-size:5px;font-weight:700;background:#EBF0FF;color:#3182F6;padding:2px 5px;border-radius:3px;cursor:pointer;">주꾸미</span>
+    <span style="font-size:5px;font-weight:700;background:#F5F5F7;color:#767676;padding:2px 5px;border-radius:3px;cursor:pointer;">광어</span>
+    <span style="font-size:5px;font-weight:700;background:#F5F5F7;color:#767676;padding:2px 5px;border-radius:3px;cursor:pointer;">낙지</span>
+  </div>
+</div>
+<div class="ph-mrow">
+  <div class="ph-mlbl">탑승 인원</div>
+  <div style="display:flex;gap:2px;">
+    <input class="ph-minp" style="width:50%;border:1px solid #eee;font-size:7px;" value="1">
+    <span>~</span>
+    <input class="ph-minp" style="width:50%;border:1px solid #eee;font-size:7px;" value="11">
+  </div>
+</div>
+<div class="ph-mrow">
+  <div class="ph-mlbl">운영 기간</div>
+  <div style="display:flex;gap:2px;">
+    <input class="ph-minp" style="width:50%;border:1px solid #eee;font-size:7px;" value="0101">
+    <span>~</span>
+    <input class="ph-minp" style="width:50%;border:1px solid #eee;font-size:7px;" value="1231">
+  </div>
+</div>
+<div class="ph-mrow">
+  <div class="ph-mlbl">요금 설정 · 대인</div>
+  <div style="display:flex;gap:2px;">
+    <div style="flex:1;"><span style="font-size:5px;color:#888;display:block;">평일</span><input class="ph-minp" style="border:1px solid #eee;font-size:7px;" value="94000"></div>
+    <div style="flex:1;"><span style="font-size:5px;color:#888;display:block;">주말</span><input class="ph-minp" style="border:1px solid #eee;font-size:7px;" value="110000"></div>
+  </div>
+  <div style="display:flex;align-items:center;justify-content:space-between;margin-top:2px;"><span style="font-size:5px;color:#888;">주말 요금 별도 적용</span><div style="width:16px;height:10px;border-radius:5px;background:#3182F6;position:relative;"><div style="width:7px;height:7px;border-radius:50%;background:#fff;position:absolute;top:1.5px;right:1.5px;"></div></div></div>
+</div>
+</div>
+<div class="ph-mfoot" style="border-top:1px solid #eee;">
+  <button style="background:#fff;border:1px solid #eee;border-radius:3px;font-size:7px;font-weight:700;cursor:pointer;">취소</button>
+  <button style="background:#FF5050;color:#fff;border:none;border-radius:3px;font-size:7px;font-weight:700;cursor:pointer;">수정 저장</button>
+</div>
+    </div>
+</div>
+</div></div>
+</div>
   <div class="fb-node-screen"><div class="ph-frame ph-lg">
   <div class="ph-island"></div>
   <div class="ph-screen">
@@ -11257,9 +11892,28 @@ window.addEventListener('load', handleHashRoute);
 </div>
   </div>
 </div></div>
-  <div class="fb-msg-panel"><div class="fb-msg"><span class="fb-msg-cat" style="background:#E8F8F1;color:#00A86B;">💬 Toast <b>T09</b></span><span class="fb-msg-txt">수정 완료</span><span class="fb-msg-trg">▸ 저장</span></div><div class="fb-msg"><span class="fb-msg-cat" style="background:#FFF4E5;color:#C96A00;">⚠️ Confirm <b>C11</b></span><span class="fb-msg-txt">기존 예약 금액 미변경</span><span class="fb-msg-trg">▸ 요금변경</span></div><div class="fb-msg"><span class="fb-msg-cat" style="background:#FFF4E5;color:#C96A00;">⚠️ Confirm <b>C12</b></span><span class="fb-msg-txt">기간 외 출조 자동삭제</span><span class="fb-msg-trg">▸ 기간축소</span></div><div class="fb-msg"><span class="fb-msg-cat" style="background:#FFF0F0;color:#D93025;">⛔ 인라인 <b>C16</b></span><span class="fb-msg-txt">필수항목 미입력</span><span class="fb-msg-trg">▸ 검증 실패</span></div></div>
-</div><div class="fb-node" id="fbnode-m7" style="left:2580px;top:2350px;" onclick="fbFocus('m7')">
+  <div class="fb-msg"><span class="fb-msg-cat" style="background:#FFF4E5;color:#C96A00;">⚠️ Confirm <b>C11</b></span><span class="fb-msg-txt">기존 예약 금액 미변경</span><span class="fb-msg-trg">▸ 요금변경</span></div><div class="fb-msg"><span class="fb-msg-cat" style="background:#FFF4E5;color:#C96A00;">⚠️ Confirm <b>C12</b></span><span class="fb-msg-txt">기간 외 출조 자동삭제</span><span class="fb-msg-trg">▸ 기간축소</span></div><div class="fb-msg"><span class="fb-msg-cat" style="background:#FFF0F0;color:#D93025;">⛔ 인라인 <b>C16</b></span><span class="fb-msg-txt">필수항목 미입력</span><span class="fb-msg-trg">▸ 검증 실패</span></div></div>
+</div><div class="fb-node" id="fbnode-m7" style="left:1120px;top:1980px;" onclick="fbFocus('m7')">
   <div class="fb-node-badge" style="background:#D93025;">M7 출조종류삭제</div>
+  <div class="fb-node-screen"><div class="ph-frame ph-lg">
+  <div class="ph-island"></div>
+  <div class="ph-screen">
+    <div class="ph-body">
+<div class="ph-confirm-wrap">
+<div class="ph-dim" style="position:absolute;inset:0;background:rgba(0,0,0,.40);"></div>
+<div class="ph-confirm" style="position:relative;z-index:10;">
+  <div class="ph-ct">출조종류 삭제</div>
+  <div class="ph-cm">'갑오징어/주꾸미'를 삭제합니다.<br>연결된 날짜별 출조도 함께 삭제됩니다.</div>
+  <div class="ph-cbtns2">
+    <button style="background:#fff;border:1px solid #eee;border-radius:3px;font-size:7px;font-weight:700;cursor:pointer;padding:6px;">취소</button>
+    <button style="background:#FF5050;color:#fff;border:none;border-radius:3px;font-size:7px;font-weight:700;cursor:pointer;padding:6px;">확인</button>
+  </div>
+</div>
+</div>
+    </div>
+</div>
+</div></div>
+</div>
   <div class="fb-node-screen"><div class="ph-frame ph-lg">
   <div class="ph-island"></div>
   <div class="ph-screen">
@@ -11306,10 +11960,10 @@ window.addEventListener('load', handleHashRoute);
 </div>
   </div>
 </div></div>
-  <div class="fb-msg-panel"><div class="fb-msg"><span class="fb-msg-cat" style="background:#FDECEA;color:#D93025;">🚫 Alert <b>C14</b></span><span class="fb-msg-txt">예약 존재 → 삭제 차단</span><span class="fb-msg-trg">▸ 예약있음</span></div><div class="fb-msg"><span class="fb-msg-cat" style="background:#FFF4E5;color:#C96A00;">⚠️ Confirm <b>C15</b></span><span class="fb-msg-txt">날짜별 출조 N건 모두 삭제</span><span class="fb-msg-trg">▸ 삭제 확인</span></div><div class="fb-msg"><span class="fb-msg-cat" style="background:#E8F8F1;color:#00A86B;">💬 Toast <b>T10</b></span><span class="fb-msg-txt">삭제 완료</span><span class="fb-msg-trg">▸ 삭제</span></div><div class="fb-msg"><span class="fb-msg-cat" style="background:#F3EEFF;color:#3B1198;">💛 알림톡 <b>P03</b></span><span class="fb-msg-txt">출조취소+환불 (전체 예약자)</span><span class="fb-msg-trg">▸ 예약있는 상품</span></div></div>
+  <div class="fb-msg"><span class="fb-msg-cat" style="background:#FFF4E5;color:#C96A00;">⚠️ Confirm <b>C15</b></span><span class="fb-msg-txt">날짜별 출조 N건 모두 삭제</span><span class="fb-msg-trg">▸ 삭제 확인</span></div><div class="fb-msg"><span class="fb-msg-cat" style="background:#E8F8F1;color:#00A86B;">💬 Toast <b>T10</b></span><span class="fb-msg-txt">삭제 완료</span><span class="fb-msg-trg">▸ 삭제</span></div><div class="fb-msg"><span class="fb-msg-cat" style="background:#F3EEFF;color:#3B1198;">💛 알림톡 <b>P03</b></span><span class="fb-msg-txt">출조취소+환불 (전체 예약자)</span><span class="fb-msg-trg">▸ 예약있는 상품</span></div></div>
 </div><div class="fb-node fb-sys-node" style="left:2580px;top:400px;">
   <div class="fb-node-badge" style="background:#3B1198;">⏰ 시스템 자동 발송</div>
-  <div class="fb-sys-card"><div class="fb-sys-title">D-1 자동 알림</div><div class="fb-msg-panel"><div class="fb-msg"><span class="fb-msg-cat" style="background:#F3EEFF;color:#3B1198;">💛 알림톡 <b>P06</b></span><span class="fb-msg-txt">D-1 출항 안내 (집결지/연락처/유의사항)</span><span class="fb-msg-trg">▸ 전일 자동발송</span></div></div></div>
+  <div class="fb-sys-card"><div class="fb-sys-title">D-1 자동 알림</div></div></div>
 </div>
     
 
@@ -11327,21 +11981,21 @@ window.addEventListener('load', handleHashRoute);
 
 
 
-<div class="fpc" id="popup-T01" style="left:80px;top:1120px;">
+<div class="fpc" id="popup-T01" style="left:80px;top:2900px;">
   <div class="fpc-badge" style="background:#00A86B;">💬 T01</div>
   <div class="fpc-phone"><div class="fpc-phone-bg">
     <div class="fpc-toast" style="background:#00A86B;">상품 노출 상태가 변경되었습니다</div>
   </div></div>
   <div class="fpc-trigger">▸ 노출 토글 변경</div>
 </div>
-<div class="fpc" id="popup-T02" style="left:300px;top:1120px;">
+<div class="fpc" id="popup-T02" style="left:280px;top:2900px;">
   <div class="fpc-badge" style="background:#00A86B;">💬 T02</div>
   <div class="fpc-phone"><div class="fpc-phone-bg">
     <div class="fpc-toast" style="background:#00A86B;">즉시 마감되었습니다</div>
   </div></div>
   <div class="fpc-trigger">▸ 즉시마감</div>
 </div>
-<div class="fpc" id="popup-C02" style="left:520px;top:1120px;">
+<div class="fpc" id="popup-C02" style="left:80px;top:3080px;">
   <div class="fpc-badge" style="background:#C96A00;">⚠️ C02</div>
   <div class="fpc-phone"><div class="fpc-phone-bg">
     <div class="fpc-overlay"><div class="fpc-dialog">
@@ -11352,7 +12006,7 @@ window.addEventListener('load', handleHashRoute);
   </div></div>
   <div class="fpc-trigger">▸ 즉시마감 확인</div>
 </div>
-<div class="fpc" id="popup-C03" style="left:740px;top:1120px;">
+<div class="fpc" id="popup-C03" style="left:280px;top:3080px;">
   <div class="fpc-badge" style="background:#C96A00;">⚠️ C03</div>
   <div class="fpc-phone"><div class="fpc-phone-bg">
     <div class="fpc-overlay"><div class="fpc-dialog">
@@ -11363,14 +12017,14 @@ window.addEventListener('load', handleHashRoute);
   </div></div>
   <div class="fpc-trigger">▸ 노출 OFF + 예약 있을 때</div>
 </div>
-<div class="fpc" id="popup-T03" style="left:3000px;top:30px;">
+<div class="fpc" id="popup-T03" style="left:480px;top:2900px;">
   <div class="fpc-badge" style="background:#00A86B;">💬 T03</div>
   <div class="fpc-phone"><div class="fpc-phone-bg">
     <div class="fpc-toast" style="background:#00A86B;">판매 좌석이 변경되었습니다</div>
   </div></div>
   <div class="fpc-trigger">▸ 인원조정 저장</div>
 </div>
-<div class="fpc" id="popup-C05" style="left:3000px;top:320px;">
+<div class="fpc" id="popup-C05" style="left:680px;top:3080px;">
   <div class="fpc-badge" style="background:#C96A00;">⚠️ C05</div>
   <div class="fpc-phone"><div class="fpc-phone-bg">
     <div class="fpc-overlay"><div class="fpc-dialog">
@@ -11381,7 +12035,7 @@ window.addEventListener('load', handleHashRoute);
   </div></div>
   <div class="fpc-trigger">▸ M1 즉시마감</div>
 </div>
-<div class="fpc" id="popup-C04" style="left:3220px;top:30px;">
+<div class="fpc" id="popup-C04" style="left:480px;top:3080px;">
   <div class="fpc-badge" style="background:#D93025;">🚫 C04</div>
   <div class="fpc-phone"><div class="fpc-phone-bg">
     <div class="fpc-overlay"><div class="fpc-dialog">
@@ -11392,7 +12046,7 @@ window.addEventListener('load', handleHashRoute);
   </div></div>
   <div class="fpc-trigger">▸ 좌석 축소 시</div>
 </div>
-<div class="fpc" id="popup-C06" style="left:3220px;top:320px;">
+<div class="fpc" id="popup-C06" style="left:880px;top:3080px;">
   <div class="fpc-badge" style="background:#D93025;">🚫 C06</div>
   <div class="fpc-phone"><div class="fpc-phone-bg">
     <div class="fpc-overlay"><div class="fpc-dialog">
@@ -11403,7 +12057,7 @@ window.addEventListener('load', handleHashRoute);
   </div></div>
   <div class="fpc-trigger">▸ 마감 상태에서 마감 시도</div>
 </div>
-<div class="fpc" id="popup-C07" style="left:3440px;top:30px;">
+<div class="fpc" id="popup-C07" style="left:1080px;top:3080px;">
   <div class="fpc-badge" style="background:#D93025;">🚫 C07</div>
   <div class="fpc-phone"><div class="fpc-phone-bg">
     <div class="fpc-overlay"><div class="fpc-dialog">
@@ -11414,14 +12068,14 @@ window.addEventListener('load', handleHashRoute);
   </div></div>
   <div class="fpc-trigger">▸ 0이하 입력</div>
 </div>
-<div class="fpc" id="popup-T04" style="left:3000px;top:700px;">
+<div class="fpc" id="popup-T04" style="left:680px;top:2900px;">
   <div class="fpc-badge" style="background:#00A86B;">💬 T04</div>
   <div class="fpc-phone"><div class="fpc-phone-bg">
     <div class="fpc-toast" style="background:#00A86B;">예약이 등록되었습니다</div>
   </div></div>
   <div class="fpc-trigger">▸ 예약 직접추가 완료</div>
 </div>
-<div class="fpc" id="popup-C08" style="left:3220px;top:700px;">
+<div class="fpc" id="popup-C08" style="left:1280px;top:3080px;">
   <div class="fpc-badge" style="background:#D93025;">🚫 C08</div>
   <div class="fpc-phone"><div class="fpc-phone-bg">
     <div class="fpc-overlay"><div class="fpc-dialog">
@@ -11432,7 +12086,7 @@ window.addEventListener('load', handleHashRoute);
   </div></div>
   <div class="fpc-trigger">▸ 매진 상품 선택</div>
 </div>
-<div class="fpc" id="popup-C09" style="left:3000px;top:990px;">
+<div class="fpc" id="popup-C09" style="left:1480px;top:3080px;">
   <div class="fpc-badge" style="background:#D93025;">🚫 C09</div>
   <div class="fpc-phone"><div class="fpc-phone-bg">
     <div class="fpc-overlay"><div class="fpc-dialog">
@@ -11443,7 +12097,7 @@ window.addEventListener('load', handleHashRoute);
   </div></div>
   <div class="fpc-trigger">▸ 잔여석 초과 인원</div>
 </div>
-<div class="fpc" id="popup-C10" style="left:3220px;top:990px;">
+<div class="fpc" id="popup-C10" style="left:1680px;top:3080px;">
   <div class="fpc-badge" style="background:#C96A00;">⚠️ C10</div>
   <div class="fpc-phone"><div class="fpc-phone-bg">
     <div class="fpc-overlay"><div class="fpc-dialog">
@@ -11454,7 +12108,7 @@ window.addEventListener('load', handleHashRoute);
   </div></div>
   <div class="fpc-trigger">▸ 출항 당일 예약</div>
 </div>
-<div class="fpc" id="popup-P01" style="left:3440px;top:700px;">
+<div class="fpc" id="popup-P01" style="left:1280px;top:3260px;">
   <div class="fpc-badge" style="background:#3B1198;">💛 P01</div>
   <div class="fpc-phone"><div class="fpc-phone-bg">
     <div class="fpc-push"><div class="fpc-push-row">
@@ -11464,7 +12118,7 @@ window.addEventListener('load', handleHashRoute);
   </div></div>
   <div class="fpc-trigger">▸ 예약추가 완료→예약자</div>
 </div>
-<div class="fpc" id="popup-P04" style="left:3440px;top:990px;">
+<div class="fpc" id="popup-P04" style="left:1880px;top:3260px;">
   <div class="fpc-badge" style="background:#0041FF;">🔔 P04</div>
   <div class="fpc-phone"><div class="fpc-phone-bg">
     <div class="fpc-push"><div class="fpc-push-row">
@@ -11474,21 +12128,21 @@ window.addEventListener('load', handleHashRoute);
   </div></div>
   <div class="fpc-trigger">▸ 플랫폼 예약→선주</div>
 </div>
-<div class="fpc" id="popup-T05" style="left:3000px;top:1380px;">
+<div class="fpc" id="popup-T05" style="left:880px;top:2900px;">
   <div class="fpc-badge" style="background:#00A86B;">💬 T05</div>
   <div class="fpc-phone"><div class="fpc-phone-bg">
     <div class="fpc-toast" style="background:#00A86B;">[이름] 복사됨</div>
   </div></div>
   <div class="fpc-trigger">▸ 연락처 복사</div>
 </div>
-<div class="fpc" id="popup-T06" style="left:3000px;top:1670px;">
+<div class="fpc" id="popup-T06" style="left:1080px;top:2900px;">
   <div class="fpc-badge" style="background:#00A86B;">💬 T06</div>
   <div class="fpc-phone"><div class="fpc-phone-bg">
     <div class="fpc-toast" style="background:#00A86B;">예약 명단이 복사되었습니다</div>
   </div></div>
   <div class="fpc-trigger">▸ 명단 복사</div>
 </div>
-<div class="fpc" id="popup-C13" style="left:3220px;top:1380px;">
+<div class="fpc" id="popup-C13" style="left:280px;top:3260px;">
   <div class="fpc-badge" style="background:#C96A00;">⚠️ C13</div>
   <div class="fpc-phone"><div class="fpc-phone-bg">
     <div class="fpc-overlay"><div class="fpc-dialog">
@@ -11499,14 +12153,14 @@ window.addEventListener('load', handleHashRoute);
   </div></div>
   <div class="fpc-trigger">▸ 예약 취소 버튼</div>
 </div>
-<div class="fpc" id="popup-T11" style="left:3220px;top:1670px;">
+<div class="fpc" id="popup-T11" style="left:1880px;top:2900px;">
   <div class="fpc-badge" style="background:#00A86B;">💬 T11</div>
   <div class="fpc-phone"><div class="fpc-phone-bg">
     <div class="fpc-toast" style="background:#00A86B;">예약이 취소됐습니다</div>
   </div></div>
   <div class="fpc-trigger">▸ 예약 취소 완료</div>
 </div>
-<div class="fpc" id="popup-P02" style="left:3440px;top:1380px;">
+<div class="fpc" id="popup-P02" style="left:1480px;top:3260px;">
   <div class="fpc-badge" style="background:#3B1198;">💛 P02</div>
   <div class="fpc-phone"><div class="fpc-phone-bg">
     <div class="fpc-push"><div class="fpc-push-row">
@@ -11516,7 +12170,7 @@ window.addEventListener('load', handleHashRoute);
   </div></div>
   <div class="fpc-trigger">▸ 예약취소→예약자</div>
 </div>
-<div class="fpc" id="popup-P05" style="left:3440px;top:1670px;">
+<div class="fpc" id="popup-P05" style="left:80px;top:3440px;">
   <div class="fpc-badge" style="background:#0041FF;">🔔 P05</div>
   <div class="fpc-phone"><div class="fpc-phone-bg">
     <div class="fpc-push"><div class="fpc-push-row">
@@ -11526,14 +12180,14 @@ window.addEventListener('load', handleHashRoute);
   </div></div>
   <div class="fpc-trigger">▸ 취소요청→선주</div>
 </div>
-<div class="fpc" id="popup-T08" style="left:1260px;top:3150px;">
+<div class="fpc" id="popup-T08" style="left:1280px;top:2900px;">
   <div class="fpc-badge" style="background:#00A86B;">💬 T08</div>
   <div class="fpc-phone"><div class="fpc-phone-bg">
     <div class="fpc-toast" style="background:#00A86B;">출조종류가 등록되었습니다</div>
   </div></div>
   <div class="fpc-trigger">▸ 등록 완료</div>
 </div>
-<div class="fpc" id="popup-A16" style="left:1480px;top:3150px;">
+<div class="fpc" id="popup-A16" style="left:1080px;top:3260px;">
   <div class="fpc-badge" style="background:#D93025;">🚫 A16</div>
   <div class="fpc-phone"><div class="fpc-phone-bg">
     <div class="fpc-overlay"><div class="fpc-dialog">
@@ -11544,7 +12198,7 @@ window.addEventListener('load', handleHashRoute);
   </div></div>
   <div class="fpc-trigger">▸ 등록 성공</div>
 </div>
-<div class="fpc" id="popup-C16" style="left:1700px;top:3150px;">
+<div class="fpc" id="popup-C16" style="left:880px;top:3260px;">
   <div class="fpc-badge" style="background:#D93025;">⛔ C16</div>
   <div class="fpc-phone"><div class="fpc-phone-bg">
     <div style="position:absolute;top:60px;left:12px;right:12px;">
@@ -11554,14 +12208,14 @@ window.addEventListener('load', handleHashRoute);
   </div></div>
   <div class="fpc-trigger">▸ 필수항목 미입력</div>
 </div>
-<div class="fpc" id="popup-T09" style="left:1920px;top:3150px;">
+<div class="fpc" id="popup-T09" style="left:1480px;top:2900px;">
   <div class="fpc-badge" style="background:#00A86B;">💬 T09</div>
   <div class="fpc-phone"><div class="fpc-phone-bg">
     <div class="fpc-toast" style="background:#00A86B;">출조종류 수정 완료</div>
   </div></div>
   <div class="fpc-trigger">▸ 수정 저장</div>
 </div>
-<div class="fpc" id="popup-C11" style="left:2140px;top:3150px;">
+<div class="fpc" id="popup-C11" style="left:1880px;top:3080px;">
   <div class="fpc-badge" style="background:#C96A00;">⚠️ C11</div>
   <div class="fpc-phone"><div class="fpc-phone-bg">
     <div class="fpc-overlay"><div class="fpc-dialog">
@@ -11572,7 +12226,7 @@ window.addEventListener('load', handleHashRoute);
   </div></div>
   <div class="fpc-trigger">▸ 요금 변경 시</div>
 </div>
-<div class="fpc" id="popup-C12" style="left:2360px;top:3150px;">
+<div class="fpc" id="popup-C12" style="left:80px;top:3260px;">
   <div class="fpc-badge" style="background:#C96A00;">⚠️ C12</div>
   <div class="fpc-phone"><div class="fpc-phone-bg">
     <div class="fpc-overlay"><div class="fpc-dialog">
@@ -11583,7 +12237,7 @@ window.addEventListener('load', handleHashRoute);
   </div></div>
   <div class="fpc-trigger">▸ 기간 축소 시</div>
 </div>
-<div class="fpc" id="popup-C14" style="left:2580px;top:3150px;">
+<div class="fpc" id="popup-C14" style="left:480px;top:3260px;">
   <div class="fpc-badge" style="background:#D93025;">🚫 C14</div>
   <div class="fpc-phone"><div class="fpc-phone-bg">
     <div class="fpc-overlay"><div class="fpc-dialog">
@@ -11594,7 +12248,7 @@ window.addEventListener('load', handleHashRoute);
   </div></div>
   <div class="fpc-trigger">▸ 예약 있는 상품 삭제</div>
 </div>
-<div class="fpc" id="popup-C15" style="left:2800px;top:3150px;">
+<div class="fpc" id="popup-C15" style="left:680px;top:3260px;">
   <div class="fpc-badge" style="background:#C96A00;">⚠️ C15</div>
   <div class="fpc-phone"><div class="fpc-phone-bg">
     <div class="fpc-overlay"><div class="fpc-dialog">
@@ -11605,14 +12259,14 @@ window.addEventListener('load', handleHashRoute);
   </div></div>
   <div class="fpc-trigger">▸ 삭제 확인</div>
 </div>
-<div class="fpc" id="popup-T10" style="left:3020px;top:3150px;">
+<div class="fpc" id="popup-T10" style="left:1680px;top:2900px;">
   <div class="fpc-badge" style="background:#00A86B;">💬 T10</div>
   <div class="fpc-phone"><div class="fpc-phone-bg">
     <div class="fpc-toast" style="background:#00A86B;">출조종류가 삭제되었습니다</div>
   </div></div>
   <div class="fpc-trigger">▸ 삭제 완료</div>
 </div>
-<div class="fpc" id="popup-P03" style="left:2580px;top:3440px;">
+<div class="fpc" id="popup-P03" style="left:1680px;top:3260px;">
   <div class="fpc-badge" style="background:#3B1198;">💛 P03</div>
   <div class="fpc-phone"><div class="fpc-phone-bg">
     <div class="fpc-push"><div class="fpc-push-row">
@@ -11622,7 +12276,7 @@ window.addEventListener('load', handleHashRoute);
   </div></div>
   <div class="fpc-trigger">▸ 삭제(예약있는)→예약자 전체</div>
 </div>
-<div class="fpc" id="popup-P06" style="left:3000px;top:2050px;">
+<div class="fpc" id="popup-P06" style="left:280px;top:3440px;">
   <div class="fpc-badge" style="background:#3B1198;">💛 P06</div>
   <div class="fpc-phone"><div class="fpc-phone-bg">
     <div class="fpc-push"><div class="fpc-push-row">
