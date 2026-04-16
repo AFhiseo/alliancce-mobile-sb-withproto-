@@ -10430,19 +10430,39 @@ function downloadHTML() {
 function openOverlay(id) {
   document.getElementById('overlay-' + id).classList.add('open');
   document.body.style.overflow = 'hidden';
+  if(location.hash !== '#/' + id) history.pushState(null, '', '#/' + id);
 }
 function closeOverlay(id) {
   document.getElementById('overlay-' + id).classList.remove('open');
   document.body.style.overflow = '';
+  if(location.hash) history.pushState(null, '', location.pathname);
 }
 document.addEventListener('keydown', function(e) {
   if(e.key === 'Escape') {
     document.querySelectorAll('.fs-overlay.open').forEach(function(el) {
       el.classList.remove('open');
     });
+    if(document.getElementById('fb-overlay')) {
+      document.getElementById('fb-overlay').classList.remove('open');
+    }
     document.body.style.overflow = '';
+    if(location.hash) history.pushState(null, '', location.pathname);
   }
 });
+
+// ── Hash routing: #/flowboard, #/dataflow, #/qa ──
+function handleHashRoute() {
+  var hash = location.hash;
+  if(hash === '#/flowboard' || hash === '#/flow') {
+    setTimeout(function(){ if(window.openFB) openFB(); }, 300);
+  } else if(hash === '#/dataflow' || hash === '#/data') {
+    setTimeout(function(){ openOverlay('dataflow'); }, 300);
+  } else if(hash === '#/qa' || hash === '#/test') {
+    setTimeout(function(){ openOverlay('qa'); }, 300);
+  }
+}
+window.addEventListener('hashchange', handleHashRoute);
+window.addEventListener('load', handleHashRoute);
 
 </script>
 
@@ -11649,10 +11669,12 @@ document.addEventListener('keydown', function(e) {
     document.getElementById('fb-overlay').classList.add('open');
     document.body.style.overflow='hidden';
     setTimeout(aT,50);
+    if(location.hash!=='#/flowboard') history.pushState(null,'','#/flowboard');
   };
   window.closeFB=function(){
     document.getElementById('fb-overlay').classList.remove('open');
     document.body.style.overflow='';
+    if(location.hash) history.pushState(null,'',location.pathname);
   };
 
 // prototype loader removed (using ph-frame mockups instead)
